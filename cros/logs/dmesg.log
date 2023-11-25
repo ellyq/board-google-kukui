@@ -1,0 +1,2206 @@
+[    0.000000] Booting Linux on physical CPU 0x0000000000 [0x410fd034]
+[    0.000000] Linux version 5.10.175-22068-g4b67de084816 (chrome-bot@chromeos-release-builder-us-central1-c-x32-45-mzgs) (Chromium OS 16.0_pre475826_p20230103-r9 clang version 16.0.0 (/var/tmp/portage/sys-devel/llvm-16.0_pre475826_p20230103-r9/work/llvm-16.0_pre475826_p20230103/clang 11897708c0229c92802e747564e7c34b722f045f), LLD 16.0.0) #1 SMP PREEMPT Fri May 5 19:04:40 PDT 2023
+[    0.000000] random: crng init done
+[    0.000000] Machine model: MediaTek krane sku176 board
+[    0.000000] Malformed early option 'console'
+[    0.000000] Reserved memory: created DMA memory pool at 0x0000000050000000, size 41 MiB
+[    0.000000] OF: reserved mem: initialized node scp_mem_region, compatible id shared-dma-pool
+[    0.000000] Zone ranges:
+[    0.000000]   DMA      [mem 0x0000000040000000-0x00000000ffffffff]
+[    0.000000]   DMA32    empty
+[    0.000000]   Normal   [mem 0x0000000100000000-0x000000013fffffff]
+[    0.000000] Movable zone start for each node
+[    0.000000] Early memory node ranges
+[    0.000000]   node   0: [mem 0x0000000040000000-0x000000004fffffff]
+[    0.000000]   node   0: [mem 0x0000000050000000-0x00000000528fffff]
+[    0.000000]   node   0: [mem 0x0000000052900000-0x00000000545fffff]
+[    0.000000]   node   0: [mem 0x0000000054700000-0x00000000ffdfffff]
+[    0.000000]   node   0: [mem 0x0000000100000000-0x000000013fffffff]
+[    0.000000] Initmem setup node 0 [mem 0x0000000040000000-0x000000013fffffff]
+[    0.000000] On node 0 totalpages: 1047808
+[    0.000000]   DMA zone: 12288 pages used for memmap
+[    0.000000]   DMA zone: 0 pages reserved
+[    0.000000]   DMA zone: 785664 pages, LIFO batch:63
+[    0.000000]   Normal zone: 4096 pages used for memmap
+[    0.000000]   Normal zone: 262144 pages, LIFO batch:63
+[    0.000000] On node 0, zone DMA: 256 pages in unavailable ranges
+[    0.000000] On node 0, zone Normal: 512 pages in unavailable ranges
+[    0.000000] psci: probing for conduit method from DT.
+[    0.000000] psci: PSCIv1.1 detected in firmware.
+[    0.000000] psci: Using standard PSCI v0.2 function IDs
+[    0.000000] psci: MIGRATE_INFO_TYPE not supported.
+[    0.000000] psci: SMC Calling Convention v1.1
+[    0.000000] percpu: Embedded 32 pages/cpu s93336 r8192 d29544 u131072
+[    0.000000] pcpu-alloc: s93336 r8192 d29544 u131072 alloc=32*4096
+[    0.000000] pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 [0] 4 [0] 5 [0] 6 [0] 7 
+[    0.000000] Detected VIPT I-cache on CPU0
+[    0.000000] CPU features: detected: ARM erratum 845719
+[    0.000000] CPU features: detected: GIC system register CPU interface
+[    0.000000] CPU features: kernel page table isolation forced ON by KASLR
+[    0.000000] CPU features: detected: Kernel page table isolation (KPTI)
+[    0.000000] Built 1 zonelists, mobility grouping on.  Total pages: 1031424
+[    0.000000] Kernel command line: cros_secure console= loglevel=7 init=/sbin/init cros_secure drm.trace=0x106 root=PARTUUID=06e0a2f9-7ff7-2a45-82e1-d15cad1138a8/PARTNROFF=1 rootwait rw dm_verity.error_behavior=3 dm_verity.max_bios=-1 dm_verity.dev_wait=0 dm="1 vroot none ro 1,0 5324800 verity payload=ROOT_DEV hashtree=HASH_DEV hashstart=5324800 alg=sha256 root_hexdigest=b12a94e951175d1db2e3b57e984581ae61b7dc5cebf316a7995d34e9d8f71406 salt=909046ee78fcaae43e2fc99f451ac928b4d6104c7964354fdd78c1940ecb0b78" noinitrd vt.global_cursor_default=0 kern_guid=06e0a2f9-7ff7-2a45-82e1-d15cad1138a8 cpuidle.governor=teo  
+[    0.000000] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.000000] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.000000] mem auto-init: stack:all(zero), heap alloc:off, heap free:off
+[    0.000000] software IO TLB: mapped [mem 0x00000000fbe00000-0x00000000ffe00000] (64MB)
+[    0.000000] Memory: 3977196K/4191232K available (12222K kernel code, 2486K rwdata, 5168K rodata, 1408K init, 1071K bss, 214036K reserved, 0K cma-reserved)
+[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=8, Nodes=1
+[    0.000000] ftrace: allocating 42795 entries in 168 pages
+[    0.000000] ftrace: allocated 168 pages with 3 groups
+[    0.000000] rcu: Preemptible hierarchical RCU implementation.
+[    0.000000] 	Trampoline variant of Tasks RCU enabled.
+[    0.000000] 	Rude variant of Tasks RCU enabled.
+[    0.000000] 	Tracing variant of Tasks RCU enabled.
+[    0.000000] rcu: RCU calculated value of scheduler-enlistment delay is 100 jiffies.
+[    0.000000] NR_IRQS: 64, nr_irqs: 64, preallocated irqs: 0
+[    0.000000] GICv3: GIC: Using split EOI/Deactivate mode
+[    0.000000] GICv3: 640 SPIs implemented
+[    0.000000] GICv3: 0 Extended SPIs implemented
+[    0.000000] GICv3: Distributor has no Range Selector support
+[    0.000000] GICv3: 16 PPIs implemented
+[    0.000000] GICv3: CPU0: found redistributor 0 region 0:0x000000000c100000
+[    0.000000] GICv3: GIC: PPI partition interrupt-partition-0[0] { /cpus/cpu@0[0] /cpus/cpu@1[1] /cpus/cpu@2[2] /cpus/cpu@3[3] }
+[    0.000000] GICv3: GIC: PPI partition interrupt-partition-1[1] { /cpus/cpu@100[4] /cpus/cpu@101[5] /cpus/cpu@102[6] /cpus/cpu@103[7] }
+[    0.000000] rcu: 	Offload RCU callbacks from CPUs: 0-7.
+[    0.000000] kfence: initialized - using 2097152 bytes for 255 objects at 0x(____ptrval____)-0x(____ptrval____)
+[    0.000000] arch_timer: cp15 timer(s) running at 13.00MHz (phys).
+[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x2ff89eacb, max_idle_ns: 440795202429 ns
+[    0.000003] sched_clock: 56 bits at 13MHz, resolution 76ns, wraps every 4398046511101ns
+[    0.000373] Calibrating delay loop (skipped), value calculated using timer frequency.. 26.00 BogoMIPS (lpj=13000)
+[    0.000381] pid_max: default: 32768 minimum: 301
+[    0.000464] LSM: Security Framework initializing
+[    0.000495] landlock: Up and running.
+[    0.000499] Yama: becoming mindful.
+[    0.000513] LoadPin: ready to pin (currently enforcing)
+[    0.000531] Chromium OS LSM: enabled
+[    0.000534] SELinux:  Initializing.
+[    0.000609] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.000623] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.001979] rcu: Hierarchical SRCU implementation.
+[    0.002703] smp: Bringing up secondary CPUs ...
+[    0.003385] Detected VIPT I-cache on CPU1
+[    0.003408] GICv3: CPU1: found redistributor 1 region 0:0x000000000c120000
+[    0.003438] CPU1: Booted secondary processor 0x0000000001 [0x410fd034]
+[    0.004060] Detected VIPT I-cache on CPU2
+[    0.004072] GICv3: CPU2: found redistributor 2 region 0:0x000000000c140000
+[    0.004085] CPU2: Booted secondary processor 0x0000000002 [0x410fd034]
+[    0.004657] Detected VIPT I-cache on CPU3
+[    0.004667] GICv3: CPU3: found redistributor 3 region 0:0x000000000c160000
+[    0.004679] CPU3: Booted secondary processor 0x0000000003 [0x410fd034]
+[    0.005367] CPU features: detected: ARM erratum 858921
+[    0.005374] CPU features: detected: Spectre-v2
+[    0.005381] CPU features: detected: Spectre-BHB
+[    0.005384] Detected VIPT I-cache on CPU4
+[    0.005399] GICv3: CPU4: found redistributor 100 region 0:0x000000000c180000
+[    0.005406] arch_timer: Enabling local workaround for ARM erratum 858921
+[    0.005415] arch_timer: CPU4: Trapping CNTVCT access
+[    0.005424] CPU4: Booted secondary processor 0x0000000100 [0x410fd092]
+[    0.006065] Detected VIPT I-cache on CPU5
+[    0.006078] GICv3: CPU5: found redistributor 101 region 0:0x000000000c1a0000
+[    0.006083] arch_timer: Enabling local workaround for ARM erratum 858921
+[    0.006089] arch_timer: CPU5: Trapping CNTVCT access
+[    0.006096] CPU5: Booted secondary processor 0x0000000101 [0x410fd092]
+[    0.006666] Detected VIPT I-cache on CPU6
+[    0.006678] GICv3: CPU6: found redistributor 102 region 0:0x000000000c1c0000
+[    0.006684] arch_timer: Enabling local workaround for ARM erratum 858921
+[    0.006689] arch_timer: CPU6: Trapping CNTVCT access
+[    0.006696] CPU6: Booted secondary processor 0x0000000102 [0x410fd092]
+[    0.007265] Detected VIPT I-cache on CPU7
+[    0.007278] GICv3: CPU7: found redistributor 103 region 0:0x000000000c1e0000
+[    0.007283] arch_timer: Enabling local workaround for ARM erratum 858921
+[    0.007289] arch_timer: CPU7: Trapping CNTVCT access
+[    0.007296] CPU7: Booted secondary processor 0x0000000103 [0x410fd092]
+[    0.007367] smp: Brought up 1 node, 8 CPUs
+[    0.007408] SMP: Total of 8 processors activated.
+[    0.007412] CPU features: detected: 32-bit EL0 Support
+[    0.007416] CPU features: detected: CRC32 instructions
+[    0.007421] CPU features: detected: 32-bit EL1 Support
+[    0.007550] CPU features: emulated: Privileged Access Never (PAN) using TTBR0_EL1 switching
+[    0.019389] CPU: All CPU(s) started at EL2
+[    0.019420] alternatives: patching kernel code
+[    0.020592] devtmpfs: initialized
+[    0.026603] Registered cp15_barrier emulation handler
+[    0.026616] Registered setend emulation handler
+[    0.026623] KASLR enabled
+[    0.026725] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[    0.026736] futex hash table entries: 2048 (order: 5, 131072 bytes, linear)
+[    0.026906] pinctrl core: initialized pinctrl subsystem
+[    0.027292] NET: Registered protocol family 16
+[    0.027921] DMA: preallocated 512 KiB GFP_KERNEL pool for atomic allocations
+[    0.028066] DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA pool for atomic allocations
+[    0.028214] DMA: preallocated 512 KiB GFP_KERNEL|GFP_DMA32 pool for atomic allocations
+[    0.028238] audit: initializing netlink subsys (disabled)
+[    0.028348] audit: type=2000 audit(0.028:1): state=initialized audit_enabled=0 res=1
+[    0.028539] thermal_sys: Registered thermal governor 'step_wise'
+[    0.028542] thermal_sys: Registered thermal governor 'user_space'
+[    0.028547] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.029018] thermal thermal_zone7: power_allocator: sustainable_power will be estimated
+[    0.029062] thermal thermal_zone8: power_allocator: sustainable_power will be estimated
+[    0.029155] cpuidle: using governor ladder
+[    0.029281] cpuidle: using governor menu
+[    0.029296] cpuidle: using governor teo
+[    0.029480] hw-breakpoint: found 6 breakpoint and 4 watchpoint registers.
+[    0.029583] ASID allocator initialised with 32768 entries
+[    0.030616] printk: console [ramoops-1] enabled
+[    0.030739] pstore: Registered ramoops as persistent store backend
+[    0.030745] ramoops: using 0x100000@0xffedb000, ecc: 0
+[    0.082971] gpiochip_find_base: found new base at 320
+[    0.083007] gpio gpiochip0: (pinctrl_paris): created GPIO range 0->191 ==> 10005000.pinctrl PIN 0->191
+[    0.083248] gpio gpiochip0: (pinctrl_paris): added GPIO chardev (254:0)
+[    0.083292] gpio gpiochip0: registered GPIOs 320 to 511 on pinctrl_paris
+[    0.091109] cryptd: max_cpu_qlen set to 1000
+[    0.092680] reg-fixed-voltage regulator0: GPIO lookup for consumer (null)
+[    0.092686] reg-fixed-voltage regulator0: using device tree for GPIO lookup
+[    0.092703] of_get_named_gpiod_flags: can't parse 'gpios' property of node '/regulator0[0]'
+[    0.092719] of_get_named_gpiod_flags: parsed 'gpio' property of node '/regulator0[0]' - status (0)
+[    0.092737] gpio gpiochip0: Persistence not supported for GPIO 178
+[    0.092867] reg-fixed-voltage regulator1: GPIO lookup for consumer (null)
+[    0.092871] reg-fixed-voltage regulator1: using device tree for GPIO lookup
+[    0.092879] of_get_named_gpiod_flags: can't parse 'gpios' property of node '/regulator1[0]'
+[    0.092886] of_get_named_gpiod_flags: can't parse 'gpio' property of node '/regulator1[0]'
+[    0.092891] reg-fixed-voltage regulator1: using lookup tables for GPIO lookup
+[    0.092895] reg-fixed-voltage regulator1: No GPIO consumer (null) found
+[    0.093004] reg-fixed-voltage regulator2: GPIO lookup for consumer (null)
+[    0.093007] reg-fixed-voltage regulator2: using device tree for GPIO lookup
+[    0.093015] of_get_named_gpiod_flags: can't parse 'gpios' property of node '/regulator2[0]'
+[    0.093022] of_get_named_gpiod_flags: can't parse 'gpio' property of node '/regulator2[0]'
+[    0.093027] reg-fixed-voltage regulator2: using lookup tables for GPIO lookup
+[    0.093030] reg-fixed-voltage regulator2: No GPIO consumer (null) found
+[    0.093124] reg-fixed-voltage regulator3: GPIO lookup for consumer (null)
+[    0.093128] reg-fixed-voltage regulator3: using device tree for GPIO lookup
+[    0.093135] of_get_named_gpiod_flags: can't parse 'gpios' property of node '/regulator3[0]'
+[    0.093142] of_get_named_gpiod_flags: can't parse 'gpio' property of node '/regulator3[0]'
+[    0.093146] reg-fixed-voltage regulator3: using lookup tables for GPIO lookup
+[    0.093149] reg-fixed-voltage regulator3: No GPIO consumer (null) found
+[    0.093240] reg-fixed-voltage regulator4: GPIO lookup for consumer (null)
+[    0.093244] reg-fixed-voltage regulator4: using device tree for GPIO lookup
+[    0.093251] of_get_named_gpiod_flags: can't parse 'gpios' property of node '/regulator4[0]'
+[    0.093257] of_get_named_gpiod_flags: can't parse 'gpio' property of node '/regulator4[0]'
+[    0.093261] reg-fixed-voltage regulator4: using lookup tables for GPIO lookup
+[    0.093264] reg-fixed-voltage regulator4: No GPIO consumer (null) found
+[    0.093365] reg-fixed-voltage regulator5: GPIO lookup for consumer (null)
+[    0.093369] reg-fixed-voltage regulator5: using device tree for GPIO lookup
+[    0.093377] of_get_named_gpiod_flags: can't parse 'gpios' property of node '/regulator5[0]'
+[    0.093384] of_get_named_gpiod_flags: can't parse 'gpio' property of node '/regulator5[0]'
+[    0.093387] reg-fixed-voltage regulator5: using lookup tables for GPIO lookup
+[    0.093391] reg-fixed-voltage regulator5: No GPIO consumer (null) found
+[    0.093482] reg-fixed-voltage regulator6: GPIO lookup for consumer (null)
+[    0.093485] reg-fixed-voltage regulator6: using device tree for GPIO lookup
+[    0.093492] of_get_named_gpiod_flags: can't parse 'gpios' property of node '/regulator6[0]'
+[    0.093499] of_get_named_gpiod_flags: can't parse 'gpio' property of node '/regulator6[0]'
+[    0.093503] reg-fixed-voltage regulator6: using lookup tables for GPIO lookup
+[    0.093506] reg-fixed-voltage regulator6: No GPIO consumer (null) found
+[    0.093684] reg-fixed-voltage ppvarn-lcd: GPIO lookup for consumer (null)
+[    0.093688] reg-fixed-voltage ppvarn-lcd: using device tree for GPIO lookup
+[    0.093695] of_get_named_gpiod_flags: can't parse 'gpios' property of node '/ppvarn-lcd[0]'
+[    0.093705] of_get_named_gpiod_flags: parsed 'gpio' property of node '/ppvarn-lcd[0]' - status (0)
+[    0.093714] gpio gpiochip0: Persistence not supported for GPIO 66
+[    0.093946] reg-fixed-voltage ppvarp-lcd: GPIO lookup for consumer (null)
+[    0.093950] reg-fixed-voltage ppvarp-lcd: using device tree for GPIO lookup
+[    0.093958] of_get_named_gpiod_flags: can't parse 'gpios' property of node '/ppvarp-lcd[0]'
+[    0.093969] of_get_named_gpiod_flags: parsed 'gpio' property of node '/ppvarp-lcd[0]' - status (0)
+[    0.093977] gpio gpiochip0: Persistence not supported for GPIO 166
+[    0.094131] reg-fixed-voltage pp1800-lcd: GPIO lookup for consumer (null)
+[    0.094135] reg-fixed-voltage pp1800-lcd: using device tree for GPIO lookup
+[    0.094142] of_get_named_gpiod_flags: can't parse 'gpios' property of node '/pp1800-lcd[0]'
+[    0.094152] of_get_named_gpiod_flags: parsed 'gpio' property of node '/pp1800-lcd[0]' - status (0)
+[    0.094160] gpio gpiochip0: Persistence not supported for GPIO 36
+[    0.094498] iommu: Default domain type: Translated 
+[    0.094650] vgaarb: loaded
+[    0.094915] SCSI subsystem initialized
+[    0.095011] usbcore: registered new interface driver usbfs
+[    0.095033] usbcore: registered new interface driver hub
+[    0.095054] usbcore: registered new device driver usb
+[    0.095084] mc: Linux media interface: v0.10
+[    0.095099] videodev: Linux video capture interface: v2.00
+[    0.096129] mediatek,efuse 8000000.soc_data: GPIO lookup for consumer wp
+[    0.096134] mediatek,efuse 8000000.soc_data: using device tree for GPIO lookup
+[    0.096145] of_get_named_gpiod_flags: can't parse 'wp-gpios' property of node '/soc/soc_data@8000000[0]'
+[    0.096153] of_get_named_gpiod_flags: can't parse 'wp-gpio' property of node '/soc/soc_data@8000000[0]'
+[    0.096159] mediatek,efuse 8000000.soc_data: using lookup tables for GPIO lookup
+[    0.096163] mediatek,efuse 8000000.soc_data: No GPIO consumer wp found
+[    0.096280] mediatek,efuse 11f10000.efuse: GPIO lookup for consumer wp
+[    0.096284] mediatek,efuse 11f10000.efuse: using device tree for GPIO lookup
+[    0.096292] of_get_named_gpiod_flags: can't parse 'wp-gpios' property of node '/soc/efuse@11f10000[0]'
+[    0.096300] of_get_named_gpiod_flags: can't parse 'wp-gpio' property of node '/soc/efuse@11f10000[0]'
+[    0.096304] mediatek,efuse 11f10000.efuse: using lookup tables for GPIO lookup
+[    0.096308] mediatek,efuse 11f10000.efuse: No GPIO consumer wp found
+[    0.096450] Advanced Linux Sound Architecture Driver Initialized.
+[    0.097080] clocksource: Switched to clocksource arch_sys_counter
+[    0.133606] VFS: Disk quotas dquot_6.6.0
+[    0.133651] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.134374] NET: Registered protocol family 2
+[    0.134497] IP idents hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.136198] tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes, linear)
+[    0.136262] TCP established hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.136384] TCP bind hash table entries: 32768 (order: 7, 524288 bytes, linear)
+[    0.136638] TCP: Hash tables configured (established 32768 bind 32768)
+[    0.136729] UDP hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    0.136787] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    0.136933] NET: Registered protocol family 1
+[    0.136955] PCI: CLS 0 bytes, default 64
+[    0.137795] hw perfevents: enabled with armv8_cortex_a53 PMU driver, 7 counters available
+[    0.137993] hw perfevents: enabled with armv8_cortex_a73 PMU driver, 7 counters available
+[    0.138414] kvm [1]: IPA Size Limit: 40 bits
+[    0.138881] kvm [1]: vgic-v2@c420000
+[    0.138897] kvm [1]: GIC system register CPU interface enabled
+[    0.139015] kvm [1]: vgic interrupt IRQ18
+[    0.139154] kvm [1]: Hyp mode initialized successfully
+[    0.142595] Initialise system trusted keyrings
+[    0.142682] workingset: timestamp_bits=62 max_order=20 bucket_order=0
+[    0.145635] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.145795] Registering esdfs 0.2
+[    0.145897] alt_syscall: table 'read_write_test' available.
+[    0.145919] alt_syscall: table 'android' available.
+[    0.145940] alt_syscall: table 'android_permissive' available.
+[    0.145959] alt_syscall: table 'third_party' available.
+[    0.145975] alt_syscall: table 'third_party_permissive' available.
+[    0.145990] alt_syscall: table 'complete' available.
+[    0.146005] alt_syscall: table 'complete_permissive' available.
+[    0.172609] Key type asymmetric registered
+[    0.172617] Asymmetric key parser 'x509' registered
+[    0.172646] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 246)
+[    0.172653] io scheduler mq-deadline registered
+[    0.172659] io scheduler kyber registered
+[    0.172725] io scheduler bfq registered
+[    0.174923] pwm-backlight backlight_lcd0: GPIO lookup for consumer enable
+[    0.174929] pwm-backlight backlight_lcd0: using device tree for GPIO lookup
+[    0.174947] of_get_named_gpiod_flags: parsed 'enable-gpios' property of node '/backlight_lcd0[0]' - status (0)
+[    0.174961] gpio gpiochip0: Persistence not supported for GPIO 176
+[    0.174964] gpio-496 (enable): no flags found for enable
+[    0.175248] of_fixed_factor_clk: probe of fixed-factor-clock-13m failed with error -17
+[    0.187502] Serial: 8250/16550 driver, 4 ports, IRQ sharing disabled
+[    0.188564] mt6577-uart 11002000.serial: GPIO lookup for consumer rs485-term
+[    0.188569] mt6577-uart 11002000.serial: using device tree for GPIO lookup
+[    0.188583] of_get_named_gpiod_flags: can't parse 'rs485-term-gpios' property of node '/soc/serial@11002000[0]'
+[    0.188591] of_get_named_gpiod_flags: can't parse 'rs485-term-gpio' property of node '/soc/serial@11002000[0]'
+[    0.188597] mt6577-uart 11002000.serial: using lookup tables for GPIO lookup
+[    0.188601] mt6577-uart 11002000.serial: No GPIO consumer rs485-term found
+[    0.208721] 11002000.serial: ttyS0 at MMIO 0x11002000 (irq = 33, base_baud = 1625000) is a ST16650V2
+[    0.209337] mt6577-uart 11003000.serial: GPIO lookup for consumer rs485-term
+[    0.209341] mt6577-uart 11003000.serial: using device tree for GPIO lookup
+[    0.209351] of_get_named_gpiod_flags: can't parse 'rs485-term-gpios' property of node '/soc/serial@11003000[0]'
+[    0.209359] of_get_named_gpiod_flags: can't parse 'rs485-term-gpio' property of node '/soc/serial@11003000[0]'
+[    0.209364] mt6577-uart 11003000.serial: using lookup tables for GPIO lookup
+[    0.209368] mt6577-uart 11003000.serial: No GPIO consumer rs485-term found
+[    0.229480] 11003000.serial: ttyS1 at MMIO 0x11003000 (irq = 34, base_baud = 1625000) is a ST16650V2
+[    0.229589] serial serial0: tty port ttyS1 registered
+[    0.251168] usbcore: registered new interface driver udl
+[    0.253939] mediatek-drm mediatek-drm.1.auto: Adding component match for /soc/ovl@14008000
+[    0.253974] mediatek-drm mediatek-drm.1.auto: Adding component match for /soc/ovl@14009000
+[    0.254003] mediatek-drm mediatek-drm.1.auto: Adding component match for /soc/ovl@1400a000
+[    0.254030] mediatek-drm mediatek-drm.1.auto: Adding component match for /soc/rdma@1400b000
+[    0.254056] mediatek-drm mediatek-drm.1.auto: Adding component match for /soc/rdma@1400c000
+[    0.254096] mediatek-drm mediatek-drm.1.auto: Adding component match for /soc/color@1400e000
+[    0.254124] mediatek-drm mediatek-drm.1.auto: Adding component match for /soc/ccorr@1400f000
+[    0.254152] mediatek-drm mediatek-drm.1.auto: Adding component match for /soc/aal@14010000
+[    0.254179] mediatek-drm mediatek-drm.1.auto: Adding component match for /soc/gamma@14011000
+[    0.254257] mediatek-drm mediatek-drm.1.auto: Adding component match for /soc/dsi@14014000
+[    0.254286] mediatek-drm mediatek-drm.1.auto: Adding component match for /soc/dpi@14015000
+[    0.257712] mali 13040000.mali: Kernel DDK version r40p0-01eac0
+[    0.257723] mali 13040000.mali: IRQ JOB not found
+[    0.257746] mali 13040000.mali: IRQ MMU not found
+[    0.257760] mali 13040000.mali: IRQ GPU not found
+[    0.258090] cacheinfo: Unable to detect cache hierarchy for CPU 0
+[    0.260815] loop: module loaded
+[    0.260987] lkdtm: No crash points registered, enable through debugfs
+[    0.270500] vsim1: Bringing 1800000uV into 2700000-2700000uV
+[    0.281580] of_get_named_gpiod_flags: parsed 'cs-gpios' property of node '/soc/spi@1100a000[0]' - status (0)
+[    0.283470] spi-nor spi1.0: found gd25lq64c, expected w25q64dw
+[    0.283921] spi-nor spi1.0: gd25lq64c (8192 Kbytes)
+[    0.284061] mtd mtd0: GPIO lookup for consumer wp
+[    0.284065] mtd mtd0: using device tree for GPIO lookup
+[    0.284085] of_get_named_gpiod_flags: can't parse 'wp-gpios' property of node '/soc/spi@11010000/spi-flash@0[0]'
+[    0.284094] of_get_named_gpiod_flags: can't parse 'wp-gpio' property of node '/soc/spi@11010000/spi-flash@0[0]'
+[    0.284100] mtd mtd0: using lookup tables for GPIO lookup
+[    0.284104] mtd mtd0: No GPIO consumer wp found
+[    0.286205] mdio_bus fixed-0: GPIO lookup for consumer reset
+[    0.286209] mdio_bus fixed-0: using lookup tables for GPIO lookup
+[    0.286213] mdio_bus fixed-0: No GPIO consumer reset found
+[    0.286228] PPP generic driver version 2.4.2
+[    0.286323] PPP MPPE Compression module registered
+[    0.287033] mtu3 11201000.usb: uwk - reg:0x420, version:101
+[    0.287089] mtu3 11201000.usb: supply vbus not found, using dummy regulator
+[    0.287151] mtu3 11201000.usb: dr_mode: 1, is_u3_dr: 0, u3p_dis_msk: 0, drd: auto
+[    0.288099] mtu3 11201000.usb: xHCI platform device register success...
+[    0.288295] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    0.288301] ehci-pci: EHCI PCI platform driver
+[    0.288332] ehci-platform: EHCI generic platform driver
+[    0.288455] tpm_tis_spi spi0.0: TPM ready IRQ confirmed on attempt 2
+[    0.288475] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    0.288491] ohci-pci: OHCI PCI platform driver
+[    0.288513] ohci-platform: OHCI generic platform driver
+[    0.289137] xhci-mtk 11200000.xhci: supply vbus not found, using dummy regulator
+[    0.289416] xhci-mtk 11200000.xhci: xHCI Host Controller
+[    0.289533] xhci-mtk 11200000.xhci: new USB bus registered, assigned bus number 1
+[    0.289606] xhci-mtk 11200000.xhci: hcc params 0x01400f99 hci version 0x110 quirks 0x0000000000210010
+[    0.289638] xhci-mtk 11200000.xhci: irq 291, io mem 0x11200000
+[    0.289731] xhci-mtk 11200000.xhci: xHCI Host Controller
+[    0.289806] xhci-mtk 11200000.xhci: new USB bus registered, assigned bus number 2
+[    0.289817] xhci-mtk 11200000.xhci: Host supports USB 3.0 SuperSpeed
+[    0.289904] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.10
+[    0.289911] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.289918] usb usb1: Product: xHCI Host Controller
+[    0.289924] usb usb1: Manufacturer: Linux 5.10.175-22068-g4b67de084816 xhci-hcd
+[    0.289930] usb usb1: SerialNumber: 11200000.xhci
+[    0.290189] hub 1-0:1.0: USB hub found
+[    0.290210] hub 1-0:1.0: 1 port detected
+[    0.290405] usb usb2: We don't know the algorithms for LPM for this host, disabling LPM.
+[    0.290457] usb usb2: New USB device found, idVendor=1d6b, idProduct=0003, bcdDevice= 5.10
+[    0.290465] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.290471] usb usb2: Product: xHCI Host Controller
+[    0.290477] usb usb2: Manufacturer: Linux 5.10.175-22068-g4b67de084816 xhci-hcd
+[    0.290482] usb usb2: SerialNumber: 11200000.xhci
+[    0.290686] hub 2-0:1.0: USB hub found
+[    0.290705] hub 2-0:1.0: config failed, hub doesn't have any ports! (err -19)
+[    0.290902] usbcore: registered new interface driver cdc_acm
+[    0.290908] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters
+[    0.291033] usbcore: registered new interface driver uas
+[    0.291083] usbcore: registered new interface driver usb-storage
+[    0.292271] mt6397-rtc mt6358-rtc: registered as rtc0
+[    0.292449] mt6397-rtc mt6358-rtc: setting system clock to 2023-10-14T20:02:48 UTC (1697313768)
+[    0.292482] i2c /dev entries driver
+[    0.295418] at24 4-0050: GPIO lookup for consumer wp
+[    0.295423] at24 4-0050: using device tree for GPIO lookup
+[    0.295436] of_get_named_gpiod_flags: can't parse 'wp-gpios' property of node '/soc/i2c@11008000/eeprom@50[0]'
+[    0.295444] of_get_named_gpiod_flags: can't parse 'wp-gpio' property of node '/soc/i2c@11008000/eeprom@50[0]'
+[    0.295450] at24 4-0050: using lookup tables for GPIO lookup
+[    0.295454] at24 4-0050: No GPIO consumer wp found
+[    0.296128] at24 4-0050: 4096 byte 24c32 EEPROM, writable, 32 bytes/write
+[    0.297733] tpm_tis_spi spi0.0: 2.0 TPM (device-id 0x28, rev-id 0)
+[    0.298751] at24 2-0058: GPIO lookup for consumer wp
+[    0.298756] at24 2-0058: using device tree for GPIO lookup
+[    0.298767] of_get_named_gpiod_flags: can't parse 'wp-gpios' property of node '/soc/i2c@11009000/eeprom@58[0]'
+[    0.298775] of_get_named_gpiod_flags: can't parse 'wp-gpio' property of node '/soc/i2c@11009000/eeprom@58[0]'
+[    0.298781] at24 2-0058: using lookup tables for GPIO lookup
+[    0.298784] at24 2-0058: No GPIO consumer wp found
+[    0.300004] at24 2-0058: 4096 byte 24c32 EEPROM, writable, 32 bytes/write
+[    0.305178] mtk-wdt 10007000.watchdog: Watchdog enabled (timeout=31 sec, nowayout=0)
+[    0.305528] device-mapper: ioctl: 4.43.0-ioctl (2020-10-01) initialised: dm-devel@redhat.com
+[    0.305685] device-mapper: verity-chromeos: dm-verity-chromeos registered
+[    0.306016] cpu cpu0: dummy supplies not allowed for exclusive requests
+[    0.306918] cpu cpu4: dummy supplies not allowed for exclusive requests
+[    0.307885] cpu cpu0: EM: created perf domain
+[    0.308270] cpu cpu4: EM: created perf domain
+[    0.309056] cpufreq: cpufreq_online: CPU4: Running at unlisted initial frequency: 1199999 KHz, changing to: 1248000 KHz
+[    0.310267] pwrseq_simple wifi-pwrseq: GPIO lookup for consumer reset
+[    0.310270] pwrseq_simple wifi-pwrseq: using device tree for GPIO lookup
+[    0.310284] of_get_named_gpiod_flags: parsed 'reset-gpios' property of node '/wifi-pwrseq[0]' - status (0)
+[    0.310295] gpio gpiochip0: Persistence not supported for GPIO 119
+[    0.310439] sdhci: Secure Digital Host Controller Interface driver
+[    0.310444] sdhci: Copyright(c) Pierre Ossman
+[    0.310634] sdhci-pltfm: SDHCI platform and OF driver helper
+[    0.311361] hid: raw HID events driver (C) Jiri Kosina
+[    0.311380] mtk-msdc 11240000.mmc: GPIO lookup for consumer wp
+[    0.311383] mtk-msdc 11240000.mmc: using device tree for GPIO lookup
+[    0.311391] of_get_named_gpiod_flags: can't parse 'wp-gpios' property of node '/soc/mmc@11240000[0]'
+[    0.311397] of_get_named_gpiod_flags: can't parse 'wp-gpio' property of node '/soc/mmc@11240000[0]'
+[    0.311400] mtk-msdc 11230000.mmc: GPIO lookup for consumer wp
+[    0.311404] mtk-msdc 11230000.mmc: using device tree for GPIO lookup
+[    0.311405] mtk-msdc 11240000.mmc: using lookup tables for GPIO lookup
+[    0.311408] mtk-msdc 11240000.mmc: No GPIO consumer wp found
+[    0.311423] of_get_named_gpiod_flags: can't parse 'wp-gpios' property of node '/soc/mmc@11230000[0]'
+[    0.311494] mtk-msdc 11240000.mmc: allocated mmc-pwrseq
+[    0.311497] of_get_named_gpiod_flags: can't parse 'wp-gpio' property of node '/soc/mmc@11230000[0]'
+[    0.311502] mtk-msdc 11230000.mmc: using lookup tables for GPIO lookup
+[    0.311505] mtk-msdc 11230000.mmc: No GPIO consumer wp found
+[    0.311514] usbcore: registered new interface driver usbhid
+[    0.311519] usbhid: USB HID core driver
+[    0.311687] ashmem: initialized
+[    0.311866] i2c_hid_of 0-005d: supply vdd not found, using dummy regulator
+[    0.311897] spi_master spi2: will run message pump with realtime priority
+[    0.311930] i2c_hid_of 0-005d: supply vddl not found, using dummy regulator
+[    0.315530] max98357a max98357a: GPIO lookup for consumer sdmode
+[    0.315534] max98357a max98357a: using device tree for GPIO lookup
+[    0.315546] of_get_named_gpiod_flags: parsed 'sdmode-gpios' property of node '/max98357a[0]' - status (0)
+[    0.315558] gpio gpiochip0: Persistence not supported for GPIO 175
+[    0.315708] mt6358-sound mt6358-sound: mt6358_platform_driver_probe(), dev name mt6358-sound
+[    0.316760] mt8183_mt6358_ts3a227 mt8183-sound: mt8183_mt6358_ts3a227_max98357_dev_probe Can't find pin state wov -19
+[    0.317280] GACT probability NOT on
+[    0.317671] xt_time: kernel timezone is -0000
+[    0.317878] Initializing XFRM netlink socket
+[    0.318056] NET: Registered protocol family 10
+[    0.318450] Segment Routing with IPv6
+[    0.318572] NET: Registered protocol family 17
+[    0.318582] NET: Registered protocol family 15
+[    0.318832] registered taskstats version 1
+[    0.318841] Loading compiled-in X.509 certificates
+[    0.318950] Key type .fscrypt registered
+[    0.318954] Key type fscrypt-provisioning registered
+[    0.319085] pstore: Using crash dump compression: deflate
+[    0.319651] Key type encrypted registered
+[    0.331758] pwm-backlight backlight_lcd0: GPIO lookup for consumer enable
+[    0.331764] pwm-backlight backlight_lcd0: using device tree for GPIO lookup
+[    0.331779] of_get_named_gpiod_flags: parsed 'enable-gpios' property of node '/backlight_lcd0[0]' - status (0)
+[    0.331791] gpio gpiochip0: Persistence not supported for GPIO 176
+[    0.331793] gpio-496 (enable): no flags found for enable
+[    0.335524] panel-boe-tv101wum-nl6 14014000.dsi.0: supply pp3300 not found, using dummy regulator
+[    0.335630] panel-boe-tv101wum-nl6 14014000.dsi.0: GPIO lookup for consumer enable
+[    0.335633] panel-boe-tv101wum-nl6 14014000.dsi.0: using device tree for GPIO lookup
+[    0.335646] of_get_named_gpiod_flags: parsed 'enable-gpios' property of node '/soc/dsi@14014000/panel@0[0]' - status (0)
+[    0.335657] gpio gpiochip0: Persistence not supported for GPIO 45
+[    0.335988] mali 13040000.mali: Kernel DDK version r40p0-01eac0
+[    0.335997] mali 13040000.mali: IRQ JOB not found
+[    0.336011] mali 13040000.mali: IRQ MMU not found
+[    0.336019] mali 13040000.mali: IRQ GPU not found
+[    0.340736] mt8183-audio 11220000.audio-controller:mt8183-afe-pcm: No cache defaults, reading back from HW
+[    0.341217] mt8183-audio 11220000.audio-controller:mt8183-afe-pcm: mtk_afe_combine_sub_dai(), num of dai 20
+[    0.341841] mt8183_mt6358_ts3a227 mt8183-sound: mt8183_mt6358_ts3a227_max98357_dev_probe Can't find pin state wov -19
+[    0.342600] pwm-backlight backlight_lcd0: GPIO lookup for consumer enable
+[    0.342604] pwm-backlight backlight_lcd0: using device tree for GPIO lookup
+[    0.342616] of_get_named_gpiod_flags: parsed 'enable-gpios' property of node '/backlight_lcd0[0]' - status (0)
+[    0.342627] gpio gpiochip0: Persistence not supported for GPIO 176
+[    0.342629] gpio-496 (enable): no flags found for enable
+[    0.343801] mtk-iommu 10205000.iommu: bound 14017000.larb (ops 0xffffffe41df455a0)
+[    0.343812] mtk-iommu 10205000.iommu: bound 16010000.larb (ops 0xffffffe41df455a0)
+[    0.343817] mtk-iommu 10205000.iommu: bound 1502f000.larb (ops 0xffffffe41df455a0)
+[    0.343822] mtk-iommu 10205000.iommu: bound 1a002000.larb (ops 0xffffffe41df455a0)
+[    0.343828] mtk-iommu 10205000.iommu: bound 17010000.larb (ops 0xffffffe41df455a0)
+[    0.343833] mtk-iommu 10205000.iommu: bound 15021000.larb (ops 0xffffffe41df455a0)
+[    0.343838] mtk-iommu 10205000.iommu: bound 1a001000.larb (ops 0xffffffe41df455a0)
+[    0.343946] mediatek-disp-ovl 14008000.ovl: Adding to iommu group 0
+[    0.344309] mediatek-disp-ovl 14009000.ovl: Adding to iommu group 0
+[    0.344483] mediatek-disp-ovl 1400a000.ovl: Adding to iommu group 0
+[    0.344676] mediatek-disp-rdma 1400b000.rdma: Adding to iommu group 0
+[    0.344843] mediatek-disp-rdma 1400c000.rdma: Adding to iommu group 0
+[    0.345758] panel-boe-tv101wum-nl6 14014000.dsi.0: supply pp3300 not found, using dummy regulator
+[    0.345847] panel-boe-tv101wum-nl6 14014000.dsi.0: GPIO lookup for consumer enable
+[    0.345850] panel-boe-tv101wum-nl6 14014000.dsi.0: using device tree for GPIO lookup
+[    0.345864] of_get_named_gpiod_flags: parsed 'enable-gpios' property of node '/soc/dsi@14014000/panel@0[0]' - status (0)
+[    0.345875] gpio gpiochip0: Persistence not supported for GPIO 45
+[    0.346208] mali 13040000.mali: Kernel DDK version r40p0-01eac0
+[    0.346216] mali 13040000.mali: IRQ JOB not found
+[    0.346227] mali 13040000.mali: IRQ MMU not found
+[    0.346235] mali 13040000.mali: IRQ GPU not found
+[    0.347818] mali 13040000.mali: GPU identified as 0x1 arch 6.2.2 r0p3 status 0
+[    0.348278] mali 13040000.mali: No priority control manager is configured
+[    0.348285] mali 13040000.mali: No memory group manager is configured
+[    0.349103] mali 13040000.mali: Using configured power model mali-g72-power-model, and fallback mali-simple-power-model
+[    0.349115] mali 13040000.mali: No volt-bin detected, using default OPP table
+[    0.349126] mali 13040000.mali: OPP 0 : opp_freq=300000000 core_mask=f
+[    0.349132] mali 13040000.mali: OPP 1 : opp_freq=320000000 core_mask=f
+[    0.349137] mali 13040000.mali: OPP 2 : opp_freq=340000000 core_mask=f
+[    0.349143] mali 13040000.mali: OPP 3 : opp_freq=360000000 core_mask=f
+[    0.349148] mali 13040000.mali: OPP 4 : opp_freq=380000000 core_mask=f
+[    0.349153] mali 13040000.mali: OPP 5 : opp_freq=400000000 core_mask=f
+[    0.349158] mali 13040000.mali: OPP 6 : opp_freq=420000000 core_mask=f
+[    0.349163] mali 13040000.mali: OPP 7 : opp_freq=460000000 core_mask=f
+[    0.349168] mali 13040000.mali: OPP 8 : opp_freq=500000000 core_mask=f
+[    0.349172] mali 13040000.mali: OPP 9 : opp_freq=540000000 core_mask=f
+[    0.349177] mali 13040000.mali: OPP 10 : opp_freq=580000000 core_mask=f
+[    0.349181] mali 13040000.mali: OPP 11 : opp_freq=620000000 core_mask=f
+[    0.349186] mali 13040000.mali: OPP 12 : opp_freq=653000000 core_mask=f
+[    0.349191] mali 13040000.mali: OPP 13 : opp_freq=698000000 core_mask=f
+[    0.349195] mali 13040000.mali: OPP 14 : opp_freq=743000000 core_mask=f
+[    0.349200] mali 13040000.mali: OPP 15 : opp_freq=800000000 core_mask=f
+[    0.349617] mali 13040000.mali: Probed as mali0
+[    0.350552] mt8183_mt6358_ts3a227 mt8183-sound: mt8183_mt6358_ts3a227_max98357_dev_probe Can't find pin state wov -19
+[    0.351444] mtk-svs 1100b000.svs: M_HW_RES0: 0x00120090
+[    0.351450] mtk-svs 1100b000.svs: M_HW_RES1: 0xaafbf757
+[    0.351454] mtk-svs 1100b000.svs: M_HW_RES2: 0x47c74787
+[    0.351458] mtk-svs 1100b000.svs: M_HW_RES3: 0xeafab717
+[    0.351462] mtk-svs 1100b000.svs: M_HW_RES4: 0xaafbe9a1
+[    0.351466] mtk-svs 1100b000.svs: M_HW_RES5: 0x47f64b8c
+[    0.351469] mtk-svs 1100b000.svs: M_HW_RES6: 0xaafb8baa
+[    0.351472] mtk-svs 1100b000.svs: M_HW_RES7: 0xaafbda42
+[    0.351476] mtk-svs 1100b000.svs: M_HW_RES8: 0x4bf64bb1
+[    0.351479] mtk-svs 1100b000.svs: M_HW_RES9: 0xeafa993f
+[    0.351482] mtk-svs 1100b000.svs: M_HW_RES14: 0xab83bea4
+[    0.351486] mtk-svs 1100b000.svs: M_HW_RES15: 0x025a0028
+[    0.351489] mtk-svs 1100b000.svs: M_HW_RES16: 0xaafbc250
+[    0.351492] mtk-svs 1100b000.svs: M_HW_RES17: 0x47f647b1
+[    0.351496] mtk-svs 1100b000.svs: M_HW_RES18: 0xeafa8010
+[    0.351931] tpm_tis_spi spi0.0: Cr50 firmware version: B2-D:0 RO_A:0.0.11/bc74f7dc RW_B:0.5.153/cr50_v2.94_mp.151-b967c
+[    0.353741] devfreq 13040000.mali: Couldn't update frequency transition information.
+[    0.354561]  SVSB_CPU_LITTLE: svs_init01_isr_handler: VDN74~30:0x141c242b~0x2f33373d, DC:0x034cffe0
+[    0.354835]  SVSB_CPU_BIG: svs_init01_isr_handler: VDN74~30:0x151d252c~0x3034393e, DC:0x0351ff88
+[    0.355118]  SVSB_CCI: svs_init01_isr_handler: VDN74~30:0x13192229~0x2d32383d, DC:0x03580040
+[    0.355395]  SVSB_GPU: svs_init01_isr_handler: VDN74~30:0x1416181a~0x1d202428, DC:0x034affd0
+[    0.358598]  SVSB_CPU_LITTLE: svs_init02_isr_handler: VOP74~30:0x1b232b32~0x363a3e44, DC:0x034c0020
+[    0.358836]  SVSB_CPU_BIG: svs_init02_isr_handler: VOP74~30:0x1d252d34~0x383c4146, DC:0x03510078
+[    0.358902]  SVSB_CCI: svs_init02_isr_handler: VOP74~30:0x1a202930~0x34393f44, DC:0x03580000
+[    0.359034]  SVSB_GPU: svs_init02_isr_handler: VOP74~30:0x17181a1c~0x2023262a, DC:0x034a0030
+[    0.361218] mt8183_mt6358_ts3a227 mt8183-sound: mt8183_mt6358_ts3a227_max98357_dev_probe Can't find pin state wov -19
+[    0.363660] mt8183_mt6358_ts3a227 mt8183-sound: mt8183_mt6358_ts3a227_max98357_dev_probe Can't find pin state wov -19
+[    0.365184] of_get_named_gpiod_flags: parsed 'gpios' property of node '/wifi-wakeup/wowlan[0]' - status (0)
+[    0.365201] gpio gpiochip0: Persistence not supported for GPIO 113
+[    0.365314] input: wifi-wakeup as /devices/platform/wifi-wakeup/input/input0
+[    0.366195] device-mapper: init: waiting for all devices to be available before creating mapped devices
+[    0.367482] mt8183_mt6358_ts3a227 mt8183-sound: mt8183_mt6358_ts3a227_max98357_dev_probe Can't find pin state wov -19
+[    0.374461] mmc1: queuing unknown CIS tuple 0x01 (3 bytes)
+[    0.381822] mt8183_mt6358_ts3a227 mt8183-sound: mt8183_mt6358_ts3a227_max98357_dev_probe Can't find pin state wov -19
+[    0.381849] mmc1: queuing unknown CIS tuple 0x1a (5 bytes)
+[    0.385046] mmc1: queuing unknown CIS tuple 0x1b (8 bytes)
+[    0.385113] cros-ec-pchg cros-ec-pchg.14.auto: Unable to get number or ports (err:-95)
+[    0.385125] cros-ec-pchg cros-ec-pchg.14.auto: No peripheral charge ports (err:-95)
+[    0.385708] mmc1: queuing unknown CIS tuple 0x14 (0 bytes)
+[    0.386675] sbs-battery 12-000b: GPIO lookup for consumer sbs,battery-detect
+[    0.386679] sbs-battery 12-000b: using device tree for GPIO lookup
+[    0.386693] of_get_named_gpiod_flags: can't parse 'sbs,battery-detect-gpios' property of node '/soc/spi@11012000/cros-ec@0/i2c-tunnel/sbs-battery@b[0]'
+[    0.386703] of_get_named_gpiod_flags: can't parse 'sbs,battery-detect-gpio' property of node '/soc/spi@11012000/cros-ec@0/i2c-tunnel/sbs-battery@b[0]'
+[    0.386708] sbs-battery 12-000b: using lookup tables for GPIO lookup
+[    0.386712] sbs-battery 12-000b: No GPIO consumer sbs,battery-detect found
+[    0.388429] mt8183_mt6358_ts3a227 mt8183-sound: mt8183_mt6358_ts3a227_max98357_dev_probe Can't find pin state wov -19
+[    0.389203] mtk-msdc 11240000.mmc: phase: [map:f83fffff] [maxlen:22] [final:7]
+[    0.390258] thermal thermal_zone9: power_allocator: sustainable_power will be estimated
+[    0.390360] sbs-battery 12-000b: sbs-battery: battery gas gauge device registered
+[    0.390517] mmc1: queuing unknown CIS tuple 0x80 (1 bytes)
+[    0.390576] mmc1: queuing unknown CIS tuple 0x81 (1 bytes)
+[    0.390630] mmc1: queuing unknown CIS tuple 0x82 (1 bytes)
+[    0.390657] mmc1: new ultra high speed SDR104 SDIO card at address 0001
+[    0.392563] mt8183_mt6358_ts3a227 mt8183-sound: mt8183_mt6358_ts3a227_max98357_dev_probe Can't find pin state wov -19
+[    0.401585] mtk-msdc 11230000.mmc: phase: [map:ffffffff] [maxlen:32] [final:10]
+[    0.401823] mmc0: new HS400 MMC card at address 0001
+[    0.403123] mmcblk0: mmc0:0001 DV6DAB 116 GiB 
+[    0.403847] mmcblk0boot0: mmc0:0001 DV6DAB partition 1 4.00 MiB
+[    0.404585] mmcblk0boot1: mmc0:0001 DV6DAB partition 2 4.00 MiB
+[    0.404844] mmcblk0rpmb: mmc0:0001 DV6DAB partition 3 16.0 MiB, chardev (241:0)
+[    0.408892]  mmcblk0: p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12
+[    0.415748] it6505 3-005c: GPIO lookup for consumer reset
+[    0.415757] it6505 3-005c: using device tree for GPIO lookup
+[    0.415787] of_get_named_gpiod_flags: parsed 'reset-gpios' property of node '/soc/i2c@1100f000/it6505dptx@5c[0]' - status (0)
+[    0.415810] gpio gpiochip0: Persistence not supported for GPIO 179
+[    0.417741] mt8183_mt6358_ts3a227 mt8183-sound: mt8183_mt6358_ts3a227_max98357_dev_probe Can't find pin state wov -19
+[    0.418638] debugfs: Directory '11220000.audio-controller:mt8183-afe-pcm' with parent 'mt8183_mt6358_ts3a227_max98357' already present!
+[    0.422259] hdmi-audio-codec hdmi-audio-codec.16.auto: ASoC: sink widget TX overwritten
+[    0.425298] debugfs: File 'Playback' in directory 'dapm' already present!
+[    0.425314] debugfs: File 'Capture' in directory 'dapm' already present!
+[    0.427442] input: mt8183_mt6358_ts3a227_max98357 HDMI Jack as /devices/platform/mt8183-sound/sound/card0/input1
+[    0.428870] mediatek-dpi 14015000.dpi: Found bridge node: /soc/i2c@1100f000/it6505dptx@5c
+[    0.429568] mediatek-drm mediatek-drm.1.auto: bound 14008000.ovl (ops 0xffffffe41ded7f90)
+[    0.429584] mediatek-drm mediatek-drm.1.auto: bound 14009000.ovl (ops 0xffffffe41ded7f90)
+[    0.429596] mediatek-drm mediatek-drm.1.auto: bound 1400a000.ovl (ops 0xffffffe41ded7f90)
+[    0.429607] mediatek-drm mediatek-drm.1.auto: bound 1400b000.rdma (ops 0xffffffe41ded89b8)
+[    0.429619] mediatek-drm mediatek-drm.1.auto: bound 1400c000.rdma (ops 0xffffffe41ded89b8)
+[    0.429630] mediatek-drm mediatek-drm.1.auto: bound 1400e000.color (ops 0xffffffe41ded7520)
+[    0.429642] mediatek-drm mediatek-drm.1.auto: bound 1400f000.ccorr (ops 0xffffffe41ded71e8)
+[    0.429653] mediatek-drm mediatek-drm.1.auto: bound 14010000.aal (ops 0xffffffe41ded6f78)
+[    0.429664] mediatek-drm mediatek-drm.1.auto: bound 14011000.gamma (ops 0xffffffe41ded7798)
+[    0.430827] mediatek-drm mediatek-drm.1.auto: bound 14014000.dsi (ops 0xffffffe41dede118)
+[    0.431200] mediatek-drm mediatek-drm.1.auto: bound 14015000.dpi (ops 0xffffffe41deddb50)
+[    0.432374] [drm] Initialized mediatek 1.0.0 20150513 for mediatek-drm.1.auto on minor 0
+[    0.457152] input: cros_ec_buttons as /devices/platform/soc/11012000.spi/spi_master/spi2/spi2.0/11012000.spi:cros-ec@0:keyboard-controller/input/input2
+[    0.466843] cros-ec-spi spi2.0: Chrome EC device registered
+[    0.475918] sbs-battery 12-000b: I2C adapter does not support I2C_FUNC_SMBUS_READ_BLOCK_DATA.
+               Fallback method does not support PEC.
+[    0.480553] sbs-battery 12-000b: Unknown chemistry: <unkn>
+[    0.505563] input: hid-over-i2c 27C6:0E30 as /devices/platform/soc/11007000.i2c/i2c-0/0-005d/0018:27C6:0E30.0001/input/input3
+[    0.505899] input: hid-over-i2c 27C6:0E30 Stylus as /devices/platform/soc/11007000.i2c/i2c-0/0-005d/0018:27C6:0E30.0001/input/input4
+[    0.506203] input: hid-over-i2c 27C6:0E30 Stylus as /devices/platform/soc/11007000.i2c/i2c-0/0-005d/0018:27C6:0E30.0001/input/input5
+[    0.506506] input: hid-over-i2c 27C6:0E30 UNKNOWN as /devices/platform/soc/11007000.i2c/i2c-0/0-005d/0018:27C6:0E30.0001/input/input6
+[    0.506976] hid-multitouch 0018:27C6:0E30.0001: input,hidraw0: I2C HID v1.00 Device [hid-over-i2c 27C6:0E30] on 0-005d
+[    0.508207] device-mapper: table: 254:0: verity: Data device lookup failed
+[    0.508216] device-mapper: ioctl: error adding target to table
+[    0.509735] ALSA device list:
+[    0.509745]   #0: mt8183_mt6358_ts3a227_max98357
+[    0.509811] Warning: unable to open an initial console. Fallback to ttynull.
+[    0.509833] printk: console [ttynull0] enabled
+[    0.511137] EXT4-fs (mmcblk0p5): mounting ext2 file system using the ext4 subsystem
+[    0.512918] EXT4-fs (mmcblk0p5): warning: mounting unchecked fs, running e2fsck is recommended
+[    0.520821] EXT4-fs (mmcblk0p5): mounted filesystem without journal. Opts: (null)
+[    0.520871] VFS: Mounted root (ext2 filesystem) on device 179:5.
+[    0.522880] devtmpfs: mounted
+[    0.526649] Freeing unused kernel memory: 1408K
+[    0.530418] Run /sbin/init as init process
+[    0.530426]   with arguments:
+[    0.530429]     /sbin/init
+[    0.530432]     cros_secure
+[    0.530435]   with environment:
+[    0.530438]     HOME=/
+[    0.530441]     TERM=linux
+[    0.530446]     dm=1 vroot none ro 1,0 5324800 verity payload=ROOT_DEV hashtree=HASH_DEV hashstart=5324800 alg=sha256 root_hexdigest=b12a94e951175d1db2e3b57e984581ae61b7dc5cebf316a7995d34e9d8f71406 salt=909046ee78fcaae43e2fc99f451ac928b4d6104c7964354fdd78c1940ecb0b78
+[    0.572007] audit: type=1404 audit(1697313768.778:2): enforcing=1 old_enforcing=0 auid=4294967295 ses=4294967295 enabled=1 old-enabled=1 lsm=selinux res=1
+[    0.614585] SELinux:  Permission nlmsg_getneigh in class netlink_route_socket not defined in policy.
+[    0.614744] SELinux:  Permission perfmon in class capability2 not defined in policy.
+[    0.614751] SELinux:  Permission bpf in class capability2 not defined in policy.
+[    0.614758] SELinux:  Permission checkpoint_restore in class capability2 not defined in policy.
+[    0.614788] SELinux:  Permission perfmon in class cap2_userns not defined in policy.
+[    0.614795] SELinux:  Permission bpf in class cap2_userns not defined in policy.
+[    0.614801] SELinux:  Permission checkpoint_restore in class cap2_userns not defined in policy.
+[    0.614983] SELinux: the above unknown classes and permissions will be denied
+[    0.623266] SELinux:  policy capability network_peer_controls=1
+[    0.623288] SELinux:  policy capability open_perms=1
+[    0.623295] SELinux:  policy capability extended_socket_class=1
+[    0.623302] SELinux:  policy capability always_check_network=0
+[    0.623308] SELinux:  policy capability cgroup_seclabel=0
+[    0.623315] SELinux:  policy capability nnp_nosuid_transition=1
+[    0.623330] SELinux:  policy capability genfs_seclabel_symlinks=0
+[    0.623336] SELinux:  policy capability ioctl_skip_cloexec=0
+[    0.683105] usb 1-1: new high-speed USB device number 2 using xhci-mtk
+[    0.728258] audit: type=1403 audit(1697313768.935:3): auid=4294967295 ses=4294967295 lsm=selinux res=1
+[    0.810752] usb 1-1: New USB device found, idVendor=05e3, idProduct=0610, bcdDevice=60.60
+[    0.810772] usb 1-1: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+[    0.810779] usb 1-1: Product: USB2.0 Hub
+[    0.811747] hub 1-1:1.0: USB hub found
+[    0.812042] hub 1-1:1.0: 4 ports detected
+[    0.976843] audit: type=1400 audit(1697313769.183:4): avc:  granted  { execute } for  pid=329 comm="sh" name="crash_reporter" dev="mmcblk0p5" ino=14111 scontext=u:r:cros_init_scripts:s0 tcontext=u:object_r:cros_crash_reporter_exec:s0 tclass=file
+[    1.090569] usb 1-1.1: new full-speed USB device number 3 using xhci-mtk
+[    1.137460] udevd[345]: starting version 225
+[    1.168497] usb 1-1.1: New USB device found, idVendor=18d1, idProduct=503c, bcdDevice= 1.00
+[    1.168517] usb 1-1.1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[    1.168524] usb 1-1.1: Product: Hammer
+[    1.168530] usb 1-1.1: Manufacturer: Google Inc.
+[    1.168536] usb 1-1.1: SerialNumber: 4a0029000c57434130343020
+[    1.171584] input: Google Inc. Hammer as /devices/platform/soc/11201000.usb/11200000.xhci/usb1/1-1/1-1.1/1-1.1:1.0/0003:18D1:503C.0002/input/input7
+[    1.173097] Registered swp emulation handler
+[    1.196309] udevd[347]: invalid key/value pair in file /lib/udev/rules.d/99-mei_driver_files.rules on line 1, starting at character 1 ('/')
+[    1.196351] udevd[347]: invalid key/value pair in file /lib/udev/rules.d/99-mei_driver_files.rules on line 2, starting at character 1 ('/')
+[    1.196374] udevd[347]: invalid key/value pair in file /lib/udev/rules.d/99-mei_driver_files.rules on line 3, starting at character 1 ('/')
+[    1.204030] EXT4-fs (mmcblk0p1): mounted filesystem with ordered data mode. Opts: commit=600,discard
+[    1.206264] EXT4-fs (mmcblk0p8): mounted filesystem with ordered data mode. Opts: 
+[    1.223544] hid-generic 0003:18D1:503C.0002: input,hidraw1: USB HID v1.00 Keyboard [Google Inc. Hammer] on usb-11200000.xhci-1.1/input0
+[    1.228724] input: Google Inc. Hammer as /devices/platform/soc/11201000.usb/11200000.xhci/usb1/1-1/1-1.1/1-1.1:1.2/0003:18D1:503C.0003/input/input8
+[    1.270582] LoadPin: mmcblk0p5 (179:5): writable
+[    1.270625] LoadPin: enforcement can be disabled.
+[    1.270665] LoadPin: kernel-module pinned obj="/lib/modules/5.10.175-22068-g4b67de084816/kernel/drivers/input/joydev.ko.gz" pid=390 cmdline="udevd --daemon"
+[    1.280352] hid-multitouch 0003:18D1:503C.0003: input,hidraw2: USB HID v1.00 Device [Google Inc. Hammer] on usb-11200000.xhci-1.1/input2
+[    1.373879] EXT4-fs (mmcblk0p1): re-mounted. Opts: 
+[    1.447172] input: Whiskers Tablet Mode Switch as /devices/platform/soc/11012000.spi/spi_master/spi2/spi2.0/11012000.spi:cros-ec@0:cbas/input/input9
+[    1.458668] input: Google Inc. Hammer as /devices/platform/soc/11201000.usb/11200000.xhci/usb1/1-1/1-1.1/1-1.1:1.0/0003:18D1:503C.0002/input/input10
+[    1.511575] hammer 0003:18D1:503C.0002: input,hidraw1: USB HID v1.00 Keyboard [Google Inc. Hammer] on usb-11200000.xhci-1.1/input0
+[    1.549698] frecon[573]: Frecon using drm driver mediatek, version 1.0, date(20150513), desc(Mediatek SoC DRM)
+[    1.725525] EXT4-fs (dm-0): mounted filesystem with ordered data mode. Opts: discard,commit=600
+[    1.892415] encrypted-reboo (pid 617) is setting deprecated v1 encryption policy; recommend upgrading to v2.
+[    1.901123] audit: type=1400 audit(1697313770.107:5): avc:  granted  { execute } for  pid=618 comm="chromeos_startu" name="crash_reporter" dev="mmcblk0p5" ino=14111 scontext=u:r:chromeos_startup:s0 tcontext=u:object_r:cros_crash_reporter_exec:s0 tclass=file
+[    2.215722] frecon[573]: Frecon using drm driver mediatek, version 1.0, date(20150513), desc(Mediatek SoC DRM)
+[    2.647651] EXT4-fs (mmcblk0p1): re-mounted. Opts: discard,resgid=20119,commit=600
+[    2.711358] low_mem: threshold[0] 202 MB
+[    2.711385] low_mem: threshold[1] 1554 MB
+[    2.772900] zram: Added device: zram0
+[    2.883738] zram0: detected capacity change from 0 to 7957209088
+[    2.977663] Adding 7770708k swap on /dev/zram0.  Priority:-2 extents:1 across:7770708k SS
+[    3.480177] OF: graph: no port node found in /soc/spi@11012000/cros-ec@0/typec/connector@0
+[    3.480206] OF: graph: no port node found in /soc/spi@11012000/cros-ec@0/typec/connector@0
+[    3.480215] OF: graph: no port node found in /soc/spi@11012000/cros-ec@0/typec/connector@0
+[    3.480525] OF: graph: no port node found in /soc/spi@11012000/cros-ec@0/typec/connector@0
+[    3.480538] OF: graph: no port node found in /soc/spi@11012000/cros-ec@0/typec/connector@0
+[    3.480546] OF: graph: no port node found in /soc/spi@11012000/cros-ec@0/typec/connector@0
+[    3.480556] OF: graph: no port node found in /soc/spi@11012000/cros-ec@0/typec/connector@0
+[    3.480564] OF: graph: no port node found in /soc/spi@11012000/cros-ec@0/typec/connector@0
+[    3.480572] OF: graph: no port node found in /soc/spi@11012000/cros-ec@0/typec/connector@0
+[    3.480616] OF: graph: no port node found in /soc/spi@11012000/cros-ec@0/typec/connector@0
+[    3.480626] OF: graph: no port node found in /soc/spi@11012000/cros-ec@0/typec/connector@0
+[    3.870787] gpio gpiochip0: Persistence not supported for GPIO 150
+[    3.870809] gpio gpiochip0: registered chardev handle for line 150
+[    3.870826] gpio gpiochip0: registered chardev handle for 1 lines
+[    4.053586] Bluetooth: bt_init() Core ver 2.22
+[    4.054354] NET: Registered protocol family 31
+[    4.054370] Bluetooth: bt_init() HCI device and connection manager initialized
+[    4.054390] Bluetooth: hci_sock_init() HCI socket layer initialized
+[    4.054400] Bluetooth: l2cap_init_sockets() L2CAP socket layer initialized
+[    4.054428] Bluetooth: sco_init() SCO socket layer initialized
+[    4.479319] ath10k_sdio mmc1:0001:1: qca6174 hw3.2 sdio target 0x05030000 chip_id 0x00000000 sub 0000:0000
+[    4.479359] ath10k_sdio mmc1:0001:1: kconfig debug 1 debugfs 1 tracing 1 dfs 0 testmode 1
+[    4.479573] ath10k_sdio mmc1:0001:1: firmware ver WLAN.RMH.4.4.1-00189 api 6 features wowlan,ignore-otp,mfp crc32 595e0108
+[    4.632909] ath10k_sdio mmc1:0001:1: board_file api 2 bmi_id 0:4 crc32 e57aadc7
+[    4.970321] ath10k_sdio mmc1:0001:1: htt-ver 3.87 wmi-op 4 htt-op 3 cal otp max-sta 32 raw 0 hwcrypto 1
+[    5.039509] mmc1: queuing unknown CIS tuple 0x01 (3 bytes)
+[    5.047000] mmc1: queuing unknown CIS tuple 0x1a (5 bytes)
+[    5.050249] mmc1: queuing unknown CIS tuple 0x1b (8 bytes)
+[    5.054356] mtk-msdc 11240000.mmc: phase: [map:f83fffff] [maxlen:22] [final:7]
+[    5.054495] ath: EEPROM regdomain: 0x6c
+[    5.054498] ath: EEPROM indicates we should expect a direct regpair map
+[    5.054505] ath: Country alpha2 being used: 00
+[    5.054508] ath: Regpair used: 0x6c
+[    6.783640] init: failsafe-delay main process (867) killed by TERM signal
+[    6.925527] fuse: init (API version 7.32)
+[    7.073754] cgroup: cgroup: disabling cgroup2 socket matching due to net_prio or net_cls activation
+[    7.503489] fscrypt: AES-256-CTS-CBC using implementation "cts-cbc-aes-ce"
+[    7.521739] mtk-scp 10500000.scp: invalid resource
+[    7.521814] mtk-scp 10500000.scp: assigned reserved memory node scp_mem_region
+[    7.534221] remoteproc remoteproc0: scp is available
+[    7.540120] remoteproc remoteproc0: powering up scp
+[    7.540152] remoteproc remoteproc0: Booting fw image scp.img, size 1032064
+[    7.540176] mtk-scp 10500000.scp: IPI buf addr 0x0007bdb0
+[    7.569473] ov8856 2-0010: GPIO lookup for consumer reset
+[    7.569490] ov8856 2-0010: using device tree for GPIO lookup
+[    7.569526] of_get_named_gpiod_flags: parsed 'reset-gpios' property of node '/soc/i2c@11009000/sensor_main@10[0]' - status (0)
+[    7.569552] gpio gpiochip0: Persistence not supported for GPIO 111
+[    7.574648] ov8856 2-0010: external clock rate 24000000 is unsupported
+[    7.585830] Bluetooth: hci_uart_init() HCI UART driver ver 2.3
+[    7.585863] Bluetooth: hci_uart_register_proto() HCI UART protocol H4 registered
+[    7.585956] Bluetooth: hci_uart_register_proto() HCI UART protocol Three-wire (H5) registered
+[    7.586331] hci_uart_qca serial0-0: GPIO lookup for consumer enable
+[    7.586337] hci_uart_qca serial0-0: using device tree for GPIO lookup
+[    7.586376] of_get_named_gpiod_flags: parsed 'enable-gpios' property of node '/soc/serial@11003000/bluetooth[0]' - status (0)
+[    7.586400] gpio gpiochip0: Persistence not supported for GPIO 120
+[    7.587193] Bluetooth: qca_setup() hci0: setting up ROME/QCA6390
+[    7.587592] Bluetooth: hci_uart_register_proto() HCI UART protocol QCA registered
+[    7.589183] ov02a10 4-003d: GPIO lookup for consumer powerdown
+[    7.589195] ov02a10 4-003d: using device tree for GPIO lookup
+[    7.589231] of_get_named_gpiod_flags: parsed 'powerdown-gpios' property of node '/soc/i2c@11008000/sensor_sub@3d[0]' - status (0)
+[    7.589260] gpio gpiochip0: Persistence not supported for GPIO 107
+[    7.589270] ov02a10 4-003d: GPIO lookup for consumer reset
+[    7.589274] ov02a10 4-003d: using device tree for GPIO lookup
+[    7.589286] of_get_named_gpiod_flags: parsed 'reset-gpios' property of node '/soc/i2c@11008000/sensor_sub@3d[0]' - status (0)
+[    7.589294] gpio gpiochip0: Persistence not supported for GPIO 109
+[    7.712149] mtk-scp 10500000.scp: creating channel cros-ec-rpmsg addr 0xd
+[    7.712156] mtk-scp 10500000.scp: SCP is ready. FW version kukui_scp_v2.0.2766-5977b37a8f
+[    7.712168] remoteproc remoteproc0: remote processor scp is now up
+[    7.782938] mtk-mdp3 14001000.mdp3_rdma0: Adding to iommu group 0
+[    7.783128] mtk-mdp3 14001000.mdp3_rdma0: can't get node mediatek,mmsys2
+[    7.783147] mtk-mdp3 14001000.mdp3_rdma0: Failed to get mdp mmsys2
+[    7.783393] mtk-mdp3 14001000.mdp3_rdma0: Failed to get mdp mm-mutex2
+[    7.784537] mtk-mdp3 14001000.mdp3_rdma0: mdp3_rdma0 type:3 alias:0 id:11 base:0x14001000 regs:00000000e8cfe121
+[    7.784622] mtk-mdp3 14001000.mdp3_rdma0: mdp3_rdma0 type:23 alias:0 id:9 base:0x14000000 regs:00000000c84e63d3
+[    7.784682] mtk-mdp3 14001000.mdp3_rdma0: mdp3_rdma0 type:24 alias:1 id:10 base:0x14000000 regs:00000000ddb2b1dd
+[    7.784729] mtk-mdp3 14001000.mdp3_rdma0: mdp3_rdma0 type:7 alias:0 id:18 base:0x14005000 regs:00000000dde42367
+[    7.784774] mtk-mdp3 14001000.mdp3_rdma0: mdp3_rdma0 type:8 alias:1 id:19 base:0x14006000 regs:000000000d840b9f
+[    7.784819] mtk-mdp3 14001000.mdp3_rdma0: mdp3_rdma0 type:1 alias:0 id:4 base:0x15020000 regs:00000000effd1959
+[    7.784865] mtk-mdp3 14001000.mdp3_rdma0: mdp3_rdma0 type:22 alias:1 id:6 base:0x15020000 regs:000000002df72881
+[    7.784935] mtk-mdp3 14001000.mdp3_rdma0: mdp3_rdma0 type:4 alias:0 id:14 base:0x14003000 regs:0000000010114f60
+[    7.784994] mtk-mdp3 14001000.mdp3_rdma0: mdp3_rdma0 type:4 alias:1 id:15 base:0x14004000 regs:000000000ccd5bad
+[    7.785056] mtk-mdp3 14001000.mdp3_rdma0: mdp3_rdma0 type:5 alias:0 id:20 base:0x14005000 regs:000000008f86bbd7
+[    7.785656] mtk-mdp3 14001000.mdp3_rdma0: mdp3_rdma0 type:6 alias:0 id:21 base:0x14006000 regs:00000000ab84050d
+[    7.785874] mtk-mdp3 14001000.mdp3_rdma0: mdp3_rdma0 type:18 alias:0 id:13 base:0x1401c000 regs:0000000047d6d1b9
+[    7.786108] mdp_debug_init:start
+[    7.786335] [MTK-MDP3][ERR] mdp_alloc_reference_VA_by_name:80: DEV: cannot parse node name:mdp3-tdshp0
+[    7.786344] [MTK-MDP3][ERR] mdp_alloc_reference_VA_by_name:80: DEV: cannot parse node name:mdp3-color0
+[    7.786353] [MTK-MDP3][ERR] mdp_alloc_reference_VA_by_name:80: DEV: cannot parse node name:mdp3-aal0
+[    7.786373] [MTK-MDP3][ERR] mdp_alloc_reference_VA_by_name:80: DEV: cannot parse node name:mediatek,larb
+[    7.786394] mdp_debug_init:end
+[    7.786792] mtk-mdp3 14001000.mdp3_rdma0: Driver registered as /dev/video2
+[    7.800700] Bluetooth: qca_recv() hci0: Frame reassembly failed (-84)
+[    7.825546] mtk-fd-4.0 1502b000.fd: Adding to iommu group 0
+[    7.830280] mtk-cam-dip 15022000.dip: Adding to iommu group 0
+[    7.831327] mtk-fd-4.0 1502b000.fd: scp addr:0x0000000050800000 va:ffffffc018800000
+[    7.831359] mtk-fd-4.0 1502b000.fd: scp iova addr:0x00000000faf00000
+[    7.868904] mtk-jpeg 17030000.venc_jpg: Adding to iommu group 0
+[    7.869816] mtk-jpeg 17030000.venc_jpg: mtk-jpeg-enc device registered as /dev/video26 (81,29)
+[    7.872599] mtk-vcodec-enc 17020000.vcodec: Adding to iommu group 0
+[    7.873473] seninf 1a040000.seninf: seninf probe +
+[    7.873749] seninf 1a040000.seninf: seninf probe -
+[    7.875204] mtk-vcodec-dec 16000000.vcodec: Adding to iommu group 0
+[    7.878429] mtk-cam-p1 1a000000.camisp: Adding to iommu group 0
+[    7.881857] mtk-cam-p1 1a000000.camisp: Registered media2
+[    7.881878] mtk-cam-p1 1a000000.camisp: Registered mtk-cam-p1 1a000000.camisp
+[    8.058016] Bluetooth: qca_read_soc_version() hci0: QCA Product ID   :0x00000008
+[    8.058046] Bluetooth: qca_read_soc_version() hci0: QCA SOC Version  :0x00000044
+[    8.058063] Bluetooth: qca_read_soc_version() hci0: QCA ROM Version  :0x00000302
+[    8.058071] Bluetooth: qca_read_soc_version() hci0: QCA Patch Version:0x00000111
+[    8.058111] Bluetooth: qca_uart_setup() hci0: QCA controller version 0x00440302
+[    8.058121] Bluetooth: qca_download_firmware() hci0: QCA Downloading qca/rampatch_00440302.bin
+[    8.291425] mtk-mdp3 14001000.mdp3_rdma0: [0] type:10
+[    8.291448] mtk-mdp3 14001000.mdp3_rdma0: [0] type:10, frame:32x32
+[    8.291454] mtk-mdp3 14001000.mdp3_rdma0: [0] type:9
+[    8.291461] mtk-mdp3 14001000.mdp3_rdma0: [0] type:9, frame:32x32
+[    8.293030] cros-ec-dev cros-ec-dev.22.auto: CrOS System Control Processor MCU detected
+[    8.330541] Bluetooth: qca_recv() hci0: Frame reassembly failed (-84)
+[    8.360124] cros-ec-pchg cros-ec-pchg.29.auto: Unable to get number or ports (err:-95)
+[    8.360145] cros-ec-pchg cros-ec-pchg.29.auto: No peripheral charge ports (err:-95)
+[    8.362477] cros-ec-rpmsg 10500000.scp.cros-ec-rpmsg.13.-1: Chrome EC device registered
+[    8.450126] Bluetooth: qca_download_firmware() hci0: QCA Downloading qca/nvm_00440302_i2s_eu.bin
+[    8.535031] mt8183-audio 11220000.audio-controller:mt8183-afe-pcm: mt8183_adda_dmic_set(), kcontrol name MTKAIF_DMIC, mtkaif_dmic 1
+[    8.544771] Bluetooth: qca_uart_setup() hci0: QCA setup on UART is completed
+[    8.980598] gpio gpiochip0: Persistence not supported for GPIO 150
+[    8.980610] gpio gpiochip0: registered chardev handle for line 150
+[    8.980618] gpio gpiochip0: registered chardev handle for 1 lines
+[    9.081255] gpio gpiochip0: Persistence not supported for GPIO 150
+[    9.081268] gpio gpiochip0: registered chardev handle for line 150
+[    9.081277] gpio gpiochip0: registered chardev handle for 1 lines
+[    9.104448] init: cros-camera-gpu-algo main process (3261) terminated with status 127
+[    9.104509] init: cros-camera-gpu-algo main process ended, respawning
+[    9.161474] NET: Registered protocol family 38
+[    9.343861] Bluetooth: rfcomm_init_sockets() RFCOMM socket layer initialized
+[    9.343965] Bluetooth: rfcomm_init() RFCOMM ver 1.11
+[    9.427048] Bluetooth: set_quality_report_func() quality report not supported
+[    9.532338] gpio gpiochip0: Persistence not supported for GPIO 150
+[    9.532356] gpio gpiochip0: registered chardev handle for line 150
+[    9.532370] gpio gpiochip0: registered chardev handle for 1 lines
+[    9.816670] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.817575] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.818476] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.819371] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.820273] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.821249] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.822229] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.823255] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.824276] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.825580] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.826467] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.827358] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.828257] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.829281] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.830194] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.831075] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.832124] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.834127] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.835062] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.836114] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.837022] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.837929] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.839025] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.839925] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.841150] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.842267] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.844687] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.845605] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.848392] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.849380] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.850269] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[    9.851192] it6505 3-005c: [drm:it6505_read] *ERROR* read failed reg[0xd] err: -6
+[   10.339590] IPv6: ADDRCONF(NETDEV_CHANGE): arc_ns0: link becomes ready
+[   10.339766] IPv6: ADDRCONF(NETDEV_CHANGE): veth0: link becomes ready
+[   10.540001] IPv6: ADDRCONF(NETDEV_CHANGE): veth1: link becomes ready
+[   13.344185] device-mapper: verity: sha256 using implementation "sha256-ce"
+[   16.245336] cgroup: Unknown subsys name 'memory'
+[   16.256947] cgroup: Unknown subsys name 'schedtune'
+[   16.268175] new mount options do not match the existing superblock, will be ignored
+[   17.247991] mt6358-sound mt6358-sound: mt6358_codec_dai_hw_params(), substream->stream 1, rate 48000, number 0
+[   17.249256] mt6358-sound mt6358-sound: mt6358_dmic_enable()
+[   17.364374] mt6358-sound mt6358-sound: mt6358_dmic_disable()
+[   17.372366] mt6358-sound mt6358-sound: mt6358_codec_dai_hw_params(), substream->stream 1, rate 48000, number 0
+[   17.373896] mt6358-sound mt6358-sound: mt6358_dmic_enable()
+[   17.490851] mt6358-sound mt6358-sound: mt6358_dmic_disable()
+[   18.714200] capability: warning: `main' uses 32-bit capabilities (legacy support in use)
+[   30.689535] vaux18: disabling
+[   30.689723] vio28: disabling
+[   40.268942] WARNING! power/level is deprecated; use power/control instead
+[   47.708684] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 2: lost 1 samples when spreading
+[   47.708712] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 3: lost 1 samples when spreading
+[   48.718187] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 2: lost 2 samples when spreading
+[   48.718216] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 3: lost 2 samples when spreading
+[   50.721550] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 2: lost 3 samples when spreading
+[   50.721579] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 3: lost 3 samples when spreading
+[   54.731370] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 2: lost 4 samples when spreading
+[   54.731386] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 3: lost 4 samples when spreading
+[   55.185279] gpio gpiochip0: Persistence not supported for GPIO 150
+[   55.185304] gpio gpiochip0: registered chardev handle for line 150
+[   55.185323] gpio gpiochip0: registered chardev handle for 1 lines
+[   59.487384] mtk-mdp3 14001000.mdp3_rdma0: [0] type:10
+[   59.487400] mtk-mdp3 14001000.mdp3_rdma0: [0] type:10, frame:32x32
+[   59.487405] mtk-mdp3 14001000.mdp3_rdma0: [0] type:9
+[   59.487410] mtk-mdp3 14001000.mdp3_rdma0: [0] type:9, frame:32x32
+[   62.436425] PDLOG 2023/10/14 20:02:43.024 P0 SNK Charger ??? 4550mV max 5000mV / 2400mA
+[   78.813180] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 2: lost 5 samples when spreading
+[   78.813209] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 3: lost 5 samples when spreading
+[  237.342182] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 2: lost 6 samples when spreading
+[  237.342211] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 3: lost 6 samples when spreading
+[  246.370518] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 2: lost 7 samples when spreading
+[  246.370547] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 3: lost 7 samples when spreading
+[  424.844063] init: ml-service (mojo_service) post-start process (5641) terminated with status 2
+[  516.678833] PM: suspend entry (deep)
+[  516.693459] Filesystems sync: 0.014 seconds
+[  516.693480] PM: Preparing system for sleep (deep)
+[  516.699680] Freezing user space processes ... (elapsed 0.002 seconds) done.
+[  516.702570] OOM killer disabled.
+[  516.702576] Freezing remaining freezable tasks ... (elapsed 0.109 seconds) done.
+[  516.812170] PM: Suspending system (deep)
+[  516.813429] platform cros-ec-throttler.30.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.22.auto
+[  516.813445] platform cros-ec-throttler.30.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.813460] platform cros-ec-pchg.29.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.22.auto
+[  516.813471] platform cros-ec-pchg.29.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.813485] cros-ec-pd-update cros-ec-pd-update.28.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.22.auto
+[  516.813498] cros-ec-pd-update cros-ec-pd-update.28.auto: platform_pm_suspend+0x0/0x5c returned 0 after 2 usecs
+[  516.813513] cros-ec-sysfs cros-ec-sysfs.27.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.22.auto
+[  516.813524] cros-ec-sysfs cros-ec-sysfs.27.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.813537] cros-ec-pd-sysfs cros-ec-pd-sysfs.26.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.22.auto
+[  516.813548] cros-ec-pd-sysfs cros-ec-pd-sysfs.26.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.813561] platform cros-ec-lightbar.25.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.22.auto
+[  516.813572] platform cros-ec-lightbar.25.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.813585] cros-ec-debugfs cros-ec-debugfs.24.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.22.auto
+[  516.813599] cros-ec-debugfs cros-ec-debugfs.24.auto: platform_pm_suspend+0x0/0x5c returned 0 after 2 usecs
+[  516.813614] cros-ec-chardev cros-ec-chardev.23.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.22.auto
+[  516.813626] cros-ec-chardev cros-ec-chardev.23.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.813647] cros-ec-dev cros-ec-dev.22.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: 10500000.scp.cros-ec-rpmsg.13.-1
+[  516.813658] cros-ec-dev cros-ec-dev.22.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.813713] mtk-cam-p1 1a000000.camisp: calling mtk_isp_pm_suspend+0x0/0x1dc [mtk_cam_isp] @ 6028, parent: soc
+[  516.813727] mtk-cam-p1 1a000000.camisp: mtk_isp_pm_suspend+0x0/0x1dc [mtk_cam_isp] returned 0 after 0 usecs
+[  516.813756] mtk-jpeg 17030000.venc_jpg: calling mtk_jpeg_suspend+0x0/0x40 [mtk_jpeg] @ 6028, parent: soc
+[  516.813772] mtk-jpeg 17030000.venc_jpg: mtk_jpeg_suspend+0x0/0x40 [mtk_jpeg] returned 0 after 3 usecs
+[  516.813859] mtk-cam-dip 15022000.dip: calling mtk_dip_pm_suspend+0x0/0x1e0 [mtk_dip] @ 6028, parent: soc
+[  516.813874] mtk-cam-dip 15022000.dip: mtk_dip_pm_suspend+0x0/0x1e0 [mtk_dip] returned 0 after 0 usecs
+[  516.813893] mtk-fd-4.0 1502b000.fd: calling mtk_fd_suspend+0x0/0x88 [mtk_fd] @ 6028, parent: soc
+[  516.813905] mtk-fd-4.0 1502b000.fd: mtk_fd_suspend+0x0/0x88 [mtk_fd] returned 0 after 0 usecs
+[  516.813934] mtk-mdp3 14001000.mdp3_rdma0: calling mdp_suspend+0x0/0x180 [mtk_mdp3] @ 6028, parent: soc
+[  516.813944] mtk-mdp3 14001000.mdp3_rdma0: suspend enter : stage flag 1st 0, 2nd 0
+[  516.813952] mtk-mdp3 14001000.mdp3_rdma0: suspend check job : stage flag 1st 0, 2nd 0
+[  516.813961] mtk-mdp3 14001000.mdp3_rdma0: suspend done : stage flag 1st 0, 2nd 0
+[  516.813978] mtk-mdp3 14001000.mdp3_rdma0: mdp_suspend+0x0/0x180 [mtk_mdp3] returned 0 after 26 usecs
+[  516.813998] cros-ec-rpmsg 10500000.scp.cros-ec-rpmsg.13.-1: calling cros_ec_rpmsg_suspend+0x0/0x28 [cros_ec_rpmsg] @ 6028, parent: 10500000.scp
+[  516.814332] cros-ec-rpmsg 10500000.scp.cros-ec-rpmsg.13.-1: cros_ec_rpmsg_suspend+0x0/0x28 [cros_ec_rpmsg] returned 0 after 311 usecs
+[  516.814375] rfkill rfkill1: calling rfkill_suspend+0x0/0x38 @ 6028, parent: hci0
+[  516.814385] ov02a10 4-003d: calling pm_runtime_force_suspend+0x0/0xc8 @ 192, parent: i2c-4
+[  516.814393] ov02a10 4-003d: pm_runtime_force_suspend+0x0/0xc8 returned 0 after 0 usecs
+[  516.814410] rfkill rfkill1: rfkill_suspend+0x0/0x38 returned 0 after 2 usecs
+[  516.814456] rfkill rfkill0: calling rfkill_suspend+0x0/0x38 @ 6028, parent: phy0
+[  516.814470] ov8856 2-0010: calling ov8856_suspend+0x0/0x5c [ov8856] @ 192, parent: i2c-2
+[  516.814480] dw9768 2-000c: calling pm_runtime_force_suspend+0x0/0xc8 @ 7, parent: i2c-2
+[  516.814487] dw9768 2-000c: pm_runtime_force_suspend+0x0/0xc8 returned 0 after 0 usecs
+[  516.814501] rfkill rfkill0: rfkill_suspend+0x0/0x38 returned 0 after 2 usecs
+[  516.814527] platform regulatory.0: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.814539] platform regulatory.0: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.814564] platform cros-ec-activity.21.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-sensorhub.4.auto
+[  516.814571] ov8856 2-0010: ov8856_suspend+0x0/0x5c [ov8856] returned 0 after 89 usecs
+[  516.814585] platform cros-ec-activity.21.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.814701] ieee80211 phy0: calling wiphy_suspend+0x0/0x114 [cfg80211] @ 192, parent: mmc1:0001:1
+[  516.814719] cros-ec-sync cros-ec-sync.20.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-sensorhub.4.auto
+[  516.814730] cros-ec-sync cros-ec-sync.20.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.814744] cros-ec-light-prox cros-ec-light.19.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-sensorhub.4.auto
+[  516.814755] cros-ec-light-prox cros-ec-light.19.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.814770] cros-ec-sensors cros-ec-gyro.18.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-sensorhub.4.auto
+[  516.814781] cros-ec-sensors cros-ec-gyro.18.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.814795] cros-ec-sensors cros-ec-accel.17.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-sensorhub.4.auto
+[  516.814806] cros-ec-sensors cros-ec-accel.17.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.814853] input input10: calling input_dev_suspend+0x0/0x70 @ 6028, parent: 0003:18D1:503C.0002
+[  516.814867] input input10: input_dev_suspend+0x0/0x70 returned 0 after 2 usecs
+[  516.814885] input input9: calling input_dev_suspend+0x0/0x70 @ 6028, parent: 11012000.spi:cros-ec@0:cbas
+[  516.814897] input input9: input_dev_suspend+0x0/0x70 returned 0 after 0 usecs
+[  516.814938] input input8: calling input_dev_suspend+0x0/0x70 @ 6028, parent: 0003:18D1:503C.0003
+[  516.814971] input input8: input_dev_suspend+0x0/0x70 returned 0 after 0 usecs
+[  516.815115] usb 1-1.1: calling usb_dev_suspend+0x0/0x28 @ 5937, parent: 1-1
+[  516.815123] input input6: calling input_dev_suspend+0x0/0x70 @ 6028, parent: 0018:27C6:0E30.0001
+[  516.815131] input input6: input_dev_suspend+0x0/0x70 returned 0 after 0 usecs
+[  516.815145] input input5: calling input_dev_suspend+0x0/0x70 @ 6028, parent: 0018:27C6:0E30.0001
+[  516.815150] usb 1-1.1: usb_dev_suspend+0x0/0x28 returned 0 after 2 usecs
+[  516.815166] input input5: input_dev_suspend+0x0/0x70 returned 0 after 0 usecs
+[  516.815184] input input4: calling input_dev_suspend+0x0/0x70 @ 6028, parent: 0018:27C6:0E30.0001
+[  516.815195] input input4: input_dev_suspend+0x0/0x70 returned 0 after 0 usecs
+[  516.815212] input input3: calling input_dev_suspend+0x0/0x70 @ 6028, parent: 0018:27C6:0E30.0001
+[  516.815224] input input3: input_dev_suspend+0x0/0x70 returned 0 after 1 usecs
+[  516.815262] input input2: calling input_dev_suspend+0x0/0x70 @ 6028, parent: 11012000.spi:cros-ec@0:keyboard-controller
+[  516.815275] input input2: input_dev_suspend+0x0/0x70 returned 0 after 1 usecs
+[  516.815291] cros-ec-keyb 11012000.spi:cros-ec@0:keyboard-controller: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: spi2.0
+[  516.815302] usb 1-1: calling usb_dev_suspend+0x0/0x28 @ 190, parent: usb1
+[  516.815312] cros-ec-keyb 11012000.spi:cros-ec@0:keyboard-controller: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.815327] cros-ec-typec 11012000.spi:cros-ec@0:typec: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: spi2.0
+[  516.815340] cros-ec-typec 11012000.spi:cros-ec@0:typec: platform_pm_suspend+0x0/0x5c returned 0 after 2 usecs
+[  516.815355] cbas_ec 11012000.spi:cros-ec@0:cbas: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: spi2.0
+[  516.815366] cbas_ec 11012000.spi:cros-ec@0:cbas: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.815392] mediatek-drm mediatek-drm.1.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: 14000000.syscon
+[  516.815501] mediatek-drm mediatek-drm.1.auto: platform_pm_suspend+0x0/0x5c returned 0 after 95 usecs
+[  516.815546] input input1: calling input_dev_suspend+0x0/0x70 @ 6028, parent: card0
+[  516.815557] input input1: input_dev_suspend+0x0/0x70 returned 0 after 0 usecs
+[  516.815576] sound pcmC0D7p: calling do_pcm_suspend+0x0/0x34 @ 6028, parent: card0
+[  516.815588] sound pcmC0D7p: do_pcm_suspend+0x0/0x34 returned 0 after 0 usecs
+[  516.815603] sound pcmC0D6c: calling do_pcm_suspend+0x0/0x34 @ 6028, parent: card0
+[  516.815615] sound pcmC0D6c: do_pcm_suspend+0x0/0x34 returned 0 after 0 usecs
+[  516.815629] sound pcmC0D5c: calling do_pcm_suspend+0x0/0x34 @ 6028, parent: card0
+[  516.815641] sound pcmC0D5c: do_pcm_suspend+0x0/0x34 returned 0 after 0 usecs
+[  516.815656] sound pcmC0D4c: calling do_pcm_suspend+0x0/0x34 @ 6028, parent: card0
+[  516.815668] sound pcmC0D4c: do_pcm_suspend+0x0/0x34 returned 0 after 0 usecs
+[  516.815683] sound pcmC0D3c: calling do_pcm_suspend+0x0/0x34 @ 6028, parent: card0
+[  516.815694] sound pcmC0D3c: do_pcm_suspend+0x0/0x34 returned 0 after 0 usecs
+[  516.815709] sound pcmC0D2p: calling do_pcm_suspend+0x0/0x34 @ 6028, parent: card0
+[  516.815720] sound pcmC0D2p: do_pcm_suspend+0x0/0x34 returned 0 after 0 usecs
+[  516.815734] sound pcmC0D1p: calling do_pcm_suspend+0x0/0x34 @ 6028, parent: card0
+[  516.815745] sound pcmC0D1p: do_pcm_suspend+0x0/0x34 returned 0 after 0 usecs
+[  516.815759] sound pcmC0D0p: calling do_pcm_suspend+0x0/0x34 @ 6028, parent: card0
+[  516.815771] sound pcmC0D0p: do_pcm_suspend+0x0/0x34 returned 0 after 0 usecs
+[  516.815795] mt6358-sound mt6358-sound: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: 1000d000.pwrap:mt6358
+[  516.815805] mt6358-sound mt6358-sound: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.815864] mt8183_mt6358_ts3a227 mt8183-sound: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.815874] mt8183_mt6358_ts3a227 mt8183-sound: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.815889] hdmi-audio-codec hdmi-audio-codec.16.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: 3-005c
+[  516.815900] hdmi-audio-codec hdmi-audio-codec.16.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.815986] extcon-usbc-cros-ec 11012000.spi:cros-ec@0:extcon0: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: spi2.0
+[  516.815998] extcon-usbc-cros-ec 11012000.spi:cros-ec@0:extcon0: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.816077] it6505 3-005c: calling it6505_bridge_suspend+0x0/0x28 @ 7, parent: i2c-3
+[  516.816091] mmcblk mmc0:0001: calling mmc_bus_suspend+0x0/0x68 @ 5937, parent: mmc0
+[  516.816134] it6505 3-005c: it6505_bridge_suspend+0x0/0x28 returned 0 after 17 usecs
+[  516.816639] sbs-battery 12-000b: calling sbs_suspend+0x0/0x70 @ 6030, parent: i2c-12
+[  516.816655] sbs-battery 12-000b: sbs_suspend+0x0/0x70 returned 0 after 0 usecs
+[  516.816788] cros-ec-i2c-tunnel 11012000.spi:cros-ec@0:i2c-tunnel: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: spi2.0
+[  516.816801] cros-ec-i2c-tunnel 11012000.spi:cros-ec@0:i2c-tunnel: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.816817] platform cros-ec-throttler.15.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.3.auto
+[  516.816828] platform cros-ec-throttler.15.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.816848] platform cros-ec-pchg.14.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.3.auto
+[  516.816859] platform cros-ec-pchg.14.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.816878] input input0: calling input_dev_suspend+0x0/0x70 @ 6028, parent: wifi-wakeup
+[  516.816890] input input0: input_dev_suspend+0x0/0x70 returned 0 after 1 usecs
+[  516.816906] mtk-svs 1100b000.svs: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.817574] mtk-svs 1100b000.svs: platform_pm_suspend+0x0/0x5c returned 0 after 638 usecs
+[  516.817611] mali 13040000.mali: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.817687] mali 13040000.mali: platform_pm_suspend+0x0/0x5c returned 0 after 61 usecs
+[  516.817708] panel-boe-tv101wum-nl6 14014000.dsi.0: calling pm_generic_suspend+0x0/0x44 @ 6028, parent: 14014000.dsi
+[  516.817720] panel-boe-tv101wum-nl6 14014000.dsi.0: pm_generic_suspend+0x0/0x44 returned 0 after 0 usecs
+[  516.817795] mtk-iommu 10205000.iommu: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.817807] mtk-iommu 10205000.iommu: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.817830] backlight backlight_lcd0: calling backlight_suspend+0x0/0x94 @ 6028, parent: backlight_lcd0
+[  516.817842] backlight backlight_lcd0: backlight_suspend+0x0/0x94 returned 0 after 0 usecs
+[  516.817857] pwm-backlight backlight_lcd0: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.817869] pwm-backlight backlight_lcd0: platform_pm_suspend+0x0/0x5c returned 0 after 1 usecs
+[  516.817888] pwm pwmchip0: calling pwm_class_suspend+0x0/0x118 @ 6028, parent: 1100e000.pwm
+[  516.817901] pwm pwmchip0: pwm_class_suspend+0x0/0x118 returned 0 after 1 usecs
+[  516.817923] generic-adc-thermal thermal-sensor2: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.817935] generic-adc-thermal thermal-sensor2: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.817949] generic-adc-thermal thermal-sensor1: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.817960] generic-adc-thermal thermal-sensor1: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.817992] mtk-power-controller 10006000.syscon:power-controller: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: 10006000.syscon
+[  516.818003] mtk-power-controller 10006000.syscon:power-controller: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.818019] amba db10000.cpu-debug: calling pm_generic_suspend+0x0/0x44 @ 6028, parent: soc
+[  516.818030] amba db10000.cpu-debug: pm_generic_suspend+0x0/0x44 returned 0 after 0 usecs
+[  516.818046] cros-ec-pd-update cros-ec-pd-update.13.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.3.auto
+[  516.818060] cros-ec-pd-update cros-ec-pd-update.13.auto: platform_pm_suspend+0x0/0x5c returned 0 after 3 usecs
+[  516.818074] amba da10000.cpu-debug: calling pm_generic_suspend+0x0/0x44 @ 6028, parent: soc
+[  516.818098] amba da10000.cpu-debug: pm_generic_suspend+0x0/0x44 returned 0 after 0 usecs
+[  516.818113] cros-ec-sysfs cros-ec-sysfs.12.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.3.auto
+[  516.818124] cros-ec-sysfs cros-ec-sysfs.12.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.818138] amba d910000.cpu-debug: calling pm_generic_suspend+0x0/0x44 @ 6028, parent: soc
+[  516.818149] amba d910000.cpu-debug: pm_generic_suspend+0x0/0x44 returned 0 after 0 usecs
+[  516.818163] amba d810000.cpu-debug: calling pm_generic_suspend+0x0/0x44 @ 6028, parent: soc
+[  516.818173] amba d810000.cpu-debug: pm_generic_suspend+0x0/0x44 returned 0 after 0 usecs
+[  516.818188] amba d710000.cpu-debug: calling pm_generic_suspend+0x0/0x44 @ 6028, parent: soc
+[  516.818198] amba d710000.cpu-debug: pm_generic_suspend+0x0/0x44 returned 0 after 0 usecs
+[  516.818212] amba d610000.cpu-debug: calling pm_generic_suspend+0x0/0x44 @ 6028, parent: soc
+[  516.818222] amba d610000.cpu-debug: pm_generic_suspend+0x0/0x44 returned 0 after 0 usecs
+[  516.818236] amba d510000.cpu-debug: calling pm_generic_suspend+0x0/0x44 @ 6028, parent: soc
+[  516.818247] amba d510000.cpu-debug: pm_generic_suspend+0x0/0x44 returned 0 after 0 usecs
+[  516.818261] amba d410000.cpu-debug: calling pm_generic_suspend+0x0/0x44 @ 6028, parent: soc
+[  516.818271] amba d410000.cpu-debug: pm_generic_suspend+0x0/0x44 returned 0 after 0 usecs
+[  516.818288] cros-ec-pd-sysfs cros-ec-pd-sysfs.11.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.3.auto
+[  516.818299] cros-ec-pd-sysfs cros-ec-pd-sysfs.11.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.818314] platform cros-ec-lightbar.10.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.3.auto
+[  516.818324] platform cros-ec-lightbar.10.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.818339] cros-ec-debugfs cros-ec-debugfs.9.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.3.auto
+[  516.818354] cros-ec-debugfs cros-ec-debugfs.9.auto: platform_pm_suspend+0x0/0x5c returned 0 after 3 usecs
+[  516.818371] cros-ec-chardev cros-ec-chardev.8.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.3.auto
+[  516.818381] cros-ec-chardev cros-ec-chardev.8.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.818396] cros-usbpd-notify cros-usbpd-notify.7.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.3.auto
+[  516.818407] cros-usbpd-notify cros-usbpd-notify.7.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.818427] cros-usbpd-logger cros-usbpd-logger.6.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.3.auto
+[  516.818440] cros-usbpd-logger cros-usbpd-logger.6.auto: platform_pm_suspend+0x0/0x5c returned 0 after 3 usecs
+[  516.818462] cros-usbpd-charger cros-usbpd-charger.5.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.3.auto
+[  516.818473] cros-usbpd-charger cros-usbpd-charger.5.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.818493] cros-ec-sensorhub cros-ec-sensorhub.4.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: cros-ec-dev.3.auto
+[  516.818509] mmcblk mmc0:0001: mmc_bus_suspend+0x0/0x68 returned 0 after 2349 usecs
+[  516.819306] cros-ec-sensorhub cros-ec-sensorhub.4.auto: platform_pm_suspend+0x0/0x5c returned 0 after 782 usecs
+[  516.819333] cros-ec-dev cros-ec-dev.3.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: spi2.0
+[  516.819343] cros-ec-dev cros-ec-dev.3.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.819359] snd-soc-dummy snd-soc-dummy: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.819369] snd-soc-dummy snd-soc-dummy: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.819413] mediatek-cci-devfreq cci: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.819424] mediatek-cci-devfreq cci: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.819455] mtk-msdc 11230000.mmc: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.819482] i2c_hid_of 0-005d: calling i2c_hid_core_suspend+0x0/0xcc @ 6031, parent: i2c-0
+[  516.819493] mtk-msdc 11230000.mmc: platform_pm_suspend+0x0/0x5c returned 0 after 24 usecs
+[  516.819756] i2c_hid_of 0-005d: i2c_hid_core_suspend+0x0/0xcc returned 0 after 240 usecs
+[  516.888262] sdio_read_cis: 1 callbacks suppressed
+[  516.888267] mmc1: queuing unknown CIS tuple 0x01 (3 bytes)
+[  516.897896] mmc1: queuing unknown CIS tuple 0x1a (5 bytes)
+[  516.902086] mmc1: queuing unknown CIS tuple 0x1b (8 bytes)
+[  516.902929] mmc1: queuing unknown CIS tuple 0x14 (0 bytes)
+[  516.912070] mtk-msdc 11240000.mmc: phase: [map:f81fffff] [maxlen:21] [final:7]
+[  516.912227] ieee80211 phy0: wiphy_suspend+0x0/0x114 [cfg80211] returned 0 after 95126 usecs
+[  516.912525] ath10k_sdio mmc1:0001:1: calling pm_generic_suspend+0x0/0x44 @ 7, parent: mmc1:0001
+[  516.912547] ath10k_sdio mmc1:0001:1: pm_generic_suspend+0x0/0x44 returned 0 after 1 usecs
+[  516.912595] mmc mmc1:0001: calling mmc_bus_suspend+0x0/0x68 @ 189, parent: mmc1
+[  516.913891] mmc mmc1:0001: mmc_bus_suspend+0x0/0x68 returned 0 after 1249 usecs
+[  516.914026] mtk-msdc 11240000.mmc: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.914062] mtk-msdc 11240000.mmc: platform_pm_suspend+0x0/0x5c returned 0 after 22 usecs
+[  516.914158] psci-cpuidle psci-cpuidle: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.914169] psci-cpuidle psci-cpuidle: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.914194] mtk-cpufreq mtk-cpufreq: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.914205] mtk-cpufreq mtk-cpufreq: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.914286] at24 2-0058: calling pm_runtime_force_suspend+0x0/0xc8 @ 189, parent: i2c-2
+[  516.914299] at24 2-0058: pm_runtime_force_suspend+0x0/0xc8 returned 0 after 0 usecs
+[  516.914549] i2c-mt65xx 11009000.i2c: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.914562] i2c-mt65xx 11009000.i2c: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.915233] at24 4-0050: calling pm_runtime_force_suspend+0x0/0xc8 @ 7, parent: i2c-4
+[  516.915255] at24 4-0050: pm_runtime_force_suspend+0x0/0xc8 returned 0 after 1 usecs
+[  516.915420] i2c-mt65xx 11008000.i2c: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.915433] i2c-mt65xx 11008000.i2c: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.915483] alarmtimer alarmtimer.2.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: rtc0
+[  516.915949] alarmtimer alarmtimer.2.auto: platform_pm_suspend+0x0/0x5c returned 0 after 442 usecs
+[  516.915969] rtc rtc0: calling rtc_suspend+0x0/0x14c @ 6028, parent: mt6358-rtc
+[  516.916215] rtc rtc0: rtc_suspend+0x0/0x14c returned 0 after 228 usecs
+[  516.916274] platform Fixed MDIO bus.0: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.916285] platform Fixed MDIO bus.0: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.916310] cros-ec-spi spi2.0: calling cros_ec_spi_suspend+0x0/0x28 @ 6028, parent: spi2
+[  516.916821] usb usb2: calling usb_dev_suspend+0x0/0x28 @ 5937, parent: 11200000.xhci
+[  516.916834] usb usb2: usb_dev_suspend+0x0/0x28 returned 0 after 1 usecs
+[  516.918656] cros-ec-spi spi2.0: cros_ec_spi_suspend+0x0/0x28 returned 0 after 2277 usecs
+[  516.918682] mtd mtd0ro: calling mtd_cls_suspend+0x0/0x70 @ 6028, parent: spi1.0
+[  516.918694] mtd mtd0ro: mtd_cls_suspend+0x0/0x70 returned 0 after 0 usecs
+[  516.918712] mtd mtd0: calling mtd_cls_suspend+0x0/0x70 @ 6028, parent: spi1.0
+[  516.918724] mtd mtd0: mtd_cls_suspend+0x0/0x70 returned 0 after 0 usecs
+[  516.918753] tpm_tis_spi spi0.0: calling tpm_pm_suspend+0x0/0xb0 @ 6028, parent: spi0
+[  516.918764] tpm_tis_spi spi0.0: tpm_pm_suspend+0x0/0xb0 returned 0 after 0 usecs
+[  516.918795] mt6397-rtc mt6358-rtc: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: 1000d000.pwrap:mt6358
+[  516.918812] mt6397-rtc mt6358-rtc: platform_pm_suspend+0x0/0x5c returned 0 after 5 usecs
+[  516.918830] regulator regulator.51: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.918842] regulator regulator.51: regulator_suspend+0x0/0xfc returned 0 after 1 usecs
+[  516.918858] regulator regulator.50: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.918869] regulator regulator.50: regulator_suspend+0x0/0xfc returned 0 after 1 usecs
+[  516.918883] regulator regulator.49: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.918894] regulator regulator.49: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.918908] regulator regulator.48: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.918920] regulator regulator.48: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.918935] regulator regulator.47: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.918946] regulator regulator.47: regulator_suspend+0x0/0xfc returned 0 after 1 usecs
+[  516.918960] regulator regulator.46: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.918971] regulator regulator.46: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.918985] regulator regulator.45: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.918995] regulator regulator.45: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919009] regulator regulator.44: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919021] regulator regulator.44: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919034] regulator regulator.43: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919045] regulator regulator.43: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919058] regulator regulator.42: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919069] regulator regulator.42: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919093] regulator regulator.41: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919104] regulator regulator.41: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919119] regulator regulator.40: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919131] regulator regulator.40: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919144] regulator regulator.39: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919155] regulator regulator.39: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919169] regulator regulator.38: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919180] regulator regulator.38: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919194] regulator regulator.37: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919205] regulator regulator.37: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919219] regulator regulator.36: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919230] regulator regulator.36: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919243] regulator regulator.35: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919254] regulator regulator.35: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919268] regulator regulator.34: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919279] regulator regulator.34: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919293] regulator regulator.33: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919304] regulator regulator.33: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919318] regulator regulator.32: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919329] regulator regulator.32: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919343] regulator regulator.31: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919354] regulator regulator.31: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919368] regulator regulator.30: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919379] regulator regulator.30: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919392] regulator regulator.29: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919403] regulator regulator.29: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919418] regulator regulator.28: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919430] regulator regulator.28: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919444] regulator regulator.27: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919455] regulator regulator.27: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.919470] regulator regulator.26: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.919481] regulator regulator.26: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.937111] usb 1-1: usb_dev_suspend+0x0/0x28 returned 0 after 118945 usecs
+[  516.937146] usb usb1: calling usb_dev_suspend+0x0/0x28 @ 189, parent: 11200000.xhci
+[  516.937193] usb usb1: usb_dev_suspend+0x0/0x28 returned 0 after 34 usecs
+[  516.937332] xhci-mtk 11200000.xhci: calling platform_pm_suspend+0x0/0x5c @ 5937, parent: 11201000.usb
+[  516.937352] xhci-mtk 11200000.xhci: platform_pm_suspend+0x0/0x5c returned 0 after 7 usecs
+[  516.937388] mtu3 11201000.usb: calling platform_pm_suspend+0x0/0x5c @ 192, parent: soc
+[  516.937815] mtu3 11201000.usb: platform_pm_suspend+0x0/0x5c returned 0 after 405 usecs
+[  516.937972] regulator regulator.25: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.937986] regulator regulator.25: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938002] regulator regulator.24: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.938013] regulator regulator.24: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938028] regulator regulator.23: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.938039] regulator regulator.23: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938053] regulator regulator.22: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.938064] regulator regulator.22: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938092] regulator regulator.21: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.938103] regulator regulator.21: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938118] regulator regulator.20: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.938129] regulator regulator.20: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938143] regulator regulator.19: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.938154] regulator regulator.19: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938168] regulator regulator.18: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.938178] regulator regulator.18: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938192] regulator regulator.17: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.938203] regulator regulator.17: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938218] regulator regulator.16: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.938229] regulator regulator.16: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938244] regulator regulator.15: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.938254] regulator regulator.15: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938269] regulator regulator.14: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.938280] regulator regulator.14: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938294] regulator regulator.13: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.938305] regulator regulator.13: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938319] regulator regulator.12: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.938330] regulator regulator.12: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938345] regulator regulator.11: calling regulator_suspend+0x0/0xfc @ 6028, parent: mt6358-regulator
+[  516.938356] regulator regulator.11: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.938395] mt6358-regulator mt6358-regulator: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: 1000d000.pwrap:mt6358
+[  516.938406] mt6358-regulator mt6358-regulator: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.938482] hci_uart_qca serial0-0: calling qca_suspend+0x0/0x2f8 [hci_uart] @ 6028, parent: serial0
+[  516.938766] hci_uart_qca serial0-0: qca_suspend+0x0/0x2f8 [hci_uart] returned 0 after 257 usecs
+[  516.938796] serial8250 serial8250: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.938808] serial8250 serial8250: platform_pm_suspend+0x0/0x5c returned 0 after 1 usecs
+[  516.938829] clk-mt8183-mm clk-mt8183-mm.0.auto: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: 14000000.syscon
+[  516.938840] clk-mt8183-mm clk-mt8183-mm.0.auto: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.938857] mt6397 1000d000.pwrap:mt6358: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: 1000d000.pwrap
+[  516.938868] mt6397 1000d000.pwrap:mt6358: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.938974] regulator regulator.10: calling regulator_suspend+0x0/0xfc @ 6028, parent: pp1800-lcd
+[  516.938986] regulator regulator.10: regulator_suspend+0x0/0xfc returned 0 after 1 usecs
+[  516.939002] regulator regulator.9: calling regulator_suspend+0x0/0xfc @ 6028, parent: ppvarp-lcd
+[  516.939013] regulator regulator.9: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.939029] regulator regulator.8: calling regulator_suspend+0x0/0xfc @ 6028, parent: ppvarn-lcd
+[  516.939040] regulator regulator.8: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.939054] regulator regulator.7: calling regulator_suspend+0x0/0xfc @ 6028, parent: regulator6
+[  516.939065] regulator regulator.7: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.939094] regulator regulator.6: calling regulator_suspend+0x0/0xfc @ 6028, parent: regulator5
+[  516.939106] regulator regulator.6: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.939121] regulator regulator.5: calling regulator_suspend+0x0/0xfc @ 6028, parent: regulator4
+[  516.939132] regulator regulator.5: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.939147] regulator regulator.4: calling regulator_suspend+0x0/0xfc @ 6028, parent: regulator3
+[  516.939157] regulator regulator.4: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.939172] regulator regulator.3: calling regulator_suspend+0x0/0xfc @ 6028, parent: regulator2
+[  516.939183] regulator regulator.3: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.939198] regulator regulator.2: calling regulator_suspend+0x0/0xfc @ 6028, parent: regulator1
+[  516.939209] regulator regulator.2: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.939225] regulator regulator.1: calling regulator_suspend+0x0/0xfc @ 6028, parent: regulator0
+[  516.939236] regulator regulator.1: regulator_suspend+0x0/0xfc returned 0 after 0 usecs
+[  516.939276] reg-fixed-voltage pp1800-lcd: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.939286] reg-fixed-voltage pp1800-lcd: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939301] reg-fixed-voltage ppvarp-lcd: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.939311] reg-fixed-voltage ppvarp-lcd: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939325] reg-fixed-voltage ppvarn-lcd: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.939335] reg-fixed-voltage ppvarn-lcd: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939350] max98357a max98357a: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.939361] max98357a max98357a: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939377] gpio-keys wifi-wakeup: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.939392] gpio-keys wifi-wakeup: platform_pm_suspend+0x0/0x5c returned 0 after 3 usecs
+[  516.939407] pwrseq_simple wifi-pwrseq: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.939417] pwrseq_simple wifi-pwrseq: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939431] bt-sco bt-sco: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.939441] bt-sco bt-sco: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939455] reg-fixed-voltage regulator6: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.939465] reg-fixed-voltage regulator6: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939479] reg-fixed-voltage regulator5: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.939489] reg-fixed-voltage regulator5: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939504] reg-fixed-voltage regulator4: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.939514] reg-fixed-voltage regulator4: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939528] reg-fixed-voltage regulator3: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.939538] reg-fixed-voltage regulator3: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939552] reg-fixed-voltage regulator2: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.939562] reg-fixed-voltage regulator2: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939576] reg-fixed-voltage regulator1: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.939586] reg-fixed-voltage regulator1: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939601] reg-fixed-voltage regulator0: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.939611] reg-fixed-voltage regulator0: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939631] clk-mt8183-cam 1a000000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939642] clk-mt8183-cam 1a000000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939657] clk-mt8183-ipu_core1 19280000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939667] clk-mt8183-ipu_core1 19280000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939682] clk-mt8183-ipu_core0 19180000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939693] clk-mt8183-ipu_core0 19180000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939708] clk-mt8183-ipu_adl 19010000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939718] clk-mt8183-ipu_adl 19010000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939733] clk-mt8183-ipu_conn 19000000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939743] clk-mt8183-ipu_conn 19000000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939757] clk-mt8183-venc 17000000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939768] clk-mt8183-venc 17000000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939783] clk-mt8183-vdec 16000000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939793] clk-mt8183-vdec 16000000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939808] clk-mt8183-img 15020000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939818] clk-mt8183-img 15020000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939833] platform 1401c000.mdp3_ccorr: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939843] platform 1401c000.mdp3_ccorr: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939858] platform 14012000.dither: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939868] platform 14012000.dither: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939883] platform 14006000.mdp3_wdma: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939893] platform 14006000.mdp3_wdma: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939909] platform 14005000.mdp3_wrot0: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939919] platform 14005000.mdp3_wrot0: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939934] platform 14004000.mdp3_rsz1: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939945] platform 14004000.mdp3_rsz1: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939959] platform 14003000.mdp3_rsz0: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939969] platform 14003000.mdp3_rsz0: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.939986] mtk-mmsys 14000000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.939997] mtk-mmsys 14000000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940013] mtk-tphy soc:usb-phy@11f40000: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940024] mtk-tphy soc:usb-phy@11f40000: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940038] mediatek,efuse 11f10000.efuse: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940049] mediatek,efuse 11f10000.efuse: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940063] mediatek-mipi-tx 11e50000.mipi-dphy: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940074] mediatek-mipi-tx 11e50000.mipi-dphy: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940100] clk-mt8183-audio 11220000.audio-controller: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940111] clk-mt8183-audio 11220000.audio-controller: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940126] i2c-mt65xx 11016000.i2c: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940137] i2c-mt65xx 11016000.i2c: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940151] mtk-spi 11012000.spi: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940170] mtk-spi 11012000.spi: platform_pm_suspend+0x0/0x5c returned 0 after 8 usecs
+[  516.940185] i2c-mt65xx 11011000.i2c: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940196] i2c-mt65xx 11011000.i2c: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940210] mtk-spi 11010000.spi: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940221] mtk-spi 11010000.spi: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940236] i2c-mt65xx 1100f000.i2c: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940247] i2c-mt65xx 1100f000.i2c: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940261] platform 11006000.pwm: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940271] platform 11006000.pwm: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940286] mtk-thermal 1100b000.thermal: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940304] mtk-thermal 1100b000.thermal: platform_pm_suspend+0x0/0x5c returned 0 after 7 usecs
+[  516.940318] mtk-spi 1100a000.spi: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940329] mtk-spi 1100a000.spi: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940344] i2c-mt65xx 11007000.i2c: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940355] i2c-mt65xx 11007000.i2c: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940369] i2c-mt65xx 11005000.i2c: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940379] i2c-mt65xx 11005000.i2c: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940394] mt6577-uart 11003000.serial: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940500] mt6577-uart 11003000.serial: platform_pm_suspend+0x0/0x5c returned 0 after 92 usecs
+[  516.940517] mt6577-uart 11002000.serial: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940557] mt6577-uart 11002000.serial: platform_pm_suspend+0x0/0x5c returned 0 after 27 usecs
+[  516.940573] mt6577-auxadc 11001000.auxadc: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940588] mt6577-auxadc 11001000.auxadc: platform_pm_suspend+0x0/0x5c returned 0 after 3 usecs
+[  516.940603] mtk_cmdq 10238000.mailbox: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940618] mtk_cmdq 10238000.mailbox: platform_pm_suspend+0x0/0x5c returned 0 after 4 usecs
+[  516.940632] platform 10017000.timer: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940642] platform 10017000.timer: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940660] mtk-scp 10500000.scp: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940670] mtk-scp 10500000.scp: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940685] mt-pmic-pwrap 1000d000.pwrap: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940695] mt-pmic-pwrap 1000d000.pwrap: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940710] clk-mt8183 1000c000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940721] clk-mt8183 1000c000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940736] mtk-wdt 10007000.watchdog: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940748] mtk-wdt 10007000.watchdog: platform_pm_suspend+0x0/0x5c returned 0 after 1 usecs
+[  516.940763] platform 10006000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940773] platform 10006000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940791] mt8183-pinctrl 10005000.pinctrl: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940802] mt8183-pinctrl 10005000.pinctrl: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940816] clk-mt8183 10003000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940827] clk-mt8183 10003000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940843] clk-mt8183 10001000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940854] clk-mt8183 10001000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940868] clk-mt8183 10000000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940878] clk-mt8183 10000000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940893] clk-mt8183 c530000.syscon: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940903] clk-mt8183 c530000.syscon: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.940917] mediatek,efuse 8000000.soc_data: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: soc
+[  516.940928] mediatek,efuse 8000000.soc_data: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.941006] platform soc: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.941017] platform soc: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.941032] platform timer: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.941043] platform timer: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.941056] platform fixed-factor-clock-13m: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.941067] platform fixed-factor-clock-13m: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.941092] psci-cpuidle-domain psci: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.941103] psci-cpuidle-domain psci: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.941117] armv8-pmu pmu-a73: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.941127] armv8-pmu pmu-a73: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.941141] armv8-pmu pmu-a53: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.941152] armv8-pmu pmu-a53: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.941166] platform firmware:chromeos: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.941176] platform firmware:chromeos: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.941214] coreboot_table ffed9000.coreboot: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.941225] coreboot_table ffed9000.coreboot: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.941242] ramoops ffedb000.ramoops: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.941253] ramoops ffedb000.ramoops: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.941292] regulator regulator.0: calling regulator_suspend+0x0/0xfc @ 6028, parent: reg-dummy
+[  516.941303] regulator regulator.0: regulator_suspend+0x0/0xfc returned 0 after 1 usecs
+[  516.941318] reg-dummy reg-dummy: calling platform_pm_suspend+0x0/0x5c @ 6028, parent: platform
+[  516.941328] reg-dummy reg-dummy: platform_pm_suspend+0x0/0x5c returned 0 after 0 usecs
+[  516.941377] PM: suspend of devices complete after 128.084 msecs
+[  516.941382] PM: start suspend of devices complete after 129.205 msecs
+[  516.941791] ov02a10 4-003d: calling i2c_suspend_late+0x0/0x7c @ 192, parent: i2c-4
+[  516.941805] ov02a10 4-003d: i2c_suspend_late+0x0/0x7c returned 0 after 1 usecs
+[  516.941825] ov8856 2-0010: calling i2c_suspend_late+0x0/0x7c @ 192, parent: i2c-2
+[  516.941837] ov8856 2-0010: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.941853] dw9768 2-000c: calling i2c_suspend_late+0x0/0x7c @ 192, parent: i2c-2
+[  516.941865] dw9768 2-000c: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.941975] i2c i2c-13: calling i2c_suspend_late+0x0/0x7c @ 192, parent: 3-005c
+[  516.941986] i2c i2c-13: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.942003] it6505 3-005c: calling i2c_suspend_late+0x0/0x7c @ 192, parent: i2c-3
+[  516.942015] it6505 3-005c: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.942067] sbs-battery 12-000b: calling i2c_suspend_late+0x0/0x7c @ 192, parent: i2c-12
+[  516.942093] sbs-battery 12-000b: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.942110] i2c i2c-12: calling i2c_suspend_late+0x0/0x7c @ 192, parent: 11012000.spi:cros-ec@0:i2c-tunnel
+[  516.942121] i2c i2c-12: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.942449] mtk-smi-larb 1a002000.larb: calling pm_runtime_force_suspend+0x0/0xc8 @ 6028, parent: soc
+[  516.942462] mtk-smi-larb 1a002000.larb: pm_runtime_force_suspend+0x0/0xc8 returned 0 after 0 usecs
+[  516.942476] mtk-smi-larb 1a001000.larb: calling pm_runtime_force_suspend+0x0/0xc8 @ 6028, parent: soc
+[  516.942487] mtk-smi-larb 1a001000.larb: pm_runtime_force_suspend+0x0/0xc8 returned 0 after 0 usecs
+[  516.942501] mtk-smi-larb 17010000.larb: calling pm_runtime_force_suspend+0x0/0xc8 @ 6028, parent: soc
+[  516.942512] mtk-smi-larb 17010000.larb: pm_runtime_force_suspend+0x0/0xc8 returned 0 after 0 usecs
+[  516.942526] mtk-smi-larb 16010000.larb: calling pm_runtime_force_suspend+0x0/0xc8 @ 6028, parent: soc
+[  516.942537] mtk-smi-larb 16010000.larb: pm_runtime_force_suspend+0x0/0xc8 returned 0 after 0 usecs
+[  516.942551] mtk-smi-larb 1502f000.larb: calling pm_runtime_force_suspend+0x0/0xc8 @ 6028, parent: soc
+[  516.942562] mtk-smi-larb 1502f000.larb: pm_runtime_force_suspend+0x0/0xc8 returned 0 after 0 usecs
+[  516.942576] mtk-smi-larb 15021000.larb: calling pm_runtime_force_suspend+0x0/0xc8 @ 6028, parent: soc
+[  516.942587] mtk-smi-larb 15021000.larb: pm_runtime_force_suspend+0x0/0xc8 returned 0 after 0 usecs
+[  516.942603] mtk-smi-larb 14017000.larb: calling pm_runtime_force_suspend+0x0/0xc8 @ 6028, parent: soc
+[  516.942613] mtk-smi-larb 14017000.larb: pm_runtime_force_suspend+0x0/0xc8 returned 0 after 0 usecs
+[  516.942630] mtk-smi-common 14019000.smi: calling pm_runtime_force_suspend+0x0/0xc8 @ 6028, parent: soc
+[  516.942640] mtk-smi-common 14019000.smi: pm_runtime_force_suspend+0x0/0xc8 returned 0 after 0 usecs
+[  516.942657] mtk-iommu 10205000.iommu: calling pm_runtime_force_suspend+0x0/0xc8 @ 6028, parent: soc
+[  516.942667] mtk-iommu 10205000.iommu: pm_runtime_force_suspend+0x0/0xc8 returned 0 after 0 usecs
+[  516.942957] i2c_hid_of 0-005d: calling i2c_suspend_late+0x0/0x7c @ 5937, parent: i2c-0
+[  516.942971] i2c_hid_of 0-005d: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.943269] i2c i2c-5: calling i2c_suspend_late+0x0/0x7c @ 192, parent: 11016000.i2c
+[  516.943282] i2c i2c-5: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.943299] i2c i2c-1: calling i2c_suspend_late+0x0/0x7c @ 192, parent: 11011000.i2c
+[  516.943310] i2c i2c-1: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.943326] i2c i2c-3: calling i2c_suspend_late+0x0/0x7c @ 192, parent: 1100f000.i2c
+[  516.943337] i2c i2c-3: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.943352] at24 2-0058: calling i2c_suspend_late+0x0/0x7c @ 192, parent: i2c-2
+[  516.943363] at24 2-0058: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.943380] i2c i2c-2: calling i2c_suspend_late+0x0/0x7c @ 192, parent: 11009000.i2c
+[  516.943391] i2c i2c-2: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.943567] at24 4-0050: calling i2c_suspend_late+0x0/0x7c @ 5937, parent: i2c-4
+[  516.943579] at24 4-0050: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.943596] i2c i2c-4: calling i2c_suspend_late+0x0/0x7c @ 5937, parent: 11008000.i2c
+[  516.943607] i2c i2c-4: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.943664] i2c i2c-0: calling i2c_suspend_late+0x0/0x7c @ 192, parent: 11007000.i2c
+[  516.943675] i2c i2c-0: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.943693] i2c i2c-6: calling i2c_suspend_late+0x0/0x7c @ 192, parent: 11005000.i2c
+[  516.943704] i2c i2c-6: i2c_suspend_late+0x0/0x7c returned 0 after 0 usecs
+[  516.944194] PM: late suspend of devices complete after 2.802 msecs
+[  516.944518] mtk-cam-p1 1a000000.camisp: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.944534] mtk-cam-p1 1a000000.camisp: genpd_suspend_noirq+0x0/0x28 returned 0 after 3 usecs
+[  516.944550] mtk-vcodec-dec 16000000.vcodec: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.944561] mtk-vcodec-dec 16000000.vcodec: genpd_suspend_noirq+0x0/0x28 returned 0 after 1 usecs
+[  516.944576] mtk-vcodec-enc 17020000.vcodec: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.944588] mtk-vcodec-enc 17020000.vcodec: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.944605] mtk-jpeg 17030000.venc_jpg: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.944617] mtk-jpeg 17030000.venc_jpg: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.944671] mtk-cam-dip 15022000.dip: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.944682] mtk-cam-dip 15022000.dip: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.944696] mtk-fd-4.0 1502b000.fd: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.944707] mtk-fd-4.0 1502b000.fd: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.944723] mtk-mdp3 14001000.mdp3_rdma0: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.944735] mtk-mdp3 14001000.mdp3_rdma0: genpd_suspend_noirq+0x0/0x28 returned 0 after 1 usecs
+[  516.944960] mediatek-dpi 14015000.dpi: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.944972] mediatek-dpi 14015000.dpi: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945163] genpd genpd:2:13040000.mali: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: none
+[  516.945176] genpd genpd:2:13040000.mali: genpd_suspend_noirq+0x0/0x28 returned 0 after 1 usecs
+[  516.945190] genpd genpd:1:13040000.mali: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: none
+[  516.945202] genpd genpd:1:13040000.mali: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945215] genpd genpd:0:13040000.mali: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: none
+[  516.945227] genpd genpd:0:13040000.mali: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945245] mtk-dsi 14014000.dsi: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945256] mtk-dsi 14014000.dsi: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945271] mediatek-disp-rdma 1400c000.rdma: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945282] mediatek-disp-rdma 1400c000.rdma: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945296] mediatek-disp-rdma 1400b000.rdma: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945307] mediatek-disp-rdma 1400b000.rdma: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945320] mediatek-disp-ovl 1400a000.ovl: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945331] mediatek-disp-ovl 1400a000.ovl: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945344] mediatek-disp-ovl 14009000.ovl: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945355] mediatek-disp-ovl 14009000.ovl: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945368] mediatek-disp-ovl 14008000.ovl: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945379] mediatek-disp-ovl 14008000.ovl: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945392] mtk-smi-larb 1a002000.larb: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945404] mtk-smi-larb 1a002000.larb: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945416] mtk-smi-larb 1a001000.larb: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945428] mtk-smi-larb 1a001000.larb: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945440] mtk-smi-larb 17010000.larb: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945451] mtk-smi-larb 17010000.larb: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945464] mtk-smi-larb 16010000.larb: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945475] mtk-smi-larb 16010000.larb: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945487] mtk-smi-larb 1502f000.larb: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945498] mtk-smi-larb 1502f000.larb: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945511] mtk-smi-larb 15021000.larb: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945522] mtk-smi-larb 15021000.larb: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945535] mtk-smi-larb 14017000.larb: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945546] mtk-smi-larb 14017000.larb: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945559] mtk-smi-common 14019000.smi: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945570] mtk-smi-common 14019000.smi: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945587] clk-mt8183-mfg 13000000.syscon: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945598] clk-mt8183-mfg 13000000.syscon: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945619] mediatek-disp-pwm 1100e000.pwm: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945630] mediatek-disp-pwm 1100e000.pwm: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945645] mt8183-audio 11220000.audio-controller:mt8183-afe-pcm: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: 11220000.audio-controller
+[  516.945657] mt8183-audio 11220000.audio-controller:mt8183-afe-pcm: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945675] mediatek-disp-gamma 14011000.gamma: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945686] mediatek-disp-gamma 14011000.gamma: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945699] mediatek-disp-color 1400e000.color: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945710] mediatek-disp-color 1400e000.color: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945724] mediatek-disp-ccorr 1400f000.ccorr: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945735] mediatek-disp-ccorr 1400f000.ccorr: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945748] mediatek-disp-aal 14010000.aal: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945759] mediatek-disp-aal 14010000.aal: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.945773] mediatek-mutex 14016000.mutex: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.945834] mediatek-mutex 14016000.mutex: genpd_suspend_noirq+0x0/0x28 returned 0 after 48 usecs
+[  516.946046] i2c-mt65xx 11009000.i2c: calling mtk_i2c_suspend_noirq+0x0/0x84 @ 6028, parent: soc
+[  516.946062] i2c-mt65xx 11009000.i2c: mtk_i2c_suspend_noirq+0x0/0x84 returned 0 after 3 usecs
+[  516.946145] i2c-mt65xx 11008000.i2c: calling mtk_i2c_suspend_noirq+0x0/0x84 @ 6028, parent: soc
+[  516.946159] i2c-mt65xx 11008000.i2c: mtk_i2c_suspend_noirq+0x0/0x84 returned 0 after 0 usecs
+[  516.946435] seninf 1a040000.seninf: calling genpd_suspend_noirq+0x0/0x28 @ 6028, parent: soc
+[  516.946447] seninf 1a040000.seninf: genpd_suspend_noirq+0x0/0x28 returned 0 after 0 usecs
+[  516.946491] i2c-mt65xx 11016000.i2c: calling mtk_i2c_suspend_noirq+0x0/0x84 @ 6028, parent: soc
+[  516.946503] i2c-mt65xx 11016000.i2c: mtk_i2c_suspend_noirq+0x0/0x84 returned 0 after 0 usecs
+[  516.946518] i2c-mt65xx 11011000.i2c: calling mtk_i2c_suspend_noirq+0x0/0x84 @ 6028, parent: soc
+[  516.946529] i2c-mt65xx 11011000.i2c: mtk_i2c_suspend_noirq+0x0/0x84 returned 0 after 0 usecs
+[  516.946544] i2c-mt65xx 1100f000.i2c: calling mtk_i2c_suspend_noirq+0x0/0x84 @ 6028, parent: soc
+[  516.946556] i2c-mt65xx 1100f000.i2c: mtk_i2c_suspend_noirq+0x0/0x84 returned 0 after 0 usecs
+[  516.946573] i2c-mt65xx 11007000.i2c: calling mtk_i2c_suspend_noirq+0x0/0x84 @ 6028, parent: soc
+[  516.946584] i2c-mt65xx 11007000.i2c: mtk_i2c_suspend_noirq+0x0/0x84 returned 0 after 0 usecs
+[  516.946597] i2c-mt65xx 11005000.i2c: calling mtk_i2c_suspend_noirq+0x0/0x84 @ 6028, parent: soc
+[  516.946609] i2c-mt65xx 11005000.i2c: mtk_i2c_suspend_noirq+0x0/0x84 returned 0 after 0 usecs
+[  516.946639] mt8183-pinctrl 10005000.pinctrl: calling mtk_paris_pinctrl_suspend+0x0/0x2c @ 6028, parent: soc
+[  516.946651] mt8183-pinctrl 10005000.pinctrl: mtk_paris_pinctrl_suspend+0x0/0x2c returned 0 after 1 usecs
+[  516.946734] PM: noirq suspend of devices complete after 2.307 msecs
+[  516.946740] Disabling non-boot CPUs ...
+[  516.947793] CPU1: shutdown
+[  516.947804] psci: CPU1 killed (polled 0 ms)
+[  516.950220] CPU2: shutdown
+[  516.950233] psci: CPU2 killed (polled 0 ms)
+[  516.952209] CPU3: shutdown
+[  516.952220] psci: CPU3 killed (polled 0 ms)
+[  516.954461] CPU4: shutdown
+[  516.955492] psci: CPU4 killed (polled 1 ms)
+[  516.956827] CPU5: shutdown
+[  516.957855] psci: CPU5 killed (polled 1 ms)
+[  516.959834] CPU6: shutdown
+[  516.960860] psci: CPU6 killed (polled 1 ms)
+[  516.962691] CPU7: shutdown
+[  516.963520] psci: CPU7 killed (polled 1 ms)
+[  516.964921] PM: Checking wakeup interrupts
+[  516.964939] PM: Calling sched_clock_suspend+0x0/0x44
+[  516.964941] PM: Calling timekeeping_suspend+0x0/0x2cc
+[  516.964941] PM: Calling kvm_suspend+0x0/0x34
+[  516.964941] PM: Calling fw_suspend+0x0/0x20
+[  516.964941] PM: Calling clkchk_syscore_suspend+0x0/0x29c
+[  516.964941] PM: Calling cpu_pm_suspend+0x0/0x3c
+[  516.964941] PM: Calling cpu_pm_resume+0x0/0x30
+[  516.964941] PM: Calling clkchk_syscore_resume+0x0/0x14
+[  516.964941] PM: Calling kvm_resume+0x0/0x30
+[  516.964941] PM: Calling irq_pm_syscore_resume+0x0/0x28
+[  516.964941] PM: Calling timekeeping_resume+0x0/0x178
+[  516.964941] PM: Timekeeping suspended for 403.184 seconds
+[  516.964941] PM: Calling sched_clock_resume+0x0/0x5c
+[  516.965247] Enabling non-boot CPUs ...
+[  516.965739] Detected VIPT I-cache on CPU1
+[  516.965773] GICv3: CPU1: found redistributor 1 region 0:0x000000000c120000
+[  516.965835] CPU1: Booted secondary processor 0x0000000001 [0x410fd034]
+[  516.966499] CPU1 is up
+[  516.967006] Detected VIPT I-cache on CPU2
+[  516.967026] GICv3: CPU2: found redistributor 2 region 0:0x000000000c140000
+[  516.967055] CPU2: Booted secondary processor 0x0000000002 [0x410fd034]
+[  516.967461] CPU2 is up
+[  516.967806] Detected VIPT I-cache on CPU3
+[  516.967826] GICv3: CPU3: found redistributor 3 region 0:0x000000000c160000
+[  516.967856] CPU3: Booted secondary processor 0x0000000003 [0x410fd034]
+[  516.968246] CPU3 is up
+[  516.968743] Detected VIPT I-cache on CPU4
+[  516.968781] GICv3: CPU4: found redistributor 100 region 0:0x000000000c180000
+[  516.968816] arch_timer: CPU4: Trapping CNTVCT access
+[  516.968840] CPU4: Booted secondary processor 0x0000000100 [0x410fd092]
+[  516.969799] CPU4 is up
+[  516.970226] Detected VIPT I-cache on CPU5
+[  516.970253] GICv3: CPU5: found redistributor 101 region 0:0x000000000c1a0000
+[  516.970277] arch_timer: CPU5: Trapping CNTVCT access
+[  516.970295] CPU5: Booted secondary processor 0x0000000101 [0x410fd092]
+[  516.970847] CPU5 is up
+[  516.971227] Detected VIPT I-cache on CPU6
+[  516.971254] GICv3: CPU6: found redistributor 102 region 0:0x000000000c1c0000
+[  516.971277] arch_timer: CPU6: Trapping CNTVCT access
+[  516.971295] CPU6: Booted secondary processor 0x0000000102 [0x410fd092]
+[  516.971893] CPU6 is up
+[  516.972327] Detected VIPT I-cache on CPU7
+[  516.972353] GICv3: CPU7: found redistributor 103 region 0:0x000000000c1e0000
+[  516.972378] arch_timer: CPU7: Trapping CNTVCT access
+[  516.972396] CPU7: Booted secondary processor 0x0000000103 [0x410fd092]
+[  516.973126] CPU7 is up
+[  516.973583] mt8183-pinctrl 10005000.pinctrl: calling mtk_paris_pinctrl_resume+0x0/0x2c @ 6028, parent: soc
+[  516.973598] mt8183-pinctrl 10005000.pinctrl: mtk_paris_pinctrl_resume+0x0/0x2c returned 0 after 1 usecs
+[  516.973636] i2c-mt65xx 11005000.i2c: calling mtk_i2c_resume_noirq+0x0/0xdc @ 6028, parent: soc
+[  516.973761] i2c-mt65xx 11005000.i2c: mtk_i2c_resume_noirq+0x0/0xdc returned 0 after 109 usecs
+[  516.973790] i2c-mt65xx 11007000.i2c: calling mtk_i2c_resume_noirq+0x0/0xdc @ 6028, parent: soc
+[  516.973895] i2c-mt65xx 11007000.i2c: mtk_i2c_resume_noirq+0x0/0xdc returned 0 after 90 usecs
+[  516.973926] i2c-mt65xx 1100f000.i2c: calling mtk_i2c_resume_noirq+0x0/0xdc @ 6028, parent: soc
+[  516.974032] i2c-mt65xx 1100f000.i2c: mtk_i2c_resume_noirq+0x0/0xdc returned 0 after 90 usecs
+[  516.974049] i2c-mt65xx 11011000.i2c: calling mtk_i2c_resume_noirq+0x0/0xdc @ 6028, parent: soc
+[  516.974153] i2c-mt65xx 11011000.i2c: mtk_i2c_resume_noirq+0x0/0xdc returned 0 after 90 usecs
+[  516.974168] i2c-mt65xx 11016000.i2c: calling mtk_i2c_resume_noirq+0x0/0xdc @ 6028, parent: soc
+[  516.974275] i2c-mt65xx 11016000.i2c: mtk_i2c_resume_noirq+0x0/0xdc returned 0 after 92 usecs
+[  516.974327] seninf 1a040000.seninf: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.974509] seninf 1a040000.seninf: genpd_resume_noirq+0x0/0xd0 returned 0 after 165 usecs
+[  516.974762] i2c-mt65xx 11008000.i2c: calling mtk_i2c_resume_noirq+0x0/0xdc @ 6028, parent: soc
+[  516.974870] i2c-mt65xx 11008000.i2c: mtk_i2c_resume_noirq+0x0/0xdc returned 0 after 93 usecs
+[  516.974899] i2c-mt65xx 11009000.i2c: calling mtk_i2c_resume_noirq+0x0/0xdc @ 6028, parent: soc
+[  516.975023] i2c-mt65xx 11009000.i2c: mtk_i2c_resume_noirq+0x0/0xdc returned 0 after 108 usecs
+[  516.975169] mediatek-mutex 14016000.mutex: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975182] mediatek-mutex 14016000.mutex: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975195] mediatek-disp-aal 14010000.aal: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975206] mediatek-disp-aal 14010000.aal: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975219] mediatek-disp-ccorr 1400f000.ccorr: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975231] mediatek-disp-ccorr 1400f000.ccorr: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975244] mediatek-disp-color 1400e000.color: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975255] mediatek-disp-color 1400e000.color: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975269] mediatek-disp-gamma 14011000.gamma: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975280] mediatek-disp-gamma 14011000.gamma: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975297] mt8183-audio 11220000.audio-controller:mt8183-afe-pcm: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: 11220000.audio-controller
+[  516.975328] mt8183-audio 11220000.audio-controller:mt8183-afe-pcm: genpd_resume_noirq+0x0/0xd0 returned 0 after 18 usecs
+[  516.975342] mediatek-disp-pwm 1100e000.pwm: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975354] mediatek-disp-pwm 1100e000.pwm: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975375] clk-mt8183-mfg 13000000.syscon: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975426] clk-mt8183-mfg 13000000.syscon: genpd_resume_noirq+0x0/0xd0 returned 0 after 38 usecs
+[  516.975442] mtk-smi-common 14019000.smi: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975454] mtk-smi-common 14019000.smi: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975467] mtk-smi-larb 14017000.larb: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975478] mtk-smi-larb 14017000.larb: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975491] mtk-smi-larb 15021000.larb: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975607] mtk-smi-larb 15021000.larb: genpd_resume_noirq+0x0/0xd0 returned 0 after 100 usecs
+[  516.975622] mtk-smi-larb 1502f000.larb: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975633] mtk-smi-larb 1502f000.larb: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975647] mtk-smi-larb 16010000.larb: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975670] mtk-smi-larb 16010000.larb: genpd_resume_noirq+0x0/0xd0 returned 0 after 11 usecs
+[  516.975684] mtk-smi-larb 17010000.larb: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975706] mtk-smi-larb 17010000.larb: genpd_resume_noirq+0x0/0xd0 returned 0 after 11 usecs
+[  516.975719] mtk-smi-larb 1a001000.larb: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975730] mtk-smi-larb 1a001000.larb: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975744] mtk-smi-larb 1a002000.larb: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975755] mtk-smi-larb 1a002000.larb: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975769] mediatek-disp-ovl 14008000.ovl: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975780] mediatek-disp-ovl 14008000.ovl: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975793] mediatek-disp-ovl 14009000.ovl: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975804] mediatek-disp-ovl 14009000.ovl: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975817] mediatek-disp-ovl 1400a000.ovl: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975828] mediatek-disp-ovl 1400a000.ovl: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975842] mediatek-disp-rdma 1400b000.rdma: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975853] mediatek-disp-rdma 1400b000.rdma: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975867] mediatek-disp-rdma 1400c000.rdma: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975878] mediatek-disp-rdma 1400c000.rdma: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975893] mtk-dsi 14014000.dsi: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.975903] mtk-dsi 14014000.dsi: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.975923] genpd genpd:0:13040000.mali: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: none
+[  516.976433] genpd genpd:0:13040000.mali: genpd_resume_noirq+0x0/0xd0 returned 0 after 485 usecs
+[  516.976448] genpd genpd:1:13040000.mali: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: none
+[  516.976526] genpd genpd:1:13040000.mali: genpd_resume_noirq+0x0/0xd0 returned 0 after 64 usecs
+[  516.976542] genpd genpd:2:13040000.mali: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: none
+[  516.976621] genpd genpd:2:13040000.mali: genpd_resume_noirq+0x0/0xd0 returned 0 after 64 usecs
+[  516.976766] mediatek-dpi 14015000.dpi: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.976778] mediatek-dpi 14015000.dpi: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.976900] mtk-mdp3 14001000.mdp3_rdma0: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.976912] mtk-mdp3 14001000.mdp3_rdma0: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.976926] mtk-fd-4.0 1502b000.fd: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.976938] mtk-fd-4.0 1502b000.fd: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.976952] mtk-cam-dip 15022000.dip: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.976963] mtk-cam-dip 15022000.dip: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.977056] mtk-jpeg 17030000.venc_jpg: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.977069] mtk-jpeg 17030000.venc_jpg: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.977084] mtk-vcodec-enc 17020000.vcodec: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.977095] mtk-vcodec-enc 17020000.vcodec: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.977110] mtk-vcodec-dec 16000000.vcodec: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.977121] mtk-vcodec-dec 16000000.vcodec: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.977135] mtk-cam-p1 1a000000.camisp: calling genpd_resume_noirq+0x0/0xd0 @ 6028, parent: soc
+[  516.977146] mtk-cam-p1 1a000000.camisp: genpd_resume_noirq+0x0/0xd0 returned 0 after 0 usecs
+[  516.977213] PM: noirq resume of devices complete after 4.018 msecs
+[  516.977904] i2c i2c-6: calling i2c_resume_early+0x0/0x74 @ 6038, parent: 11005000.i2c
+[  516.977914] i2c i2c-0: calling i2c_resume_early+0x0/0x74 @ 192, parent: 11007000.i2c
+[  516.977924] i2c i2c-0: i2c_resume_early+0x0/0x74 returned 0 after 0 usecs
+[  516.977937] i2c i2c-4: calling i2c_resume_early+0x0/0x74 @ 192, parent: 11008000.i2c
+[  516.977945] i2c i2c-4: i2c_resume_early+0x0/0x74 returned 0 after 0 usecs
+[  516.977958] at24 4-0050: calling i2c_resume_early+0x0/0x74 @ 192, parent: i2c-4
+[  516.977969] i2c i2c-6: i2c_resume_early+0x0/0x74 returned 0 after 0 usecs
+[  516.977987] mtk-iommu 10205000.iommu: calling pm_runtime_force_resume+0x0/0xac @ 6028, parent: soc
+[  516.977994] i2c i2c-2: calling i2c_resume_early+0x0/0x74 @ 6038, parent: 11009000.i2c
+[  516.978001] at24 4-0050: i2c_resume_early+0x0/0x74 returned 0 after 3 usecs
+[  516.978020] i2c i2c-2: i2c_resume_early+0x0/0x74 returned 0 after 0 usecs
+[  516.978034] at24 2-0058: calling i2c_resume_early+0x0/0x74 @ 192, parent: i2c-2
+[  516.978041] i2c i2c-3: calling i2c_resume_early+0x0/0x74 @ 6038, parent: 1100f000.i2c
+[  516.978050] at24 2-0058: i2c_resume_early+0x0/0x74 returned 0 after 2 usecs
+[  516.978057] i2c i2c-3: i2c_resume_early+0x0/0x74 returned 0 after 0 usecs
+[  516.978066] i2c i2c-1: calling i2c_resume_early+0x0/0x74 @ 192, parent: 11011000.i2c
+[  516.978075] i2c i2c-5: calling i2c_resume_early+0x0/0x74 @ 6038, parent: 11016000.i2c
+[  516.978081] i2c i2c-1: i2c_resume_early+0x0/0x74 returned 0 after 0 usecs
+[  516.978090] i2c i2c-5: i2c_resume_early+0x0/0x74 returned 0 after 0 usecs
+[  516.978098] i2c_hid_of 0-005d: calling i2c_resume_early+0x0/0x74 @ 192, parent: i2c-0
+[  516.978106] i2c_hid_of 0-005d: i2c_resume_early+0x0/0x74 returned 0 after 0 usecs
+[  516.978131] mtk-iommu 10205000.iommu: pm_runtime_force_resume+0x0/0xac returned 0 after 0 usecs
+[  516.978140] it6505 3-005c: calling i2c_resume_early+0x0/0x74 @ 5937, parent: i2c-3
+[  516.978148] it6505 3-005c: i2c_resume_early+0x0/0x74 returned 0 after 0 usecs
+[  516.978157] i2c i2c-13: calling i2c_resume_early+0x0/0x74 @ 5937, parent: 3-005c
+[  516.978163] mtk-smi-common 14019000.smi: calling pm_runtime_force_resume+0x0/0xac @ 6028, parent: soc
+[  516.978170] mtk-smi-common 14019000.smi: pm_runtime_force_resume+0x0/0xac returned 0 after 0 usecs
+[  516.978178] mtk-smi-larb 14017000.larb: calling pm_runtime_force_resume+0x0/0xac @ 6028, parent: soc
+[  516.978184] mtk-smi-larb 14017000.larb: pm_runtime_force_resume+0x0/0xac returned 0 after 0 usecs
+[  516.978194] mtk-smi-larb 15021000.larb: calling pm_runtime_force_resume+0x0/0xac @ 6028, parent: soc
+[  516.978201] mtk-smi-larb 15021000.larb: pm_runtime_force_resume+0x0/0xac returned 0 after 0 usecs
+[  516.978209] mtk-smi-larb 1502f000.larb: calling pm_runtime_force_resume+0x0/0xac @ 6028, parent: soc
+[  516.978215] i2c i2c-13: i2c_resume_early+0x0/0x74 returned 0 after 0 usecs
+[  516.978228] mtk-smi-larb 1502f000.larb: pm_runtime_force_resume+0x0/0xac returned 0 after 0 usecs
+[  516.978241] mtk-smi-larb 16010000.larb: calling pm_runtime_force_resume+0x0/0xac @ 6028, parent: soc
+[  516.978252] mtk-smi-larb 16010000.larb: pm_runtime_force_resume+0x0/0xac returned 0 after 0 usecs
+[  516.978264] mtk-smi-larb 17010000.larb: calling pm_runtime_force_resume+0x0/0xac @ 6028, parent: soc
+[  516.978274] mtk-smi-larb 17010000.larb: pm_runtime_force_resume+0x0/0xac returned 0 after 0 usecs
+[  516.978280] dw9768 2-000c: calling i2c_resume_early+0x0/0x74 @ 5937, parent: i2c-2
+[  516.978289] dw9768 2-000c: i2c_resume_early+0x0/0x74 returned 0 after 1 usecs
+[  516.978300] ov8856 2-0010: calling i2c_resume_early+0x0/0x74 @ 5937, parent: i2c-2
+[  516.978308] ov8856 2-0010: i2c_resume_early+0x0/0x74 returned 0 after 1 usecs
+[  516.978319] ov02a10 4-003d: calling i2c_resume_early+0x0/0x74 @ 5937, parent: i2c-4
+[  516.978324] mtk-smi-larb 1a001000.larb: calling pm_runtime_force_resume+0x0/0xac @ 6028, parent: soc
+[  516.978331] mtk-smi-larb 1a001000.larb: pm_runtime_force_resume+0x0/0xac returned 0 after 0 usecs
+[  516.978341] mtk-smi-larb 1a002000.larb: calling pm_runtime_force_resume+0x0/0xac @ 6028, parent: soc
+[  516.978347] mtk-smi-larb 1a002000.larb: pm_runtime_force_resume+0x0/0xac returned 0 after 0 usecs
+[  516.978360] ov02a10 4-003d: i2c_resume_early+0x0/0x74 returned 0 after 1 usecs
+[  516.978410] i2c i2c-12: calling i2c_resume_early+0x0/0x74 @ 6038, parent: 11012000.spi:cros-ec@0:i2c-tunnel
+[  516.978424] i2c i2c-12: i2c_resume_early+0x0/0x74 returned 0 after 0 usecs
+[  516.978460] sbs-battery 12-000b: calling i2c_resume_early+0x0/0x74 @ 192, parent: i2c-12
+[  516.978474] sbs-battery 12-000b: i2c_resume_early+0x0/0x74 returned 0 after 0 usecs
+[  516.978719] PM: early resume of devices complete after 1.292 msecs
+[  516.978871] reg-dummy reg-dummy: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.978884] reg-dummy reg-dummy: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.978899] regulator regulator.0: calling regulator_resume+0x0/0x164 @ 6028, parent: reg-dummy
+[  516.978935] regulator regulator.0: regulator_resume+0x0/0x164 returned 0 after 1 usecs
+[  516.978954] ramoops ffedb000.ramoops: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.978965] ramoops ffedb000.ramoops: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.978978] coreboot_table ffed9000.coreboot: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.978988] coreboot_table ffed9000.coreboot: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979016] platform firmware:chromeos: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.979273] platform firmware:chromeos: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979287] armv8-pmu pmu-a53: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.979298] armv8-pmu pmu-a53: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979310] armv8-pmu pmu-a73: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.979320] armv8-pmu pmu-a73: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979332] psci-cpuidle-domain psci: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.979343] psci-cpuidle-domain psci: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979355] platform fixed-factor-clock-13m: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.979365] platform fixed-factor-clock-13m: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979377] platform timer: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.979387] platform timer: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979399] platform soc: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.979409] platform soc: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979434] mediatek,efuse 8000000.soc_data: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.979444] mediatek,efuse 8000000.soc_data: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979457] clk-mt8183 c530000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.979468] clk-mt8183 c530000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979480] clk-mt8183 10000000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.979490] clk-mt8183 10000000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979502] clk-mt8183 10001000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.979512] clk-mt8183 10001000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979524] clk-mt8183 10003000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.979534] clk-mt8183 10003000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979546] mt8183-pinctrl 10005000.pinctrl: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.979557] mt8183-pinctrl 10005000.pinctrl: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979570] platform 10006000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.979580] platform 10006000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979592] mtk-wdt 10007000.watchdog: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.979606] mtk-wdt 10007000.watchdog: platform_pm_resume+0x0/0x54 returned 0 after 4 usecs
+[  516.979618] clk-mt8183 1000c000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.979629] clk-mt8183 1000c000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979641] mt-pmic-pwrap 1000d000.pwrap: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.979651] mt-pmic-pwrap 1000d000.pwrap: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979664] mtk-scp 10500000.scp: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.979674] mtk-scp 10500000.scp: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979686] platform 10017000.timer: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.979696] platform 10017000.timer: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.979708] mtk_cmdq 10238000.mailbox: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.979724] mtk_cmdq 10238000.mailbox: platform_pm_resume+0x0/0x54 returned 0 after 5 usecs
+[  516.979737] mt6577-auxadc 11001000.auxadc: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.980754] mt6577-auxadc 11001000.auxadc: platform_pm_resume+0x0/0x54 returned 0 after 981 usecs
+[  516.980767] mt6577-uart 11002000.serial: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.980889] mt6577-uart 11002000.serial: platform_pm_resume+0x0/0x54 returned 0 after 107 usecs
+[  516.980903] mt6577-uart 11003000.serial: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981034] mt6577-uart 11003000.serial: platform_pm_resume+0x0/0x54 returned 0 after 115 usecs
+[  516.981048] i2c-mt65xx 11005000.i2c: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981058] i2c-mt65xx 11005000.i2c: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981083] i2c-mt65xx 11007000.i2c: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981094] i2c-mt65xx 11007000.i2c: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981119] mtk-spi 1100a000.spi: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981145] mtk-spi 1100a000.spi: platform_pm_resume+0x0/0x54 returned 0 after 15 usecs
+[  516.981160] i2c_hid_of 0-005d: calling i2c_hid_core_resume+0x0/0xec @ 6040, parent: i2c-0
+[  516.981178] mtk-thermal 1100b000.thermal: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981223] mtk-thermal 1100b000.thermal: platform_pm_resume+0x0/0x54 returned 0 after 33 usecs
+[  516.981236] platform 11006000.pwm: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981246] platform 11006000.pwm: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981258] i2c-mt65xx 1100f000.i2c: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981268] i2c-mt65xx 1100f000.i2c: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981294] mtk-spi 11010000.spi: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981319] mtk-spi 11010000.spi: platform_pm_resume+0x0/0x54 returned 0 after 13 usecs
+[  516.981332] i2c-mt65xx 11011000.i2c: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981342] i2c-mt65xx 11011000.i2c: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981364] mtk-spi 11012000.spi: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981386] mtk-spi 11012000.spi: platform_pm_resume+0x0/0x54 returned 0 after 10 usecs
+[  516.981399] i2c-mt65xx 11016000.i2c: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981409] i2c-mt65xx 11016000.i2c: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981426] clk-mt8183-audio 11220000.audio-controller: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981437] clk-mt8183-audio 11220000.audio-controller: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981449] mediatek-mipi-tx 11e50000.mipi-dphy: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981460] mediatek-mipi-tx 11e50000.mipi-dphy: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981472] mediatek,efuse 11f10000.efuse: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981483] mediatek,efuse 11f10000.efuse: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981495] mtk-tphy soc:usb-phy@11f40000: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981505] mtk-tphy soc:usb-phy@11f40000: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981517] mtk-mmsys 14000000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981527] mtk-mmsys 14000000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981540] platform 14003000.mdp3_rsz0: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981550] platform 14003000.mdp3_rsz0: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981562] platform 14004000.mdp3_rsz1: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981572] platform 14004000.mdp3_rsz1: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981585] platform 14005000.mdp3_wrot0: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981595] platform 14005000.mdp3_wrot0: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981607] platform 14006000.mdp3_wdma: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981617] platform 14006000.mdp3_wdma: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981629] platform 14012000.dither: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981639] platform 14012000.dither: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981652] platform 1401c000.mdp3_ccorr: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981662] platform 1401c000.mdp3_ccorr: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981674] clk-mt8183-img 15020000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981685] clk-mt8183-img 15020000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981697] clk-mt8183-vdec 16000000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981708] clk-mt8183-vdec 16000000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981720] clk-mt8183-venc 17000000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981730] clk-mt8183-venc 17000000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981742] clk-mt8183-ipu_conn 19000000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981753] clk-mt8183-ipu_conn 19000000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981765] clk-mt8183-ipu_adl 19010000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981775] clk-mt8183-ipu_adl 19010000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981788] clk-mt8183-ipu_core0 19180000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981798] clk-mt8183-ipu_core0 19180000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981810] clk-mt8183-ipu_core1 19280000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981820] clk-mt8183-ipu_core1 19280000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981833] clk-mt8183-cam 1a000000.syscon: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.981844] clk-mt8183-cam 1a000000.syscon: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981857] reg-fixed-voltage regulator0: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.981867] reg-fixed-voltage regulator0: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981879] reg-fixed-voltage regulator1: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.981889] reg-fixed-voltage regulator1: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981901] reg-fixed-voltage regulator2: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.981911] reg-fixed-voltage regulator2: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981923] reg-fixed-voltage regulator3: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.981934] reg-fixed-voltage regulator3: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981946] reg-fixed-voltage regulator4: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.981956] reg-fixed-voltage regulator4: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981968] reg-fixed-voltage regulator5: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.981978] reg-fixed-voltage regulator5: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.981990] reg-fixed-voltage regulator6: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.982012] reg-fixed-voltage regulator6: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.982025] bt-sco bt-sco: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.982036] bt-sco bt-sco: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.982048] pwrseq_simple wifi-pwrseq: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.982059] pwrseq_simple wifi-pwrseq: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.982071] gpio-keys wifi-wakeup: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.982093] gpio-keys wifi-wakeup: platform_pm_resume+0x0/0x54 returned 0 after 11 usecs
+[  516.982106] max98357a max98357a: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.982116] max98357a max98357a: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.982128] reg-fixed-voltage ppvarn-lcd: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.982138] reg-fixed-voltage ppvarn-lcd: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.982150] reg-fixed-voltage ppvarp-lcd: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.982160] reg-fixed-voltage ppvarp-lcd: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.982172] reg-fixed-voltage pp1800-lcd: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.982182] reg-fixed-voltage pp1800-lcd: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.982203] regulator regulator.1: calling regulator_resume+0x0/0x164 @ 6028, parent: regulator0
+[  516.982214] regulator regulator.1: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982231] regulator regulator.2: calling regulator_resume+0x0/0x164 @ 6028, parent: regulator1
+[  516.982242] regulator regulator.2: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982254] regulator regulator.3: calling regulator_resume+0x0/0x164 @ 6028, parent: regulator2
+[  516.982265] regulator regulator.3: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982276] regulator regulator.4: calling regulator_resume+0x0/0x164 @ 6028, parent: regulator3
+[  516.982287] regulator regulator.4: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982299] regulator regulator.5: calling regulator_resume+0x0/0x164 @ 6028, parent: regulator4
+[  516.982310] regulator regulator.5: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982322] regulator regulator.6: calling regulator_resume+0x0/0x164 @ 6028, parent: regulator5
+[  516.982333] regulator regulator.6: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982345] regulator regulator.7: calling regulator_resume+0x0/0x164 @ 6028, parent: regulator6
+[  516.982355] regulator regulator.7: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982367] regulator regulator.8: calling regulator_resume+0x0/0x164 @ 6028, parent: ppvarn-lcd
+[  516.982378] regulator regulator.8: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982390] regulator regulator.9: calling regulator_resume+0x0/0x164 @ 6028, parent: ppvarp-lcd
+[  516.982400] regulator regulator.9: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982412] regulator regulator.10: calling regulator_resume+0x0/0x164 @ 6028, parent: pp1800-lcd
+[  516.982423] regulator regulator.10: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982465] mt6397 1000d000.pwrap:mt6358: calling platform_pm_resume+0x0/0x54 @ 6028, parent: 1000d000.pwrap
+[  516.982475] mt6397 1000d000.pwrap:mt6358: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.982487] clk-mt8183-mm clk-mt8183-mm.0.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: 14000000.syscon
+[  516.982497] clk-mt8183-mm clk-mt8183-mm.0.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.982510] serial8250 serial8250: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.982521] serial8250 serial8250: platform_pm_resume+0x0/0x54 returned 0 after 1 usecs
+[  516.982553] hci_uart_qca serial0-0: calling qca_resume+0x0/0x50 [hci_uart] @ 6028, parent: serial0
+[  516.982572] hci_uart_qca serial0-0: qca_resume+0x0/0x50 [hci_uart] returned 0 after 0 usecs
+[  516.982598] mt6358-regulator mt6358-regulator: calling platform_pm_resume+0x0/0x54 @ 6028, parent: 1000d000.pwrap:mt6358
+[  516.982609] mt6358-regulator mt6358-regulator: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.982621] regulator regulator.11: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982632] regulator regulator.11: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982644] regulator regulator.12: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982654] regulator regulator.12: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982666] regulator regulator.13: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982677] regulator regulator.13: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982688] regulator regulator.14: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982699] regulator regulator.14: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982711] regulator regulator.15: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982721] regulator regulator.15: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982733] regulator regulator.16: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982744] regulator regulator.16: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982755] regulator regulator.17: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982767] regulator regulator.17: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982778] regulator regulator.18: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982789] regulator regulator.18: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982801] regulator regulator.19: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982811] regulator regulator.19: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982824] regulator regulator.20: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982834] regulator regulator.20: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982846] regulator regulator.21: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982857] regulator regulator.21: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982869] regulator regulator.22: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982879] regulator regulator.22: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982891] regulator regulator.23: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982902] regulator regulator.23: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982914] regulator regulator.24: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982924] regulator regulator.24: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982936] regulator regulator.25: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982947] regulator regulator.25: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.982964] regulator regulator.26: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.982971] mtu3 11201000.usb: calling platform_pm_resume+0x0/0x54 @ 192, parent: soc
+[  516.982985] regulator regulator.26: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983021] regulator regulator.27: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983034] regulator regulator.27: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983042] mtu3 11201000.usb: platform_pm_resume+0x0/0x54 returned 0 after 61 usecs
+[  516.983054] regulator regulator.28: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983065] regulator regulator.28: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983078] xhci-mtk 11200000.xhci: calling platform_pm_resume+0x0/0x54 @ 6038, parent: 11201000.usb
+[  516.983095] regulator regulator.29: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983102] xhci-mtk 11200000.xhci: platform_pm_resume+0x0/0x54 returned 0 after 12 usecs
+[  516.983117] regulator regulator.29: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983131] usb usb1: calling usb_dev_resume+0x0/0x28 @ 6037, parent: 11200000.xhci
+[  516.983138] usb usb2: calling usb_dev_resume+0x0/0x28 @ 6036, parent: 11200000.xhci
+[  516.983143] regulator regulator.30: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983151] regulator regulator.30: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983161] regulator regulator.31: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983167] usb usb2: usb_dev_resume+0x0/0x28 returned 0 after 16 usecs
+[  516.983172] regulator regulator.31: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983180] regulator regulator.32: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983186] regulator regulator.32: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983196] regulator regulator.33: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983203] regulator regulator.33: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983212] regulator regulator.34: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983219] regulator regulator.34: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983227] regulator regulator.35: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983238] regulator regulator.35: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983250] regulator regulator.36: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983260] regulator regulator.36: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983272] regulator regulator.37: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983283] regulator regulator.37: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983295] regulator regulator.38: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983305] usb usb1: usb_dev_resume+0x0/0x28 returned 0 after 67 usecs
+[  516.983309] regulator regulator.38: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983318] regulator regulator.39: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983324] regulator regulator.39: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983332] regulator regulator.40: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983339] regulator regulator.40: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983348] regulator regulator.41: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983355] regulator regulator.41: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983363] regulator regulator.42: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983375] regulator regulator.42: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983386] regulator regulator.43: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983395] usb 1-1: calling usb_dev_resume+0x0/0x28 @ 6046, parent: usb1
+[  516.983406] regulator regulator.43: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983418] regulator regulator.44: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983428] regulator regulator.44: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983440] regulator regulator.45: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983451] regulator regulator.45: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983463] regulator regulator.46: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983473] regulator regulator.46: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983486] regulator regulator.47: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983496] regulator regulator.47: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983508] regulator regulator.48: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983518] regulator regulator.48: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983530] regulator regulator.49: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983541] regulator regulator.49: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983553] regulator regulator.50: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983563] regulator regulator.50: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983576] regulator regulator.51: calling regulator_resume+0x0/0x164 @ 6028, parent: mt6358-regulator
+[  516.983586] regulator regulator.51: regulator_resume+0x0/0x164 returned 0 after 0 usecs
+[  516.983601] mt6397-rtc mt6358-rtc: calling platform_pm_resume+0x0/0x54 @ 6028, parent: 1000d000.pwrap:mt6358
+[  516.983617] it6505 3-005c: calling it6505_bridge_resume+0x0/0x28 @ 6044, parent: i2c-3
+[  516.983634] mt6397-rtc mt6358-rtc: platform_pm_resume+0x0/0x54 returned 0 after 4 usecs
+[  516.983656] tpm_tis_spi spi0.0: calling tpm_tis_spi_resume+0x0/0x38 @ 6028, parent: spi0
+[  516.983667] tpm_tis_spi spi0.0: tpm_tis_spi_resume+0x0/0x38 returned 0 after 1 usecs
+[  516.983685] mtd mtd0: calling mtd_cls_resume+0x0/0x64 @ 6028, parent: spi1.0
+[  516.984131] mtd mtd0: mtd_cls_resume+0x0/0x64 returned 0 after 422 usecs
+[  516.984148] mtd mtd0ro: calling mtd_cls_resume+0x0/0x64 @ 6028, parent: spi1.0
+[  516.984159] mtd mtd0ro: mtd_cls_resume+0x0/0x64 returned 0 after 0 usecs
+[  516.984177] cros-ec-spi spi2.0: calling cros_ec_spi_resume+0x0/0x28 @ 6028, parent: spi2
+[  516.985614] cros-ec-spi spi2.0: cros_ec_spi_resume+0x0/0x28 returned 0 after 1389 usecs
+[  516.985630] platform Fixed MDIO bus.0: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.985641] platform Fixed MDIO bus.0: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.985665] rtc rtc0: calling rtc_resume+0x0/0x140 @ 6028, parent: mt6358-rtc
+[  516.985676] rtc rtc0: rtc_resume+0x0/0x140 returned 0 after 1 usecs
+[  516.985689] alarmtimer alarmtimer.2.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: rtc0
+[  516.985702] alarmtimer alarmtimer.2.auto: platform_pm_resume+0x0/0x54 returned 0 after 2 usecs
+[  516.985716] i2c-mt65xx 11008000.i2c: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.985727] i2c-mt65xx 11008000.i2c: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.985748] i2c-mt65xx 11009000.i2c: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.985759] i2c-mt65xx 11009000.i2c: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.985769] at24 4-0050: calling pm_runtime_force_resume+0x0/0xac @ 6035, parent: i2c-4
+[  516.985778] ov02a10 4-003d: calling pm_runtime_force_resume+0x0/0xac @ 6060, parent: i2c-4
+[  516.985783] at24 4-0050: pm_runtime_force_resume+0x0/0xac returned 0 after 0 usecs
+[  516.985790] ov02a10 4-003d: pm_runtime_force_resume+0x0/0xac returned 0 after 0 usecs
+[  516.985818] mtk-cpufreq mtk-cpufreq: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.985829] mtk-cpufreq mtk-cpufreq: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.985835] at24 2-0058: calling pm_runtime_force_resume+0x0/0xac @ 6033, parent: i2c-2
+[  516.985847] dw9768 2-000c: calling pm_runtime_force_resume+0x0/0xac @ 6058, parent: i2c-2
+[  516.985865] ov8856 2-0010: calling ov8856_resume+0x0/0x80 [ov8856] @ 6059, parent: i2c-2
+[  516.985872] at24 2-0058: pm_runtime_force_resume+0x0/0xac returned 0 after 0 usecs
+[  516.985879] dw9768 2-000c: pm_runtime_force_resume+0x0/0xac returned 0 after 0 usecs
+[  516.985910] psci-cpuidle psci-cpuidle: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.985920] psci-cpuidle psci-cpuidle: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.985959] mtk-msdc 11240000.mmc: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.985971] mtk-msdc 11240000.mmc: platform_pm_resume+0x0/0x54 returned 0 after 1 usecs
+[  516.985991] mtk-msdc 11230000.mmc: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.986016] mtk-msdc 11230000.mmc: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.986025] mmc mmc1:0001: calling mmc_bus_resume+0x0/0x6c @ 6043, parent: mmc1
+[  516.986046] mediatek-cci-devfreq cci: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.986056] mediatek-cci-devfreq cci: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.986070] mmcblk mmc0:0001: calling mmc_bus_resume+0x0/0x6c @ 6034, parent: mmc0
+[  516.986092] mmcblk mmc0:0001: mmc_bus_resume+0x0/0x6c returned 0 after 12 usecs
+[  516.986099] snd-soc-dummy snd-soc-dummy: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.986108] snd-soc-dummy snd-soc-dummy: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.986118] cros-ec-dev cros-ec-dev.3.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: spi2.0
+[  516.986125] cros-ec-dev cros-ec-dev.3.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.986136] cros-ec-sensorhub cros-ec-sensorhub.4.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.3.auto
+[  516.986596] cros-ec-sensorhub cros-ec-sensorhub.4.auto: platform_pm_resume+0x0/0x54 returned 0 after 439 usecs
+[  516.986611] cros-usbpd-charger cros-usbpd-charger.5.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.3.auto
+[  516.986634] cros-usbpd-charger cros-usbpd-charger.5.auto: platform_pm_resume+0x0/0x54 returned 0 after 11 usecs
+[  516.986710] cros-usbpd-logger cros-usbpd-logger.6.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.3.auto
+[  516.986725] cros-usbpd-logger cros-usbpd-logger.6.auto: platform_pm_resume+0x0/0x54 returned 0 after 3 usecs
+[  516.986740] cros-usbpd-notify cros-usbpd-notify.7.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.3.auto
+[  516.986751] cros-usbpd-notify cros-usbpd-notify.7.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.986764] cros-ec-chardev cros-ec-chardev.8.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.3.auto
+[  516.986774] cros-ec-chardev cros-ec-chardev.8.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.986788] cros-ec-debugfs cros-ec-debugfs.9.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.3.auto
+[  516.986806] cros-ec-debugfs cros-ec-debugfs.9.auto: platform_pm_resume+0x0/0x54 returned 0 after 6 usecs
+[  516.986842] platform cros-ec-lightbar.10.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.3.auto
+[  516.986854] platform cros-ec-lightbar.10.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.986866] cros-ec-pd-sysfs cros-ec-pd-sysfs.11.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.3.auto
+[  516.986876] cros-ec-pd-sysfs cros-ec-pd-sysfs.11.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.986892] amba d410000.cpu-debug: calling pm_generic_resume+0x0/0x44 @ 6028, parent: soc
+[  516.986903] amba d410000.cpu-debug: pm_generic_resume+0x0/0x44 returned 0 after 0 usecs
+[  516.986915] amba d510000.cpu-debug: calling pm_generic_resume+0x0/0x44 @ 6028, parent: soc
+[  516.986926] amba d510000.cpu-debug: pm_generic_resume+0x0/0x44 returned 0 after 0 usecs
+[  516.986947] amba d610000.cpu-debug: calling pm_generic_resume+0x0/0x44 @ 6028, parent: soc
+[  516.986958] amba d610000.cpu-debug: pm_generic_resume+0x0/0x44 returned 0 after 0 usecs
+[  516.986970] amba d710000.cpu-debug: calling pm_generic_resume+0x0/0x44 @ 6028, parent: soc
+[  516.986980] amba d710000.cpu-debug: pm_generic_resume+0x0/0x44 returned 0 after 0 usecs
+[  516.986993] amba d810000.cpu-debug: calling pm_generic_resume+0x0/0x44 @ 6028, parent: soc
+[  516.987017] amba d810000.cpu-debug: pm_generic_resume+0x0/0x44 returned 0 after 0 usecs
+[  516.987029] amba d910000.cpu-debug: calling pm_generic_resume+0x0/0x44 @ 6028, parent: soc
+[  516.987040] amba d910000.cpu-debug: pm_generic_resume+0x0/0x44 returned 0 after 0 usecs
+[  516.987061] cros-ec-sysfs cros-ec-sysfs.12.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.3.auto
+[  516.987072] cros-ec-sysfs cros-ec-sysfs.12.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.987085] amba da10000.cpu-debug: calling pm_generic_resume+0x0/0x44 @ 6028, parent: soc
+[  516.987096] amba da10000.cpu-debug: pm_generic_resume+0x0/0x44 returned 0 after 0 usecs
+[  516.987109] cros-ec-pd-update cros-ec-pd-update.13.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.3.auto
+[  516.987123] cros-ec-pd-update cros-ec-pd-update.13.auto: platform_pm_resume+0x0/0x54 returned 0 after 3 usecs
+[  516.987136] amba db10000.cpu-debug: calling pm_generic_resume+0x0/0x44 @ 6028, parent: soc
+[  516.987147] amba db10000.cpu-debug: pm_generic_resume+0x0/0x44 returned 0 after 0 usecs
+[  516.987160] mtk-power-controller 10006000.syscon:power-controller: calling platform_pm_resume+0x0/0x54 @ 6028, parent: 10006000.syscon
+[  516.987179] mtk-power-controller 10006000.syscon:power-controller: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.987199] generic-adc-thermal thermal-sensor1: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.987209] generic-adc-thermal thermal-sensor1: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.987221] generic-adc-thermal thermal-sensor2: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.987231] generic-adc-thermal thermal-sensor2: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.987251] pwm pwmchip0: calling pwm_class_resume+0x0/0x2c @ 6028, parent: 1100e000.pwm
+[  516.987264] pwm pwmchip0: pwm_class_resume+0x0/0x2c returned 0 after 1 usecs
+[  516.987285] pwm-backlight backlight_lcd0: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  516.987299] pwm-backlight backlight_lcd0: platform_pm_resume+0x0/0x54 returned 0 after 3 usecs
+[  516.987314] backlight backlight_lcd0: calling backlight_resume+0x0/0x94 @ 6028, parent: backlight_lcd0
+[  516.987326] backlight backlight_lcd0: backlight_resume+0x0/0x94 returned 0 after 0 usecs
+[  516.987340] mtk-iommu 10205000.iommu: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.987351] mtk-iommu 10205000.iommu: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.987398] panel-boe-tv101wum-nl6 14014000.dsi.0: calling pm_generic_resume+0x0/0x44 @ 6028, parent: 14014000.dsi
+[  516.987410] panel-boe-tv101wum-nl6 14014000.dsi.0: pm_generic_resume+0x0/0x44 returned 0 after 0 usecs
+[  516.987423] mali 13040000.mali: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.988032] mali 13040000.mali: platform_pm_resume+0x0/0x54 returned 0 after 582 usecs
+[  516.988055] mtk-svs 1100b000.svs: calling platform_pm_resume+0x0/0x54 @ 6028, parent: soc
+[  516.988108]  SVSB_CPU_LITTLE: svs_init02_isr_handler: VOP74~30:0x1b232b32~0x363a3e44, DC:0x00000020
+[  516.988294]  SVSB_CPU_BIG: svs_init02_isr_handler: VOP74~30:0x1d252d34~0x383c4146, DC:0x00000078
+[  516.988367]  SVSB_CCI: svs_init02_isr_handler: VOP74~30:0x1a202930~0x34393f44, DC:0x00000000
+[  516.988579]  SVSB_GPU: svs_init02_isr_handler: VOP74~30:0x17181a1c~0x2023262a, DC:0x00000030
+[  516.988669] mtk-svs 1100b000.svs: platform_pm_resume+0x0/0x54 returned 0 after 578 usecs
+[  516.988686] input input0: calling input_dev_resume+0x0/0x50 @ 6028, parent: wifi-wakeup
+[  516.988699] input input0: input_dev_resume+0x0/0x50 returned 0 after 1 usecs
+[  516.988712] platform cros-ec-pchg.14.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.3.auto
+[  516.988722] platform cros-ec-pchg.14.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.988734] platform cros-ec-throttler.15.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.3.auto
+[  516.988745] platform cros-ec-throttler.15.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.988758] cros-ec-i2c-tunnel 11012000.spi:cros-ec@0:i2c-tunnel: calling platform_pm_resume+0x0/0x54 @ 6028, parent: spi2.0
+[  516.988769] cros-ec-i2c-tunnel 11012000.spi:cros-ec@0:i2c-tunnel: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  516.988930] extcon-usbc-cros-ec 11012000.spi:cros-ec@0:extcon0: calling platform_pm_resume+0x0/0x54 @ 6028, parent: spi2.0
+[  516.989428] ov8856 2-0010: ov8856_resume+0x0/0x80 [ov8856] returned 0 after 3464 usecs
+[  517.038935] it6505 3-005c: it6505_bridge_resume+0x0/0x28 returned 0 after 54007 usecs
+[  517.051675] mmc1: queuing unknown CIS tuple 0x01 (3 bytes)
+[  517.059023] mmc1: queuing unknown CIS tuple 0x1a (5 bytes)
+[  517.062238] mmc1: queuing unknown CIS tuple 0x1b (8 bytes)
+[  517.062886] mmc1: queuing unknown CIS tuple 0x14 (0 bytes)
+[  517.065849] mtk-msdc 11240000.mmc: phase: [map:f83fffff] [maxlen:22] [final:7]
+[  517.065872] mmc mmc1:0001: mmc_bus_resume+0x0/0x6c returned 0 after 77965 usecs
+[  517.066020] ath10k_sdio mmc1:0001:1: calling pm_generic_resume+0x0/0x44 @ 6031, parent: mmc1:0001
+[  517.066034] ath10k_sdio mmc1:0001:1: pm_generic_resume+0x0/0x44 returned 0 after 0 usecs
+[  517.066149] ieee80211 phy0: calling wiphy_resume+0x0/0x1b4 [cfg80211] @ 6057, parent: mmc1:0001:1
+[  517.075055] extcon-usbc-cros-ec 11012000.spi:cros-ec@0:extcon0: platform_pm_resume+0x0/0x54 returned 0 after 84091 usecs
+[  517.075097] hdmi-audio-codec hdmi-audio-codec.16.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: 3-005c
+[  517.075108] hdmi-audio-codec hdmi-audio-codec.16.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.075122] mt8183_mt6358_ts3a227 mt8183-sound: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  517.075133] mt8183_mt6358_ts3a227 mt8183-sound: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.075174] mt6358-sound mt6358-sound: calling platform_pm_resume+0x0/0x54 @ 6028, parent: 1000d000.pwrap:mt6358
+[  517.075185] mt6358-sound mt6358-sound: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.075214] input input1: calling input_dev_resume+0x0/0x50 @ 6028, parent: card0
+[  517.075226] input input1: input_dev_resume+0x0/0x50 returned 0 after 0 usecs
+[  517.075246] mediatek-drm mediatek-drm.1.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: 14000000.syscon
+[  517.075365] mediatek-drm mediatek-drm.1.auto: platform_pm_resume+0x0/0x54 returned 0 after 97 usecs
+[  517.075393] cbas_ec 11012000.spi:cros-ec@0:cbas: calling platform_pm_resume+0x0/0x54 @ 6028, parent: spi2.0
+[  517.077744] cbas_ec 11012000.spi:cros-ec@0:cbas: platform_pm_resume+0x0/0x54 returned 0 after 2283 usecs
+[  517.077759] cros-ec-typec 11012000.spi:cros-ec@0:typec: calling platform_pm_resume+0x0/0x54 @ 6028, parent: spi2.0
+[  517.077775] cros-ec-typec 11012000.spi:cros-ec@0:typec: platform_pm_resume+0x0/0x54 returned 0 after 5 usecs
+[  517.077801] cros-ec-keyb 11012000.spi:cros-ec@0:keyboard-controller: calling platform_pm_resume+0x0/0x54 @ 6028, parent: spi2.0
+[  517.081831] usb 1-1: usb_dev_resume+0x0/0x28 returned 0 after 96118 usecs
+[  517.081885] usb 1-1.1: calling usb_dev_resume+0x0/0x28 @ 6052, parent: 1-1
+[  517.082171] cros-ec-keyb 11012000.spi:cros-ec@0:keyboard-controller: platform_pm_resume+0x0/0x54 returned 0 after 4253 usecs
+[  517.082215] input input2: calling input_dev_resume+0x0/0x50 @ 6028, parent: 11012000.spi:cros-ec@0:keyboard-controller
+[  517.082228] input input2: input_dev_resume+0x0/0x50 returned 0 after 0 usecs
+[  517.086831] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 0: lost: 4966 out of 15699
+[  517.086844] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 2: lost: 24 out of 15699
+[  517.086854] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 3: lost: 24 out of 15699
+[  517.086863] cros-ec-sensorhub cros-ec-sensorhub.4.auto: Sensor 5: lost: 2 out of 15699
+[  517.094940] usb 1-1.1: usb_dev_resume+0x0/0x28 returned 0 after 12705 usecs
+[  517.123202] i2c_hid_of 0-005d: i2c_hid_core_resume+0x0/0xec returned 0 after 138682 usecs
+[  517.123418] input input3: calling input_dev_resume+0x0/0x50 @ 6028, parent: 0018:27C6:0E30.0001
+[  517.123433] input input3: input_dev_resume+0x0/0x50 returned 0 after 1 usecs
+[  517.123449] input input4: calling input_dev_resume+0x0/0x50 @ 6028, parent: 0018:27C6:0E30.0001
+[  517.123461] input input4: input_dev_resume+0x0/0x50 returned 0 after 0 usecs
+[  517.123476] input input5: calling input_dev_resume+0x0/0x50 @ 6028, parent: 0018:27C6:0E30.0001
+[  517.123487] input input5: input_dev_resume+0x0/0x50 returned 0 after 0 usecs
+[  517.123503] input input6: calling input_dev_resume+0x0/0x50 @ 6028, parent: 0018:27C6:0E30.0001
+[  517.123514] input input6: input_dev_resume+0x0/0x50 returned 0 after 0 usecs
+[  517.123543] input input8: calling input_dev_resume+0x0/0x50 @ 6028, parent: 0003:18D1:503C.0003
+[  517.123554] input input8: input_dev_resume+0x0/0x50 returned 0 after 0 usecs
+[  517.123575] input input9: calling input_dev_resume+0x0/0x50 @ 6028, parent: 11012000.spi:cros-ec@0:cbas
+[  517.123587] input input9: input_dev_resume+0x0/0x50 returned 0 after 0 usecs
+[  517.123602] input input10: calling input_dev_resume+0x0/0x50 @ 6028, parent: 0003:18D1:503C.0002
+[  517.123613] input input10: input_dev_resume+0x0/0x50 returned 0 after 0 usecs
+[  517.123649] cros-ec-sensors cros-ec-accel.17.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-sensorhub.4.auto
+[  517.127109] cros-ec-sensors cros-ec-accel.17.auto: platform_pm_resume+0x0/0x54 returned 0 after 3365 usecs
+[  517.127124] cros-ec-sensors cros-ec-gyro.18.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-sensorhub.4.auto
+[  517.127136] cros-ec-sensors cros-ec-gyro.18.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.127150] cros-ec-light-prox cros-ec-light.19.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-sensorhub.4.auto
+[  517.127161] cros-ec-light-prox cros-ec-light.19.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.127175] cros-ec-sync cros-ec-sync.20.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-sensorhub.4.auto
+[  517.127186] cros-ec-sync cros-ec-sync.20.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.127199] platform cros-ec-activity.21.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-sensorhub.4.auto
+[  517.127209] platform cros-ec-activity.21.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.127229] platform regulatory.0: calling platform_pm_resume+0x0/0x54 @ 6028, parent: platform
+[  517.127239] platform regulatory.0: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.447287] ieee80211 phy0: wiphy_resume+0x0/0x1b4 [cfg80211] returned 0 after 372076 usecs
+[  517.447327] rfkill rfkill0: calling rfkill_resume+0x0/0x80 @ 6028, parent: phy0
+[  517.447348] rfkill rfkill0: rfkill_resume+0x0/0x80 returned 0 after 6 usecs
+[  517.447389] rfkill rfkill1: calling rfkill_resume+0x0/0x80 @ 6028, parent: hci0
+[  517.447407] rfkill rfkill1: rfkill_resume+0x0/0x80 returned 0 after 6 usecs
+[  517.447438] cros-ec-rpmsg 10500000.scp.cros-ec-rpmsg.13.-1: calling cros_ec_rpmsg_resume+0x0/0x28 [cros_ec_rpmsg] @ 6028, parent: 10500000.scp
+[  517.447686] cros-ec-rpmsg 10500000.scp.cros-ec-rpmsg.13.-1: cros_ec_rpmsg_resume+0x0/0x28 [cros_ec_rpmsg] returned 0 after 227 usecs
+[  517.447717] mtk-mdp3 14001000.mdp3_rdma0: calling mdp_resume+0x0/0x64 [mtk_mdp3] @ 6028, parent: soc
+[  517.447875] mtk-mdp3 14001000.mdp3_rdma0: resume enter : stage flag 1st 0, 2nd 0
+[  517.447884] mtk-mdp3 14001000.mdp3_rdma0: resume done : stage flag 1st 0, 2nd 0
+[  517.447903] mtk-mdp3 14001000.mdp3_rdma0: mdp_resume+0x0/0x64 [mtk_mdp3] returned 0 after 18 usecs
+[  517.447923] mtk-fd-4.0 1502b000.fd: calling mtk_fd_resume+0x0/0xbc [mtk_fd] @ 6028, parent: soc
+[  517.447935] mtk-fd-4.0 1502b000.fd: mtk_fd_resume+0x0/0xbc [mtk_fd] returned 0 after 0 usecs
+[  517.447955] mtk-cam-dip 15022000.dip: calling mtk_dip_pm_resume+0x0/0xb8 [mtk_dip] @ 6028, parent: soc
+[  517.447970] mtk-cam-dip 15022000.dip: mtk_dip_pm_resume+0x0/0xb8 [mtk_dip] returned 0 after 0 usecs
+[  517.448037] mtk-jpeg 17030000.venc_jpg: calling mtk_jpeg_resume+0x0/0x44 [mtk_jpeg] @ 6028, parent: soc
+[  517.448054] mtk-jpeg 17030000.venc_jpg: mtk_jpeg_resume+0x0/0x44 [mtk_jpeg] returned 0 after 4 usecs
+[  517.448082] mtk-cam-p1 1a000000.camisp: calling mtk_isp_pm_resume+0x0/0xb4 [mtk_cam_isp] @ 6028, parent: soc
+[  517.448096] mtk-cam-p1 1a000000.camisp: mtk_isp_pm_resume+0x0/0xb4 [mtk_cam_isp] returned 0 after 0 usecs
+[  517.448131] cros-ec-dev cros-ec-dev.22.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: 10500000.scp.cros-ec-rpmsg.13.-1
+[  517.448142] cros-ec-dev cros-ec-dev.22.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.448157] cros-ec-chardev cros-ec-chardev.23.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.22.auto
+[  517.448168] cros-ec-chardev cros-ec-chardev.23.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.448183] cros-ec-debugfs cros-ec-debugfs.24.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.22.auto
+[  517.448200] cros-ec-debugfs cros-ec-debugfs.24.auto: platform_pm_resume+0x0/0x54 returned 0 after 5 usecs
+[  517.448272] platform cros-ec-lightbar.25.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.22.auto
+[  517.448330] platform cros-ec-lightbar.25.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.448377] cros-ec-pd-sysfs cros-ec-pd-sysfs.26.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.22.auto
+[  517.448388] cros-ec-pd-sysfs cros-ec-pd-sysfs.26.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.448402] cros-ec-sysfs cros-ec-sysfs.27.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.22.auto
+[  517.448413] cros-ec-sysfs cros-ec-sysfs.27.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.448427] cros-ec-pd-update cros-ec-pd-update.28.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.22.auto
+[  517.448440] cros-ec-pd-update cros-ec-pd-update.28.auto: platform_pm_resume+0x0/0x54 returned 0 after 2 usecs
+[  517.448453] platform cros-ec-pchg.29.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.22.auto
+[  517.448464] platform cros-ec-pchg.29.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.448477] platform cros-ec-throttler.30.auto: calling platform_pm_resume+0x0/0x54 @ 6028, parent: cros-ec-dev.22.auto
+[  517.448487] platform cros-ec-throttler.30.auto: platform_pm_resume+0x0/0x54 returned 0 after 0 usecs
+[  517.448540] PM: resume of devices complete after 469.810 msecs
+[  517.450811] PM: Finishing wakeup.
+[  517.450816] OOM killer enabled.
+[  517.450822] Restarting tasks ... done.
+[  517.457132] Resume cause unknown
+[  517.463091] PM: suspend exit
+[  517.519853] mtk-msdc 11230000.mmc: phase: [map:ffffffff] [maxlen:32] [final:10]

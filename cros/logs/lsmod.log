@@ -1,0 +1,64 @@
+Module                  Size  Used by
+veth                   28672  0
+rfcomm                 57344  2
+algif_hash             20480  1
+algif_skcipher         20480  1
+af_alg                 28672  6 algif_hash,algif_skcipher
+xt_cgroup              20480  2
+xt_MASQUERADE          16384  1
+uinput                 32768  0
+cros_ec_rpmsg          16384  0
+mtk_seninf             20480  0
+mtk_vcodec_dec        102400  0
+mtk_cam_isp            45056  0
+mtk_vcodec_enc         40960  0
+mtk_jpeg               36864  0
+v4l2_h264              16384  1 mtk_vcodec_dec
+v4l2_vp9               24576  1 mtk_vcodec_dec
+mtk_vcodec_common      16384  2 mtk_vcodec_enc,mtk_vcodec_dec
+mtk_vpu                20480  1 mtk_vcodec_common
+mtk_dip                49152  0
+mtk_fd                 20480  0
+mtk_mdp3               98304  1 mtk_dip
+videobuf2_dma_contig    24576  7 mtk_jpeg,mtk_vcodec_enc,mtk_mdp3,mtk_fd,mtk_dip,mtk_vcodec_dec,mtk_cam_isp
+videobuf2_memops       20480  1 videobuf2_dma_contig
+v4l2_mem2mem           28672  5 mtk_jpeg,mtk_vcodec_enc,mtk_mdp3,mtk_fd,mtk_vcodec_dec
+videobuf2_v4l2         24576  8 mtk_jpeg,mtk_vcodec_enc,mtk_mdp3,mtk_fd,mtk_dip,mtk_vcodec_dec,mtk_cam_isp,v4l2_mem2mem
+videobuf2_common       53248  9 mtk_jpeg,mtk_vcodec_enc,mtk_mdp3,videobuf2_v4l2,mtk_fd,mtk_dip,mtk_vcodec_dec,mtk_cam_isp,v4l2_mem2mem
+ov02a10                24576  1
+hci_uart               65536  0
+btqca                  20480  1 hci_uart
+btrtl                  24576  1 hci_uart
+ov8856                 28672  1
+v4l2_fwnode            20480  4 ov02a10,ov8856,mtk_seninf,mtk_cam_isp
+dw9768                 20480  1
+mtk_scp                20480  5 mtk_vcodec_common,mtk_mdp3,mtk_fd,mtk_dip,mtk_cam_isp
+mtk_rpmsg              20480  1 mtk_scp
+rpmsg_core             16384  2 mtk_rpmsg,cros_ec_rpmsg
+mtk_scp_ipi            16384  6 mtk_vcodec_common,mtk_scp,mtk_mdp3,mtk_fd,mtk_dip,mtk_cam_isp
+ip6table_nat           16384  1
+fuse                  126976  0
+ath10k_sdio            36864  0
+ath10k_core           516096  1 ath10k_sdio
+ath                    36864  1 ath10k_core
+mac80211              802816  1 ath10k_core
+bluetooth             659456  33 btrtl,btqca,hci_uart,rfcomm
+cfg80211              733184  3 ath,mac80211,ath10k_core
+iio_trig_sysfs         16384  0
+ecdh_generic           16384  2 bluetooth
+ecc                    28672  1 ecdh_generic
+cros_ec_activity       16384  0
+cros_ec_sensors_sync    16384  0
+cros_ec_light_prox     16384  0
+cros_ec_sensors        16384  0
+cros_ec_sensors_core    20480  6 cros_ec_light_prox,cros_ec_sensors,cros_ec_activity,cros_ec_sensors_sync
+industrialio_triggered_buffer    16384  1 cros_ec_sensors_core
+kfifo_buf              16384  2 industrialio_triggered_buffer,cros_ec_sensors_core
+cros_ec_sensorhub      28672  2 cros_ec_light_prox,cros_ec_sensors_core
+cros_ec_typec          24576  0
+typec                  49152  1 cros_ec_typec
+lzo_rle                16384  8
+lzo_compress           16384  1 lzo_rle
+zram                   36864  1
+hid_google_hammer      16384  0
+joydev                 49152  0

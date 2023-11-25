@@ -1,0 +1,386 @@
+video-dec0:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'MM21' (Mediatek 8-bit Block Format)
+video-enc0:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'H264' (H.264, compressed)
+		Size: Stepwise 160x128 - 1920x1088 with step 16/16
+video0:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+video1:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+video10:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+video11:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture
+
+video12:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+video13:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+video14:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'VYUY' (VYUY 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[1]: 'YUYV' (YUYV 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[2]: 'YVYU' (YVYU 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[3]: 'YV12' (Planar YVU 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[4]: 'NV12' (Y/CbCr 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[5]: 'YM12' (Planar YUV 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[6]: 'YM21' (Planar YVU 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[7]: 'NM12' (Y/CbCr 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+video15:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'VYUY' (VYUY 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[1]: 'YUYV' (YUYV 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[2]: 'YVYU' (YVYU 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[3]: 'YV12' (Planar YVU 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[4]: 'NV12' (Y/CbCr 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[5]: 'YM12' (Planar YUV 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[6]: 'YM21' (Planar YVU 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[7]: 'NM12' (Y/CbCr 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+video16:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'YUYV' (YUYV 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+video17:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'VYUY' (VYUY 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[1]: 'YUYV' (YUYV 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[2]: 'YVYU' (YVYU 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[3]: 'YV12' (Planar YVU 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[4]: 'NV12' (Y/CbCr 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[5]: 'YM21' (Planar YVU 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[6]: 'NM12' (Y/CbCr 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+video18:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+video19:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture
+
+video2:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'GREY' (8-bit Greyscale)
+	[1]: 'RGBR' (16-bit RGB 5-6-5 BE)
+	[2]: 'RGBP' (16-bit RGB 5-6-5)
+	[3]: 'RGB3' (24-bit RGB 8-8-8)
+	[4]: 'BGR3' (24-bit BGR 8-8-8)
+	[5]: 'AR24' (32-bit BGRA 8-8-8-8)
+	[6]: 'BA24' (32-bit ARGB 8-8-8-8)
+	[7]: 'UYVY' (UYVY 4:2:2)
+	[8]: 'VYUY' (VYUY 4:2:2)
+	[9]: 'YUYV' (YUYV 4:2:2)
+	[10]: 'YVYU' (YVYU 4:2:2)
+	[11]: 'YU12' (Planar YUV 4:2:0)
+	[12]: 'YV12' (Planar YVU 4:2:0)
+	[13]: 'NV12' (Y/CbCr 4:2:0)
+	[14]: 'NV21' (Y/CrCb 4:2:0)
+	[15]: 'NM12' (Y/CbCr 4:2:0 (N-C))
+	[16]: 'NM21' (Y/CrCb 4:2:0 (N-C))
+	[17]: 'YM12' (Planar YUV 4:2:0 (N-C))
+	[18]: 'YM21' (Planar YVU 4:2:0 (N-C))
+video20:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+video21:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+video22:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'VYUY' (VYUY 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[1]: 'YUYV' (YUYV 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[2]: 'YVYU' (YVYU 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[3]: 'YV12' (Planar YVU 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[4]: 'NV12' (Y/CbCr 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[5]: 'YM12' (Planar YUV 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[6]: 'YM21' (Planar YVU 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[7]: 'NM12' (Y/CbCr 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+video23:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'VYUY' (VYUY 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[1]: 'YUYV' (YUYV 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[2]: 'YVYU' (YVYU 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[3]: 'YV12' (Planar YVU 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[4]: 'NV12' (Y/CbCr 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[5]: 'YM12' (Planar YUV 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[6]: 'YM21' (Planar YVU 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[7]: 'NM12' (Y/CbCr 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+video24:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'YUYV' (YUYV 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+video25:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'VYUY' (VYUY 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[1]: 'YUYV' (YUYV 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[2]: 'YVYU' (YVYU 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[3]: 'YV12' (Planar YVU 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[4]: 'NV12' (Y/CbCr 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[5]: 'YM21' (Planar YVU 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[6]: 'NM12' (Y/CbCr 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+video26:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'H264' (H.264, compressed)
+		Size: Stepwise 160x128 - 1920x1088 with step 16/16
+video27:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture
+
+video28:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'MBBA' (10-bit Bayer BGGR MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[1]: 'MBB8' (8-bit Bayer BGGR MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[2]: 'MBBC' (12-bit Bayer BGGR MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[3]: 'MBBE' (14-bit Bayer BGGR MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[4]: 'MBG8' (8-bit Bayer GBRG MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[5]: 'MBGA' (10-bit Bayer GBRG MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[6]: 'MBGC' (12-bit Bayer GBRG MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[7]: 'MBGE' (14-bit Bayer GBRG MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[8]: 'MBg8' (8-bit Bayer GRBG MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[9]: 'MBgA' (10-bit Bayer GRBG MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[10]: 'MBgC' (12-bit Bayer GRBG MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[11]: 'MBgE' (14-bit Bayer GRBG MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[12]: 'MBR8' (8-bit Bayer RGGB MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[13]: 'MBRA' (10-bit Bayer RGGB MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[14]: 'MBRC' (12-bit Bayer RGGB MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[15]: 'MBRE' (14-bit Bayer RGGB MTISP Packed)
+		Size: Continuous 80x60 - 5376x4032
+video29:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'MFB8' (8-bit Full-G Bayer BGGR Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[1]: 'MFBA' (10-bit Full-G Bayer BGGR Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[2]: 'MFBC' (12-bit Full-G Bayer BGGR Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[3]: 'MFBE' (14-bit Full-G Bayer BGGR Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[4]: 'MFG8' (8-bit Full-G Bayer GBRG Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[5]: 'MFGA' (10-bit Full-G Bayer GBRG Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[6]: 'MFGC' (12-bit Full-G Bayer GBRG Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[7]: 'MFGE' (14-bit Full-G Bayer GBRG Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[8]: 'MFg8' (8-bit Full-G Bayer GRBG Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[9]: 'MFgA' (10-bit Full-G Bayer GRBG Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[10]: 'MFgC' (12-bit Full-G Bayer GRBG Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[11]: 'MFgE' (14-bit Full-G Bayer GRBG Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[12]: 'MFR8' (8-bit Full-G Bayer RGGB Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[13]: 'MFRA' (10-bit Full-G Bayer RGGB Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[14]: 'MFRC' (12-bit Full-G Bayer RGGB Packed)
+		Size: Continuous 80x60 - 5376x4032
+	[15]: 'MFRE' (14-bit Full-G Bayer RGGB Packed)
+		Size: Continuous 80x60 - 5376x4032
+video3:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture
+
+video30:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture
+
+video31:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture
+
+video32:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture
+
+video33:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture
+
+video34:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'MM21' (Mediatek 8-bit Block Format)
+video35:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'JPEG' (JFIF JPEG, compressed)
+video4:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+video5:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+video6:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'VYUY' (VYUY 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[1]: 'YUYV' (YUYV 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[2]: 'YVYU' (YVYU 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[3]: 'YV12' (Planar YVU 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[4]: 'NV12' (Y/CbCr 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[5]: 'YM12' (Planar YUV 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[6]: 'YM21' (Planar YVU 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[7]: 'NM12' (Y/CbCr 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+video7:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'VYUY' (VYUY 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[1]: 'YUYV' (YUYV 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[2]: 'YVYU' (YVYU 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[3]: 'YV12' (Planar YVU 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[4]: 'NV12' (Y/CbCr 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[5]: 'YM12' (Planar YUV 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[6]: 'YM21' (Planar YVU 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[7]: 'NM12' (Y/CbCr 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+video8:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'YUYV' (YUYV 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+video9:
+ioctl: VIDIOC_ENUM_FMT
+	Type: Video Capture Multiplanar
+
+	[0]: 'VYUY' (VYUY 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[1]: 'YUYV' (YUYV 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[2]: 'YVYU' (YVYU 4:2:2)
+		Size: Continuous 2x2 - 5376x4032
+	[3]: 'YV12' (Planar YVU 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[4]: 'NV12' (Y/CbCr 4:2:0)
+		Size: Continuous 2x2 - 5376x4032
+	[5]: 'YM21' (Planar YVU 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032
+	[6]: 'NM12' (Y/CbCr 4:2:0 (N-C))
+		Size: Continuous 2x2 - 5376x4032

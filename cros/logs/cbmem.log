@@ -1,0 +1,1040 @@
+coreboot-v1.9308_26_0.0.22-10563-g0e20d8643d Tue Sep 14 04:06:38 UTC 2021 verstage starting (log level: 8)...
+ARM64: Exception handlers installed.
+WDT: Last reset was cold boot
+SPI0(PAD0) initialized at 992727 Hz
+FMAP: area RW_NVRAM found @ 554000 (8192 bytes)
+Manufacturer: c8
+SF: Detected GD25LQ64C with sector size 0x1000, total 0x800000
+Probing TPM: . done!
+TPM ready after 0 ms
+Connected to device vid:did:rid of 1ae0:0028:00
+Firmware version: B2-D:0 RO_B:0.0.12/9eb618de RW_A:0.5.201/cr50_v2.94_mp.254-a67bbb0546
+Initialized TPM device CR50 revision 0
+tlcl_send_startup: Startup return code is 0
+TPM: setup succeeded
+src/security/tpm/tss/tcg-2.0/tss.c:223 index 0x1007 return code 0
+out: cmd=0xd: 03 f0 0d 00 00 00 00 00 
+in-header: 03 99 00 00 08 00 00 00 
+in-data: 22 e0 43 04 13 00 00 00 
+Chrome EC: UHEPI supported
+out: cmd=0xa4: 03 5d a4 00 00 00 0c 00 00 01 00 00 f4 fb 00 00 00 00 00 00 
+in-header: 03 a5 00 00 08 00 00 00 
+in-data: 00 20 20 10 00 00 00 00 
+Phase 1
+FMAP: area GBB found @ 3f5000 (12032 bytes)
+VB2:vb2_check_recovery() Recovery reason from previous boot: 0x0 / 0x0
+Phase 2
+Phase 3
+FMAP: area GBB found @ 3f5000 (12032 bytes)
+read SPI 0x3f5180 0x1000: 1292 us, 3170 KB/s, 25.360 Mbps
+FMAP: area VBLOCK_B found @ 5a7000 (8192 bytes)
+FMAP: area VBLOCK_B found @ 5a7000 (8192 bytes)
+VB2:vb2_verify_keyblock() Checking key block signature...
+FMAP: area VBLOCK_B found @ 5a7000 (8192 bytes)
+FMAP: area VBLOCK_B found @ 5a7000 (8192 bytes)
+VB2:vb2_verify_fw_preamble() Verifying preamble.
+Phase 4
+FMAP: area FW_MAIN_B found @ 5a9000 (1367808 bytes)
+VB2:vb2api_init_hash() HW crypto for hash_alg 2 not supported, using SW
+Saving nvdata
+tlcl_extend: response is 0
+tlcl_extend: response is 0
+tlcl_lock_nv_write: response is 0
+Slot B is selected
+
+
+coreboot-v1.9308_26_0.0.22-10563-g0e20d8643d Tue Sep 14 04:06:38 UTC 2021 romstage starting (log level: 8)...
+ARM64: Exception handlers installed.
+[RTC]rtc_enable_dcxo,41: con=0x482, osc32con=0xa26d, sec=0x2035
+[RTC]rtc_check_state,142: con=482, pwrkey1=a357, pwrkey2=67d2
+[RTC]rtc_eosc_cali,157: PMIC_RG_FQMTR_CKSEL=0x4a
+[RTC]rtc_get_frequency_meter,134: input=0xf, output=820
+[RTC]rtc_get_frequency_meter,134: input=0x7, output=695
+[RTC]rtc_get_frequency_meter,134: input=0xb, output=758
+[RTC]rtc_get_frequency_meter,134: input=0xd, output=790
+[RTC]rtc_get_frequency_meter,134: input=0xe, output=805
+[RTC]rtc_get_frequency_meter,134: input=0xd, output=789
+[RTC]rtc_get_frequency_meter,134: input=0xe, output=805
+[RTC]rtc_osc_init,208: EOSC32 cali val = 0xa26d
+[RTC]rtc_boot_common,186: irqsta=0, bbpu=0, con=482
+[RTC]rtc_bbpu_power_on,373: rtc_write_trigger=1
+[RTC]rtc_bbpu_power_on,376: done BBPU=0x9
+out: cmd=0xd: 03 f0 0d 00 00 00 00 00 
+in-header: 03 99 00 00 08 00 00 00 
+in-data: 22 e0 43 04 13 00 00 00 
+Chrome EC: UHEPI supported
+out: cmd=0xa4: 03 5d a4 00 00 00 0c 00 00 01 00 00 f4 fb 00 00 00 00 00 00 
+in-header: 03 a5 00 00 08 00 00 00 
+in-data: 00 20 20 10 00 00 00 00 
+FMAP: area RW_NVRAM found @ 554000 (8192 bytes)
+Manufacturer: c8
+SF: Detected GD25LQ64C with sector size 0x1000, total 0x800000
+FMAP: area RW_DDR_TRAINING found @ 556000 (8192 bytes)
+read_calibration_data_from_flash: ret=0x8f0, length=0x8f0
+DRAM-K: Fast Calibration
+Calibration params loaded from flash
+Run calibration (freq: 1600, first: 1)
+Vendor id is 0x1
+Run calibration (freq: 3200, first: 0)
+Vendor id is 0x1
+Run calibration (freq: 3600, first: 0)
+Vendor id is 0x1
+[MEM] complex R/W mem test pass : 0
+[MEM] complex R/W mem test pass : 0
+Mapping address range [0000000040000000:0000000140000000) as     cacheable | read-write | non-secure | normal
+CBMEM:
+IMD: root @ 00000000fffff000 254 entries.
+IMD: root @ 00000000ffffec00 62 entries.
+VBOOT: copying vboot_working_data (3840 bytes) to CBMEM...
+out: cmd=0xa4: 03 6c a4 00 00 00 0c 00 00 01 00 00 50 7f 11 00 00 00 00 00 
+in-header: 03 e5 00 00 08 00 00 00 
+in-data: 80 20 60 10 00 00 00 00 
+Chrome EC: clear events_b mask to 0x0000000020004000
+out: cmd=0xa4: 03 ea a4 00 00 00 0c 00 02 01 00 00 00 40 00 20 00 00 00 00 
+in-header: 03 fd 00 00 00 00 00 00 
+in-data: 
+CBFS: 'VBOOT' located CBFS at [5a9000:60d180)
+CBFS: Locating 'fallback/ramstage'
+CBFS: Found @ offset 10b40 size a6ee
+read SPI 0x5b9b94 0xa6d2: 13019 us, 3280 KB/s, 26.240 Mbps
+Accumulated console time in romstage 0 ms
+
+
+coreboot-v1.9308_26_0.0.22-10563-g0e20d8643d Tue Sep 14 04:06:38 UTC 2021 ramstage starting (log level: 8)...
+ARM64: Exception handlers installed.
+FMAP: area RO_VPD found @ 3f8000 (32768 bytes)
+Manufacturer: c8
+SF: Detected GD25LQ64C with sector size 0x1000, total 0x800000
+FMAP: area RW_VPD found @ 550000 (16384 bytes)
+FMAP: area RO_VPD found @ 3f8000 (32768 bytes)
+read SPI 0x3f8600 0x7a00: 9522 us, 3279 KB/s, 26.232 Mbps
+FMAP: area RW_VPD found @ 550000 (16384 bytes)
+read SPI 0x550600 0x3a00: 4532 us, 3276 KB/s, 26.208 Mbps
+BS: BS_PRE_DEVICE times (ms): entry 0 run 0 exit 0
+BS: BS_DEV_INIT_CHIPS times (ms): entry 0 run 0 exit 0
+Enumerating buses...
+Show all devs... Before device enumeration.
+Root Device: enabled 1
+CPU_CLUSTER: 0: enabled 1
+CPU: 00: enabled 1
+Compare with tree...
+Root Device: enabled 1
+ CPU_CLUSTER: 0: enabled 1
+  CPU: 00: enabled 1
+Root Device scanning...
+root_dev_scan_bus for Root Device
+CPU_CLUSTER: 0 enabled
+root_dev_scan_bus for Root Device done
+scan_bus: scanning of bus Root Device took 7 usecs
+done
+BS: BS_DEV_ENUMERATE times (ms): entry 0 run 0 exit 0
+Allocating resources...
+Reading resources...
+Root Device read_resources bus 0 link: 0
+CPU_CLUSTER: 0 read_resources bus 0 link: 0
+CPU: 00 missing read_resources
+CPU_CLUSTER: 0 read_resources bus 0 link: 0 done
+Root Device read_resources bus 0 link: 0 done
+Done reading resources.
+Show resources in subtree (Root Device)...After reading.
+ Root Device child on link 0 CPU_CLUSTER: 0
+  CPU_CLUSTER: 0 child on link 0 CPU: 00
+  CPU_CLUSTER: 0 resource base 40000000 size 100000000 align 0 gran 0 limit 0 flags e0004200 index 0
+   CPU: 00
+Setting resources...
+Root Device assign_resources, bus 0 link: 0
+CPU_CLUSTER: 0 missing set_resources
+Root Device assign_resources, bus 0 link: 0
+Done setting resources.
+Show resources in subtree (Root Device)...After assigning values.
+ Root Device child on link 0 CPU_CLUSTER: 0
+  CPU_CLUSTER: 0 child on link 0 CPU: 00
+  CPU_CLUSTER: 0 resource base 40000000 size 100000000 align 0 gran 0 limit 0 flags e0004200 index 0
+   CPU: 00
+Done allocating resources.
+BS: BS_DEV_RESOURCES times (ms): entry 0 run 0 exit 0
+Enabling resources...
+done.
+BS: BS_DEV_ENABLE times (ms): entry 0 run 0 exit 0
+Initializing devices...
+Root Device init ...
+mainboard_init: Starting display init.
+ADC[2]: Raw value=1429620 ID=11
+ADC[4]: Raw value=76066 ID=0
+CBFS: 'VBOOT' located CBFS at [5a9000:60d180)
+CBFS: Locating 'panel-BOE_TV101WUM_NL6'
+CBFS: Found @ offset 39540 size 1a8
+get_active_panel: Found ID 11: 'BOE TV101WUM-NL6' 1200x1920@60Hz
+DSI data_rate: 956550000 bps
+[SSUSB] Setting up USB HOST controller...
+[SSUSB] u3phy_ports_enable u2p:1, u3p:0
+[SSUSB] phy power-on done.
+SPM: pcm index = 0
+CBFS: 'VBOOT' located CBFS at [5a9000:60d180)
+CBFS: Locating 'pcm_allinone_lp4_3733.bin'
+CBFS: Found @ offset 1c7c0 size 1026
+read SPI 0x5c5808 0x1026: 1274 us, 3244 KB/s, 25.952 Mbps
+SPM: binary array size = 2988
+SPM: version = pcm_allinone_v1.17.2_20180829
+SPM binary loaded in 2 msecs
+spm_kick_im_to_fetch: ptr = 00000000402189b2
+spm_kick_im_to_fetch: len = 2988
+SPM: spm_kick_pcm_to_run
+SPM: spm_kick_pcm_to_run done
+SPM: spm_init done in 5 msecs
+Root Device init finished in 206091 usecs
+CPU_CLUSTER: 0 init ...
+Mapping address range [0000000000200000:0000000000280000) as     cacheable | read-write |     secure | device
+CBFS: 'VBOOT' located CBFS at [5a9000:60d180)
+CBFS: Locating 'sspm.bin'
+CBFS: Found @ offset 1d840 size 41cb
+read SPI 0x5c6878 0x41cb: 5143 us, 3274 KB/s, 26.192 Mbps
+CPU_CLUSTER: 0 init finished in 8336 usecs
+Devices initialized
+Show all devs... After init.
+Root Device: enabled 1
+CPU_CLUSTER: 0: enabled 1
+CPU: 00: enabled 1
+BS: BS_DEV_INIT times (ms): entry 0 run 214 exit 0
+FMAP: area RW_ELOG found @ 558000 (4096 bytes)
+ELOG: NV offset 0x558000 size 0x1000
+read SPI 0x558000 0x1000: 1260 us, 3250 KB/s, 26.000 Mbps
+ELOG: area is 4096 bytes, full threshold 3842, shrink size 1024
+ELOG: Event(17) added with size 13 at 2010-01-06 19:10:54 UTC
+out: cmd=0x121: 03 db 21 01 00 00 00 00 
+in-header: 03 f2 00 00 2c 00 00 00 
+in-data: 96 04 00 00 00 00 00 00 02 08 00 00 02 80 00 00 7d 16 00 00 02 80 00 00 92 14 00 00 09 80 00 00 e3 17 01 00 08 00 00 00 08 83 e4 03 
+out: cmd=0xd: 03 f0 0d 00 00 00 00 00 
+in-header: 03 99 00 00 08 00 00 00 
+in-data: 22 e0 43 04 13 00 00 00 
+Chrome EC: UHEPI supported
+out: cmd=0xa4: 03 54 a4 00 00 00 0c 00 00 01 00 00 f8 ff 01 00 00 00 00 00 
+in-header: 03 e5 00 00 08 00 00 00 
+in-data: 80 20 60 10 00 00 00 00 
+FMAP: area RW_NVRAM found @ 554000 (8192 bytes)
+ELOG: Event(A0) added with size 9 at 2010-01-06 19:10:54 UTC
+elog_add_boot_reason: Logged dev mode boot
+Finalize devices...
+Devices finalized
+BS: BS_POST_DEVICE times (ms): entry 3 run 0 exit 0
+BS: BS_OS_RESUME_CHECK times (ms): entry 0 run 0 exit 0
+Writing coreboot table at 0xffed9000
+ 0. 0000000000114000-000000000011efff: RAMSTAGE
+ 1. 0000000040000000-0000000040237fff: RAMSTAGE
+ 2. 0000000040238000-00000000545fffff: RAM
+ 3. 0000000054600000-000000005465ffff: BL31
+ 4. 0000000054660000-00000000ffed8fff: RAM
+ 5. 00000000ffed9000-00000000ffffffff: CONFIGURATION TABLES
+ 6. 0000000100000000-000000013fffffff: RAM
+Passing 5 GPIOs to payload:
+            NAME |       PORT | POLARITY |     VALUE
+   write protect | 0x00000096 |      low |      high
+        EC in RW | 0x000000b1 |     high | undefined
+    EC interrupt | 0x00000097 |      low | undefined
+   TPM interrupt | 0x00000099 |     high | undefined
+  speaker enable | 0x000000af |     high | undefined
+out: cmd=0x6: 03 f7 06 00 00 00 00 00 
+in-header: 03 f5 00 00 02 00 00 00 
+in-data: 06 00 
+Board ID: 6
+ADC[3]: Raw value=779857 ID=6
+RAM code: 6
+SKU ID: 176
+CBFS: 'VBOOT' located CBFS at [5a9000:60d180)
+Wrote coreboot table at: 00000000ffed9000, 0x368 bytes, checksum 2ff0
+coreboot table: 896 bytes.
+IMD ROOT    0. 00000000fffff000 00001000
+IMD SMALL   1. 00000000ffffe000 00001000
+CONSOLE     2. 00000000fffde000 00020000
+FMAP        3. 00000000fffdd000 0000047c
+TIME STAMP  4. 00000000fffdc000 00000910
+VBOOT WORK  5. 00000000fffdb000 00000f00
+RAMOOPS     6. 00000000ffedb000 00100000
+COREBOOT    7. 00000000ffed9000 00002000
+IMD small region:
+  IMD ROOT    0. 00000000ffffec00 00000400
+  EC HOSTEVENT 1. 00000000ffffebe0 00000008
+  VPD         2. 00000000ffffe920 000002b3
+BS: BS_WRITE_TABLES times (ms): entry 0 run 0 exit 0
+out: cmd=0xa4: 03 a7 a4 00 00 00 0c 00 00 01 00 00 58 ed 20 40 00 00 00 00 
+in-header: 03 e5 00 00 08 00 00 00 
+in-data: 80 20 60 10 00 00 00 00 
+Probing TPM:  done!
+Connected to device vid:did:rid of 1ae0:0028:00
+Firmware version: B2-D:0 RO_B:0.0.12/9eb618de RW_A:0.5.201/cr50_v2.94_mp.254-a67bbb0546
+Initialized TPM device CR50 revision 0
+Checking cr50 for pending updates
+Reading cr50 TPM mode
+CBFS: 'VBOOT' located CBFS at [5a9000:60d180)
+CBFS: Locating 'fallback/payload'
+CBFS: Found @ offset 4d380 size 16d99
+read SPI 0x5f63b8 0x16d99: 28526 us, 3280 KB/s, 26.240 Mbps
+Checking segment from ROM address 0x000000004000b400
+Checking segment from ROM address 0x000000004000b41c
+Loading segment from ROM address 0x000000004000b400
+  code (compression=1)
+  New segment dstaddr 0x0000000080000000 memsize 0x11809c0 srcaddr 0x000000004000b438 filesize 0x16d61
+Loading Segment: addr: 0x0000000080000000 memsz: 0x00000000011809c0 filesz: 0x0000000000016d61
+using LZMA
+[ 0x80000000, 80033068, 0x811809c0) <- 4000b438
+Clearing Segment: addr: 0x0000000080033068 memsz: 0x000000000114d958
+Loading segment from ROM address 0x000000004000b41c
+  Entry Point 0x0000000080000000
+Loaded segments
+BS: BS_PAYLOAD_LOAD times (ms): entry 9 run 45 exit 0
+Jumping to boot code at 0000000080000000(00000000ffed9000)
+CPU0: stack: 0000000000114000 - 0000000000118000, lowest used address 00000000001176a0, stack used: 2400 bytes
+CBFS: 'VBOOT' located CBFS at [5a9000:60d180)
+CBFS: Locating 'fallback/bl31'
+CBFS: Found @ offset 33d40 size 4ae5
+read SPI 0x5dcd68 0x4ae5: 5851 us, 3276 KB/s, 26.208 Mbps
+Checking segment from ROM address 0x000000004000b400
+Checking segment from ROM address 0x000000004000b41c
+Loading segment from ROM address 0x000000004000b400
+  code (compression=1)
+  New segment dstaddr 0x0000000054600000 memsize 0x27000 srcaddr 0x000000004000b438 filesize 0x4aad
+Loading Segment: addr: 0x0000000054600000 memsz: 0x0000000000027000 filesz: 0x0000000000004aad
+using LZMA
+[ 0x54600000, 5460d408, 0x54627000) <- 4000b438
+Clearing Segment: addr: 0x000000005460d408 memsz: 0x0000000000019bf8
+Loading segment from ROM address 0x000000004000b41c
+  Entry Point 0x0000000054601000
+Loaded segments
+NOTICE:  MT8183 bl31_setup
+NOTICE:  BL31: v2.1(release):v2.1-806-g3addeb68c
+NOTICE:  BL31: Built : Tue Sep 14 04:06:38 UTC 2021
+INFO:    [DEVAPC] dump DEVAPC registers:
+INFO:    [DEVAPC] (INFRA)D0_APC_0 = 0x0, (INFRA)D1_APC_0 = 0xfcfffffc, (INFRA)D2_APC_0 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_1 = 0x0, (INFRA)D1_APC_1 = 0xffffffff, (INFRA)D2_APC_1 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_2 = 0x0, (INFRA)D1_APC_2 = 0xffffffff, (INFRA)D2_APC_2 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_3 = 0x0, (INFRA)D1_APC_3 = 0xffffffff, (INFRA)D2_APC_3 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_4 = 0x80000000, (INFRA)D1_APC_4 = 0xffffffff, (INFRA)D2_APC_4 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_5 = 0x2aaa, (INFRA)D1_APC_5 = 0xfcff3fff, (INFRA)D2_APC_5 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_6 = 0x0, (INFRA)D1_APC_6 = 0xffffffff, (INFRA)D2_APC_6 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_7 = 0x0, (INFRA)D1_APC_7 = 0xffffffff, (INFRA)D2_APC_7 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_8 = 0x0, (INFRA)D1_APC_8 = 0xffffffff, (INFRA)D2_APC_8 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_9 = 0x0, (INFRA)D1_APC_9 = 0xffffffff, (INFRA)D2_APC_9 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_10 = 0x0, (INFRA)D1_APC_10 = 0xffffffff, (INFRA)D2_APC_10 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_11 = 0x0, (INFRA)D1_APC_11 = 0xffffffff, (INFRA)D2_APC_11 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_12 = 0x0, (INFRA)D1_APC_12 = 0xff, (INFRA)D2_APC_12 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_0 = 0x0, (MM)D1_APC_0 = 0xffc000ff, (MM)D2_APC_0 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_1 = 0x0, (MM)D1_APC_1 = 0x3fffffff, (MM)D2_APC_1 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_2 = 0x0, (MM)D1_APC_2 = 0xcffff33c, (MM)D2_APC_2 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_3 = 0x0, (MM)D1_APC_3 = 0x3ccfc0ff, (MM)D2_APC_3 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_4 = 0x0, (MM)D1_APC_4 = 0xffff0000, (MM)D2_APC_4 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_5 = 0x0, (MM)D1_APC_5 = 0xffffffff, (MM)D2_APC_5 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_6 = 0x0, (MM)D1_APC_6 = 0xffffffff, (MM)D2_APC_6 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_7 = 0x0, (MM)D1_APC_7 = 0xffffffff, (MM)D2_APC_7 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_8 = 0x0, (MM)D1_APC_8 = 0x3ffffff, (MM)D2_APC_8 = 0x0
+INFO:    [DEVAPC] MAS_DOM_0 = 0x1
+INFO:    [DEVAPC] MAS_DOM_1 = 0x200
+INFO:    [DEVAPC] MAS_DOM_2 = 0x0
+INFO:    [DEVAPC] MAS_DOM_3 = 0x2000
+INFO:    [DEVAPC] MAS_SEC_0 = 0x8000000
+INFO:    [DEVAPC]  (INFRA)MAS_DOMAIN_REMAP_0 = 0x88, (INFRA)MAS_DOMAIN_REMAP_1 = 0x0
+INFO:    [DEVAPC]  (MM)MAS_DOMAIN_REMAP_0 = 0x24
+WARNING: region 0:
+WARNING: 	apc:0x168, sa:0x0, ea:0xfff
+WARNING: region 1:
+WARNING: 	apc:0x140, sa:0x1000, ea:0x128f
+WARNING: region 2:
+WARNING: 	apc:0x168, sa:0x1290, ea:0x1fff
+WARNING: region 3:
+WARNING: 	apc:0x168, sa:0x2000, ea:0xbfff
+WARNING: region 4:
+WARNING: 	apc:0x168, sa:0xc000, ea:0x1ffff
+WARNING: region 5:
+WARNING: 	apc:0x0, sa:0x0, ea:0x0
+WARNING: region 6:
+WARNING: 	apc:0x0, sa:0x0, ea:0x0
+WARNING: region 7:
+WARNING: 	apc:0x0, sa:0x0, ea:0x0
+INFO:    GICv3 without legacy support detected. ARM GICv3 driver initialized in EL3
+INFO:    SPM: enable SPMC mode
+NOTICE:  spm_boot_init() start
+NOTICE:  spm_boot_init() end
+INFO:    BL31: Initializing runtime services
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x80000000
+INFO:    SPSR = 0x8
+
+
+Starting depthcharge on Krane...
+vboot_handoff: creating legacy vboot_handoff structure
+vboot_handoff: copying FW preamble
+ec_init(0): CrosEC protocol v3 supported (544, 544)
+Wipe memory regions:
+	[0x00000040000000, 0x00000054600000)
+	[0x00000054660000, 0x00000080000000)
+	[0x000000811809c0, 0x000000ffed9000)
+	[0x00000100000000, 0x00000140000000)
+Initializing XHCI USB controller at 0x11200000.
+Calling VbSelectAndLoadKernel().
+Connected to device vid:did:rid of 1ae0:0028:00
+tpm_get_response: command 0x14e, return code 0x0
+ReadSpaceKernel: TPM: read secdata_kernel: 02 4c 57 52 47 02 00 01 00 00 00 00 33
+RollbackKernelRead: TPM: RollbackKernelRead 0x10002
+tpm_get_response: command 0x14e, return code 0x28b
+RollbackFwmpRead: TPM: no FWMP space
+VbSelectAndLoadKernel: GBB flags are 0x0
+print_hash: RW(active) hash: 85b8cb93b04ed42d395cd019ed72ca37799129fee1c7243e63b5ab67a36b5465
+Trying to locate 'ecrw.hash' in CBFS
+sync_one_ec: devidx=0 select_rw=4
+sync_one_ec: jumping to EC-RW
+EC returned from reboot after 4527us
+CBGFX: cbgfx initialized: screen:width=1920, height=1200, offset=0 canvas:width=1200, height=1200, offset=360
+vboot_init_locale: Supported locales: en, es-419, pt-BR, fr, es, pt-PT, ca, it, de, el, nl, da, nb, sv, fi, et, lv, lt, ru, pl, cs, sk, hu, sl, sr, hr, bg, ro, uk, tr, he, ar, fa, hi, th, ms, vi, id, fil, zh-CN, zh-TW, ko, ja, bn, gu, kn, ml, mr, ta, te, (50 locales)
+load_archive: loading vbgfx.bin
+load_archive: loading font.bin
+vb2_log_menu_change: ================ Developer Warning Menu ================ [ Power Off ]
+vboot_draw_ui: screen=0x20a locale=0, selected_index=3,disabled_idx_mask=0x0
+load_archive: loading locale_en.bin
+vb2_log_menu_change: ================ Developer Warning Menu ================ [ Enable OS Verification ]
+vboot_draw_ui: screen=0x20a locale=0, selected_index=2,disabled_idx_mask=0x0
+vb2_log_menu_change: ================ Developer Warning Menu ================ [ Show Debug Info ]
+vboot_draw_ui: screen=0x20a locale=0, selected_index=1,disabled_idx_mask=0x0
+vb2_log_menu_change: ================ Developer Warning Menu ================ [ Developer Options ]
+vboot_draw_ui: screen=0x20a locale=0, selected_index=0,disabled_idx_mask=0x0
+vb2_log_menu_change: ================ Developer Boot Options Menu ================ [ Boot From Internal Disk ]
+vboot_draw_ui: screen=0x20b locale=0, selected_index=3,disabled_idx_mask=0x1
+boot_disk_action: trying fixed disk
+Man 000015 Snr 1314902098 Product DV6DAB Revision 0.2
+VbTryLoadKernel: trying disk 0
+GptNextKernelEntry: GptNextKernelEntry looking at new prio partition 2
+GptNextKernelEntry: GptNextKernelEntry s1 t0 p1
+GptNextKernelEntry: GptNextKernelEntry looking at new prio partition 4
+GptNextKernelEntry: GptNextKernelEntry s1 t0 p2
+GptNextKernelEntry: GptNextKernelEntry looking at new prio partition 6
+GptNextKernelEntry: GptNextKernelEntry s0 t15 p0
+GptNextKernelEntry: GptNextKernelEntry likes partition 4
+LoadKernel: Found kernel entry at 65605 size 65536
+vb2_verify_keyblock: Checking key block signature...
+vb2_rsa_verify_digest: Digest check failed!
+vb2_verify_keyblock: Invalid key block signature.
+vb2_verify_kernel_vblock: Verifying key block signature failed.
+vb2_verify_keyblock_hash: Checking key block hash...
+vb2_verify_kernel_preamble: Verifying kernel preamble.
+vb2_verify_kernel_vblock: Kernel preamble is good.
+vb2_load_partition: read 10408 KB in 238 ms at 43641 KB/s.
+vb2_load_partition: Partition is good.
+LoadKernel: Key block valid: 0
+LoadKernel: Combined version: 65538
+LoadKernel: In recovery mode or dev-signed kernel
+LoadKernel: Good partition 4
+VbTryLoadKernel: LoadKernel() = 0x0
+vboot_draw_screen: screen=0x0 locale=0
+tpm_get_response: command 0x121, return code 0x0
+RollbackKernelLock: TPM: lock secdata_kernel returned 0x0
+VbSelectAndLoadKernel: Returning 0
+Boot policy: Match for type 0 with cmdline 1
+Modified kernel command line: cros_secure console= loglevel=7 init=/sbin/init cros_secure drm.trace=0x106 root=PARTUUID=06e0a2f9-7ff7-2a45-82e1-d15cad1138a8/PARTNROFF=1 rootwait rw dm_verity.error_behavior=3 dm_verity.max_bios=-1 dm_verity.dev_wait=0 dm="1 vroot none ro 1,0 6144000 verity payload=ROOT_DEV hashtree=HASH_DEV hashstart=6144000 alg=sha256 root_hexdigest=c3b93180258e89e23e6d143cab17cbe34950f97d23d2bd01bb69ed583979403a salt=95adcf9b78aec4c04212393972f9e7928850029cc0ace2c6fe7cb96a77e3a57b" noinitrd vt.global_cursor_default=0 kern_guid=06e0a2f9-7ff7-2a45-82e1-d15cad1138a8 cpuidle.governor=teo  
+Loading FIT.
+Image fdt@36 has 16903 bytes.
+Image fdt@35 has 16904 bytes.
+Image fdt@34 has 16883 bytes.
+Image fdt@33 has 16927 bytes.
+Image fdt@32 has 16923 bytes.
+Image fdt@31 has 16882 bytes.
+Image fdt@30 has 17295 bytes.
+Image fdt@29 has 16989 bytes.
+Image fdt@28 has 17343 bytes.
+Image fdt@27 has 17025 bytes.
+Image fdt@26 has 17354 bytes.
+Image fdt@25 has 17249 bytes.
+Image fdt@24 has 17504 bytes.
+Image fdt@23 has 17461 bytes.
+Image fdt@22 has 17211 bytes.
+Image fdt@21 has 17220 bytes.
+Image fdt@20 has 17162 bytes.
+Image fdt@19 has 17221 bytes.
+Image fdt@18 has 17478 bytes.
+Image fdt@17 has 17472 bytes.
+Image fdt@16 has 17213 bytes.
+Image fdt@15 has 17257 bytes.
+Image fdt@14 has 17089 bytes.
+Image fdt@13 has 17185 bytes.
+Image fdt@12 has 17463 bytes.
+Image fdt@11 has 17205 bytes.
+Image fdt@10 has 17224 bytes.
+Image fdt@9 has 17481 bytes.
+Image fdt@8 has 17541 bytes.
+Image fdt@7 has 17451 bytes.
+Image fdt@6 has 17184 bytes.
+Image fdt@5 has 17410 bytes.
+Image fdt@4 has 17162 bytes.
+Image fdt@3 has 17191 bytes.
+Image fdt@2 has 17134 bytes.
+Image fdt@1 has 17395 bytes.
+Image kernel@1 has 9950032 bytes.
+Compat preference: google,krane-rev6-sku176 google,krane-sku176 google,krane-rev6 google,krane
+Config conf@36, kernel kernel@1, fdt fdt@36, compat google,krane-sku176 (match) google,krane mediatek,mt8183
+Config conf@35, kernel kernel@1, fdt fdt@35, compat google,krane-sku0 google,krane (match) mediatek,mt8183
+Config conf@34, kernel kernel@1, fdt fdt@34, compat google,kodama-sku32 google,kodama mediatek,mt8183
+Config conf@33, kernel kernel@1, fdt fdt@33, compat google,kodama-sku288 google,kodama mediatek,mt8183
+Config conf@32, kernel kernel@1, fdt fdt@32, compat google,kodama-sku272 google,kodama mediatek,mt8183
+Config conf@31, kernel kernel@1, fdt fdt@31, compat google,kodama-sku16 google,kodama mediatek,mt8183
+Config conf@30, kernel kernel@1, fdt fdt@30, compat google,katsu mediatek,mt8183
+Config conf@29, kernel kernel@1, fdt fdt@29, compat google,katsu-sku38 google,katsu mediatek,mt8183
+Config conf@28, kernel kernel@1, fdt fdt@28, compat google,kakadu-rev3 google,kakadu-rev2 google,kakadu mediatek,mt8183
+Config conf@27, kernel kernel@1, fdt fdt@27, compat google,kakadu-rev3-sku22 google,kakadu-rev2-sku22 google,kakadu mediatek,mt8183
+Config conf@26, kernel kernel@1, fdt fdt@26, compat google,kakadu-rev1 google,kakadu-rev0 google,kakadu mediatek,mt8183
+Config conf@25, kernel kernel@1, fdt fdt@25, compat google,willow-sku1 google,willow mediatek,mt8183
+Config conf@24, kernel kernel@1, fdt fdt@24, compat google,willow-sku0 google,willow mediatek,mt8183
+Config conf@23, kernel kernel@1, fdt fdt@23, compat google,cerise-sku1 google,cerise mediatek,mt8183
+Config conf@22, kernel kernel@1, fdt fdt@22, compat google,cerise-rev3-sku1 google,cerise mediatek,mt8183
+Config conf@21, kernel kernel@1, fdt fdt@21, compat google,pico-sku2 google,pico mediatek,mt8183
+Config conf@20, kernel kernel@1, fdt fdt@20, compat google,pico-sku1 google,pico mediatek,mt8183
+Config conf@19, kernel kernel@1, fdt fdt@19, compat google,makomo-rev4-sku1 google,makomo-rev5-sku1 google,makomo mediatek,mt8183
+Config conf@18, kernel kernel@1, fdt fdt@18, compat google,makomo-rev4-sku0 google,makomo-rev5-sku0 google,makomo mediatek,mt8183
+Config conf@17, kernel kernel@1, fdt fdt@17, compat google,makomo-rev3-sku0 google,makomo mediatek,mt8183
+Config conf@16, kernel kernel@1, fdt fdt@16, compat google,makomo-rev0-sku0 google,makomo mediatek,mt8183
+Config conf@15, kernel kernel@1, fdt fdt@15, compat google,juniper-sku17 google,juniper mediatek,mt8183
+Config conf@14, kernel kernel@1, fdt fdt@14, compat google,kappa mediatek,mt8183
+Config conf@13, kernel kernel@1, fdt fdt@13, compat google,juniper-sku16 google,juniper mediatek,mt8183
+Config conf@12, kernel kernel@1, fdt fdt@12, compat google,fennel-sku0 google,fennel mediatek,mt8183
+Config conf@11, kernel kernel@1, fdt fdt@11, compat google,fennel-sku2 google,fennel mediatek,mt8183
+Config conf@10, kernel kernel@1, fdt fdt@10, compat google,fennel-sku7 google,fennel mediatek,mt8183
+Config conf@9, kernel kernel@1, fdt fdt@9, compat google,fennel-sku6 google,fennel mediatek,mt8183
+Config conf@8, kernel kernel@1, fdt fdt@8, compat google,fennel-sku1 google,fennel mediatek,mt8183
+Config conf@7, kernel kernel@1, fdt fdt@7, compat google,damu mediatek,mt8183
+Config conf@6, kernel kernel@1, fdt fdt@6, compat google,cozmo mediatek,mt8183
+Config conf@5, kernel kernel@1, fdt fdt@5, compat google,cerise-sku0 google,cerise mediatek,mt8183
+Config conf@4, kernel kernel@1, fdt fdt@4, compat google,cerise-rev3-sku0 google,cerise mediatek,mt8183
+Config conf@3, kernel kernel@1, fdt fdt@3, compat google,burnet mediatek,mt8183
+Config conf@2, kernel kernel@1, fdt fdt@2, compat google,bellis-rev0-sku1 google,bellis mediatek,mt8183
+Config conf@1, kernel kernel@1, fdt fdt@1, compat google,bellis-rev0-sku0 google,bellis mediatek,mt8183
+Choosing best match conf@36 for compat google,krane-sku176.
+LZ4 decompressing fdt@36 to 0x5f800000
+tpm_get_response: command 0x17b, return code 0x0
+tpm_cleanup: add release locality here.
+Shutting down all USB controllers.
+Exiting depthcharge with code 4 at timestamp: 7333728
+LZ4 decompressing kernel@1 to 0x8017b418
+LZ4 decompressing kernel@1 to 0x40000000
+jumping to kernel
+
+
+coreboot-v1.9308_26_0.0.22-10563-g0e20d8643d Tue Sep 14 04:06:38 UTC 2021 verstage starting (log level: 8)...
+ARM64: Exception handlers installed.
+WDT: Last reset was cold boot
+SPI0(PAD0) initialized at 992727 Hz
+FMAP: area RW_NVRAM found @ 554000 (8192 bytes)
+Manufacturer: c8
+SF: Detected GD25LQ64C with sector size 0x1000, total 0x800000
+Probing TPM: . done!
+TPM ready after 0 ms
+Connected to device vid:did:rid of 1ae0:0028:00
+Firmware version: B2-D:0 RO_B:0.0.12/9eb618de RW_A:0.5.201/cr50_v2.94_mp.254-a67bbb0546
+Initialized TPM device CR50 revision 0
+tlcl_send_startup: Startup return code is 0
+TPM: setup succeeded
+src/security/tpm/tss/tcg-2.0/tss.c:223 index 0x1007 return code 0
+out: cmd=0xd: 03 f0 0d 00 00 00 00 00 
+in-header: 03 99 00 00 08 00 00 00 
+in-data: 22 e0 43 04 13 00 00 00 
+Chrome EC: UHEPI supported
+out: cmd=0xa4: 03 5d a4 00 00 00 0c 00 00 01 00 00 f4 fb 00 00 00 00 00 00 
+in-header: 03 a5 00 00 08 00 00 00 
+in-data: 00 20 20 10 00 00 00 00 
+Phase 1
+FMAP: area GBB found @ 3f5000 (12032 bytes)
+VB2:vb2_check_recovery() Recovery reason from previous boot: 0x0 / 0x0
+Phase 2
+Phase 3
+FMAP: area GBB found @ 3f5000 (12032 bytes)
+read SPI 0x3f5180 0x1000: 1293 us, 3167 KB/s, 25.336 Mbps
+FMAP: area VBLOCK_B found @ 5a7000 (8192 bytes)
+FMAP: area VBLOCK_B found @ 5a7000 (8192 bytes)
+VB2:vb2_verify_keyblock() Checking key block signature...
+FMAP: area VBLOCK_B found @ 5a7000 (8192 bytes)
+FMAP: area VBLOCK_B found @ 5a7000 (8192 bytes)
+VB2:vb2_verify_fw_preamble() Verifying preamble.
+Phase 4
+FMAP: area FW_MAIN_B found @ 5a9000 (1367808 bytes)
+VB2:vb2api_init_hash() HW crypto for hash_alg 2 not supported, using SW
+tlcl_extend: response is 0
+tlcl_extend: response is 0
+tlcl_lock_nv_write: response is 0
+Slot B is selected
+
+
+coreboot-v1.9308_26_0.0.22-10563-g0e20d8643d Tue Sep 14 04:06:38 UTC 2021 romstage starting (log level: 8)...
+ARM64: Exception handlers installed.
+[RTC]rtc_enable_dcxo,41: con=0x482, osc32con=0xa26d, sec=0x2035
+[RTC]rtc_check_state,142: con=482, pwrkey1=a357, pwrkey2=67d2
+[RTC]rtc_eosc_cali,157: PMIC_RG_FQMTR_CKSEL=0x4a
+[RTC]rtc_get_frequency_meter,134: input=0xf, output=819
+[RTC]rtc_get_frequency_meter,134: input=0x7, output=695
+[RTC]rtc_get_frequency_meter,134: input=0xb, output=758
+[RTC]rtc_get_frequency_meter,134: input=0xd, output=788
+[RTC]rtc_get_frequency_meter,134: input=0xe, output=804
+[RTC]rtc_get_frequency_meter,134: input=0xd, output=788
+[RTC]rtc_get_frequency_meter,134: input=0xe, output=804
+[RTC]rtc_osc_init,208: EOSC32 cali val = 0xa26d
+[RTC]rtc_boot_common,186: irqsta=0, bbpu=0, con=482
+[RTC]rtc_bbpu_power_on,373: rtc_write_trigger=1
+[RTC]rtc_bbpu_power_on,376: done BBPU=0x9
+out: cmd=0xd: 03 f0 0d 00 00 00 00 00 
+in-header: 03 99 00 00 08 00 00 00 
+in-data: 22 e0 43 04 13 00 00 00 
+Chrome EC: UHEPI supported
+out: cmd=0xa4: 03 5d a4 00 00 00 0c 00 00 01 00 00 f4 fb 00 00 00 00 00 00 
+in-header: 03 a5 00 00 08 00 00 00 
+in-data: 00 20 20 10 00 00 00 00 
+FMAP: area RW_NVRAM found @ 554000 (8192 bytes)
+Manufacturer: c8
+SF: Detected GD25LQ64C with sector size 0x1000, total 0x800000
+FMAP: area RW_DDR_TRAINING found @ 556000 (8192 bytes)
+read_calibration_data_from_flash: ret=0x8f0, length=0x8f0
+DRAM-K: Fast Calibration
+Calibration params loaded from flash
+Run calibration (freq: 1600, first: 1)
+Vendor id is 0x1
+Run calibration (freq: 3200, first: 0)
+Vendor id is 0x1
+Run calibration (freq: 3600, first: 0)
+Vendor id is 0x1
+[MEM] complex R/W mem test pass : 0
+[MEM] complex R/W mem test pass : 0
+Mapping address range [0000000040000000:0000000140000000) as     cacheable | read-write | non-secure | normal
+CBMEM:
+IMD: root @ 00000000fffff000 254 entries.
+IMD: root @ 00000000ffffec00 62 entries.
+VBOOT: copying vboot_working_data (3840 bytes) to CBMEM...
+out: cmd=0xa4: 03 6c a4 00 00 00 0c 00 00 01 00 00 50 7f 11 00 00 00 00 00 
+in-header: 03 e5 00 00 08 00 00 00 
+in-data: 80 20 60 10 00 00 00 00 
+Chrome EC: clear events_b mask to 0x0000000020004000
+out: cmd=0xa4: 03 ea a4 00 00 00 0c 00 02 01 00 00 00 40 00 20 00 00 00 00 
+in-header: 03 fd 00 00 00 00 00 00 
+in-data: 
+CBFS: 'VBOOT' located CBFS at [5a9000:60d180)
+CBFS: Locating 'fallback/ramstage'
+CBFS: Found @ offset 10b40 size a6ee
+read SPI 0x5b9b94 0xa6d2: 13019 us, 3280 KB/s, 26.240 Mbps
+Accumulated console time in romstage 0 ms
+
+
+coreboot-v1.9308_26_0.0.22-10563-g0e20d8643d Tue Sep 14 04:06:38 UTC 2021 ramstage starting (log level: 8)...
+ARM64: Exception handlers installed.
+FMAP: area RO_VPD found @ 3f8000 (32768 bytes)
+Manufacturer: c8
+SF: Detected GD25LQ64C with sector size 0x1000, total 0x800000
+FMAP: area RW_VPD found @ 550000 (16384 bytes)
+FMAP: area RO_VPD found @ 3f8000 (32768 bytes)
+read SPI 0x3f8600 0x7a00: 9522 us, 3279 KB/s, 26.232 Mbps
+FMAP: area RW_VPD found @ 550000 (16384 bytes)
+read SPI 0x550600 0x3a00: 4532 us, 3276 KB/s, 26.208 Mbps
+BS: BS_PRE_DEVICE times (ms): entry 0 run 0 exit 0
+BS: BS_DEV_INIT_CHIPS times (ms): entry 0 run 0 exit 0
+Enumerating buses...
+Show all devs... Before device enumeration.
+Root Device: enabled 1
+CPU_CLUSTER: 0: enabled 1
+CPU: 00: enabled 1
+Compare with tree...
+Root Device: enabled 1
+ CPU_CLUSTER: 0: enabled 1
+  CPU: 00: enabled 1
+Root Device scanning...
+root_dev_scan_bus for Root Device
+CPU_CLUSTER: 0 enabled
+root_dev_scan_bus for Root Device done
+scan_bus: scanning of bus Root Device took 6 usecs
+done
+BS: BS_DEV_ENUMERATE times (ms): entry 0 run 0 exit 0
+Allocating resources...
+Reading resources...
+Root Device read_resources bus 0 link: 0
+CPU_CLUSTER: 0 read_resources bus 0 link: 0
+CPU: 00 missing read_resources
+CPU_CLUSTER: 0 read_resources bus 0 link: 0 done
+Root Device read_resources bus 0 link: 0 done
+Done reading resources.
+Show resources in subtree (Root Device)...After reading.
+ Root Device child on link 0 CPU_CLUSTER: 0
+  CPU_CLUSTER: 0 child on link 0 CPU: 00
+  CPU_CLUSTER: 0 resource base 40000000 size 100000000 align 0 gran 0 limit 0 flags e0004200 index 0
+   CPU: 00
+Setting resources...
+Root Device assign_resources, bus 0 link: 0
+CPU_CLUSTER: 0 missing set_resources
+Root Device assign_resources, bus 0 link: 0
+Done setting resources.
+Show resources in subtree (Root Device)...After assigning values.
+ Root Device child on link 0 CPU_CLUSTER: 0
+  CPU_CLUSTER: 0 child on link 0 CPU: 00
+  CPU_CLUSTER: 0 resource base 40000000 size 100000000 align 0 gran 0 limit 0 flags e0004200 index 0
+   CPU: 00
+Done allocating resources.
+BS: BS_DEV_RESOURCES times (ms): entry 0 run 0 exit 0
+Enabling resources...
+done.
+BS: BS_DEV_ENABLE times (ms): entry 0 run 0 exit 0
+Initializing devices...
+Root Device init ...
+mainboard_init: Starting display init.
+ADC[2]: Raw value=1429976 ID=11
+ADC[4]: Raw value=76066 ID=0
+CBFS: 'VBOOT' located CBFS at [5a9000:60d180)
+CBFS: Locating 'panel-BOE_TV101WUM_NL6'
+CBFS: Found @ offset 39540 size 1a8
+get_active_panel: Found ID 11: 'BOE TV101WUM-NL6' 1200x1920@60Hz
+DSI data_rate: 956550000 bps
+[SSUSB] Setting up USB HOST controller...
+[SSUSB] u3phy_ports_enable u2p:1, u3p:0
+[SSUSB] phy power-on done.
+SPM: pcm index = 0
+CBFS: 'VBOOT' located CBFS at [5a9000:60d180)
+CBFS: Locating 'pcm_allinone_lp4_3733.bin'
+CBFS: Found @ offset 1c7c0 size 1026
+read SPI 0x5c5808 0x1026: 1271 us, 3252 KB/s, 26.016 Mbps
+SPM: binary array size = 2988
+SPM: version = pcm_allinone_v1.17.2_20180829
+SPM binary loaded in 2 msecs
+spm_kick_im_to_fetch: ptr = 00000000402189b2
+spm_kick_im_to_fetch: len = 2988
+SPM: spm_kick_pcm_to_run
+SPM: spm_kick_pcm_to_run done
+SPM: spm_init done in 5 msecs
+Root Device init finished in 206081 usecs
+CPU_CLUSTER: 0 init ...
+Mapping address range [0000000000200000:0000000000280000) as     cacheable | read-write |     secure | device
+CBFS: 'VBOOT' located CBFS at [5a9000:60d180)
+CBFS: Locating 'sspm.bin'
+CBFS: Found @ offset 1d840 size 41cb
+read SPI 0x5c6878 0x41cb: 5142 us, 3275 KB/s, 26.200 Mbps
+CPU_CLUSTER: 0 init finished in 8341 usecs
+Devices initialized
+Show all devs... After init.
+Root Device: enabled 1
+CPU_CLUSTER: 0: enabled 1
+CPU: 00: enabled 1
+BS: BS_DEV_INIT times (ms): entry 0 run 214 exit 0
+FMAP: area RW_ELOG found @ 558000 (4096 bytes)
+ELOG: NV offset 0x558000 size 0x1000
+read SPI 0x558000 0x1000: 1260 us, 3250 KB/s, 26.000 Mbps
+ELOG: area is 4096 bytes, full threshold 3842, shrink size 1024
+ELOG: Event(17) added with size 13 at 2010-01-06 19:12:29 UTC
+out: cmd=0x121: 03 db 21 01 00 00 00 00 
+in-header: 03 6c 00 00 2c 00 00 00 
+in-data: 04 04 00 00 00 00 00 00 22 00 00 00 02 80 00 00 7d 16 00 00 02 80 00 00 92 14 00 00 09 80 00 00 e3 17 01 00 08 00 00 00 08 83 e4 03 
+out: cmd=0xd: 03 f0 0d 00 00 00 00 00 
+in-header: 03 99 00 00 08 00 00 00 
+in-data: 22 e0 43 04 13 00 00 00 
+Chrome EC: UHEPI supported
+out: cmd=0xa4: 03 54 a4 00 00 00 0c 00 00 01 00 00 f8 ff 01 00 00 00 00 00 
+in-header: 03 e5 00 00 08 00 00 00 
+in-data: 80 20 60 10 00 00 00 00 
+FMAP: area RW_NVRAM found @ 554000 (8192 bytes)
+ELOG: Event(A0) added with size 9 at 2010-01-06 19:12:29 UTC
+elog_add_boot_reason: Logged dev mode boot
+Finalize devices...
+Devices finalized
+BS: BS_POST_DEVICE times (ms): entry 3 run 0 exit 0
+BS: BS_OS_RESUME_CHECK times (ms): entry 0 run 0 exit 0
+Writing coreboot table at 0xffed9000
+ 0. 0000000000114000-000000000011efff: RAMSTAGE
+ 1. 0000000040000000-0000000040237fff: RAMSTAGE
+ 2. 0000000040238000-00000000545fffff: RAM
+ 3. 0000000054600000-000000005465ffff: BL31
+ 4. 0000000054660000-00000000ffed8fff: RAM
+ 5. 00000000ffed9000-00000000ffffffff: CONFIGURATION TABLES
+ 6. 0000000100000000-000000013fffffff: RAM
+Passing 5 GPIOs to payload:
+            NAME |       PORT | POLARITY |     VALUE
+   write protect | 0x00000096 |      low |      high
+        EC in RW | 0x000000b1 |     high | undefined
+    EC interrupt | 0x00000097 |      low | undefined
+   TPM interrupt | 0x00000099 |     high | undefined
+  speaker enable | 0x000000af |     high | undefined
+out: cmd=0x6: 03 f7 06 00 00 00 00 00 
+in-header: 03 f5 00 00 02 00 00 00 
+in-data: 06 00 
+Board ID: 6
+ADC[3]: Raw value=779857 ID=6
+RAM code: 6
+SKU ID: 176
+CBFS: 'VBOOT' located CBFS at [5a9000:60d180)
+Wrote coreboot table at: 00000000ffed9000, 0x368 bytes, checksum 2ff0
+coreboot table: 896 bytes.
+IMD ROOT    0. 00000000fffff000 00001000
+IMD SMALL   1. 00000000ffffe000 00001000
+CONSOLE     2. 00000000fffde000 00020000
+FMAP        3. 00000000fffdd000 0000047c
+TIME STAMP  4. 00000000fffdc000 00000910
+VBOOT WORK  5. 00000000fffdb000 00000f00
+RAMOOPS     6. 00000000ffedb000 00100000
+COREBOOT    7. 00000000ffed9000 00002000
+IMD small region:
+  IMD ROOT    0. 00000000ffffec00 00000400
+  EC HOSTEVENT 1. 00000000ffffebe0 00000008
+  VPD         2. 00000000ffffe920 000002b3
+BS: BS_WRITE_TABLES times (ms): entry 0 run 0 exit 0
+out: cmd=0xa4: 03 a7 a4 00 00 00 0c 00 00 01 00 00 58 ed 20 40 00 00 00 00 
+in-header: 03 e5 00 00 08 00 00 00 
+in-data: 80 20 60 10 00 00 00 00 
+Probing TPM:  done!
+Connected to device vid:did:rid of 1ae0:0028:00
+Firmware version: B2-D:0 RO_B:0.0.12/9eb618de RW_A:0.5.201/cr50_v2.94_mp.254-a67bbb0546
+Initialized TPM device CR50 revision 0
+Checking cr50 for pending updates
+Reading cr50 TPM mode
+CBFS: 'VBOOT' located CBFS at [5a9000:60d180)
+CBFS: Locating 'fallback/payload'
+CBFS: Found @ offset 4d380 size 16d99
+read SPI 0x5f63b8 0x16d99: 28526 us, 3280 KB/s, 26.240 Mbps
+Checking segment from ROM address 0x000000004000b400
+Checking segment from ROM address 0x000000004000b41c
+Loading segment from ROM address 0x000000004000b400
+  code (compression=1)
+  New segment dstaddr 0x0000000080000000 memsize 0x11809c0 srcaddr 0x000000004000b438 filesize 0x16d61
+Loading Segment: addr: 0x0000000080000000 memsz: 0x00000000011809c0 filesz: 0x0000000000016d61
+using LZMA
+[ 0x80000000, 80033068, 0x811809c0) <- 4000b438
+Clearing Segment: addr: 0x0000000080033068 memsz: 0x000000000114d958
+Loading segment from ROM address 0x000000004000b41c
+  Entry Point 0x0000000080000000
+Loaded segments
+BS: BS_PAYLOAD_LOAD times (ms): entry 9 run 45 exit 0
+Jumping to boot code at 0000000080000000(00000000ffed9000)
+CPU0: stack: 0000000000114000 - 0000000000118000, lowest used address 00000000001176a0, stack used: 2400 bytes
+CBFS: 'VBOOT' located CBFS at [5a9000:60d180)
+CBFS: Locating 'fallback/bl31'
+CBFS: Found @ offset 33d40 size 4ae5
+read SPI 0x5dcd68 0x4ae5: 5851 us, 3276 KB/s, 26.208 Mbps
+Checking segment from ROM address 0x000000004000b400
+Checking segment from ROM address 0x000000004000b41c
+Loading segment from ROM address 0x000000004000b400
+  code (compression=1)
+  New segment dstaddr 0x0000000054600000 memsize 0x27000 srcaddr 0x000000004000b438 filesize 0x4aad
+Loading Segment: addr: 0x0000000054600000 memsz: 0x0000000000027000 filesz: 0x0000000000004aad
+using LZMA
+[ 0x54600000, 5460d408, 0x54627000) <- 4000b438
+Clearing Segment: addr: 0x000000005460d408 memsz: 0x0000000000019bf8
+Loading segment from ROM address 0x000000004000b41c
+  Entry Point 0x0000000054601000
+Loaded segments
+NOTICE:  MT8183 bl31_setup
+NOTICE:  BL31: v2.1(release):v2.1-806-g3addeb68c
+NOTICE:  BL31: Built : Tue Sep 14 04:06:38 UTC 2021
+INFO:    [DEVAPC] dump DEVAPC registers:
+INFO:    [DEVAPC] (INFRA)D0_APC_0 = 0x0, (INFRA)D1_APC_0 = 0xfcfffffc, (INFRA)D2_APC_0 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_1 = 0x0, (INFRA)D1_APC_1 = 0xffffffff, (INFRA)D2_APC_1 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_2 = 0x0, (INFRA)D1_APC_2 = 0xffffffff, (INFRA)D2_APC_2 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_3 = 0x0, (INFRA)D1_APC_3 = 0xffffffff, (INFRA)D2_APC_3 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_4 = 0x80000000, (INFRA)D1_APC_4 = 0xffffffff, (INFRA)D2_APC_4 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_5 = 0x2aaa, (INFRA)D1_APC_5 = 0xfcff3fff, (INFRA)D2_APC_5 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_6 = 0x0, (INFRA)D1_APC_6 = 0xffffffff, (INFRA)D2_APC_6 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_7 = 0x0, (INFRA)D1_APC_7 = 0xffffffff, (INFRA)D2_APC_7 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_8 = 0x0, (INFRA)D1_APC_8 = 0xffffffff, (INFRA)D2_APC_8 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_9 = 0x0, (INFRA)D1_APC_9 = 0xffffffff, (INFRA)D2_APC_9 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_10 = 0x0, (INFRA)D1_APC_10 = 0xffffffff, (INFRA)D2_APC_10 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_11 = 0x0, (INFRA)D1_APC_11 = 0xffffffff, (INFRA)D2_APC_11 = 0x0
+INFO:    [DEVAPC] (INFRA)D0_APC_12 = 0x0, (INFRA)D1_APC_12 = 0xff, (INFRA)D2_APC_12 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_0 = 0x0, (MM)D1_APC_0 = 0xffc000ff, (MM)D2_APC_0 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_1 = 0x0, (MM)D1_APC_1 = 0x3fffffff, (MM)D2_APC_1 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_2 = 0x0, (MM)D1_APC_2 = 0xcffff33c, (MM)D2_APC_2 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_3 = 0x0, (MM)D1_APC_3 = 0x3ccfc0ff, (MM)D2_APC_3 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_4 = 0x0, (MM)D1_APC_4 = 0xffff0000, (MM)D2_APC_4 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_5 = 0x0, (MM)D1_APC_5 = 0xffffffff, (MM)D2_APC_5 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_6 = 0x0, (MM)D1_APC_6 = 0xffffffff, (MM)D2_APC_6 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_7 = 0x0, (MM)D1_APC_7 = 0xffffffff, (MM)D2_APC_7 = 0x0
+INFO:    [DEVAPC] (MM)D0_APC_8 = 0x0, (MM)D1_APC_8 = 0x3ffffff, (MM)D2_APC_8 = 0x0
+INFO:    [DEVAPC] MAS_DOM_0 = 0x1
+INFO:    [DEVAPC] MAS_DOM_1 = 0x200
+INFO:    [DEVAPC] MAS_DOM_2 = 0x0
+INFO:    [DEVAPC] MAS_DOM_3 = 0x2000
+INFO:    [DEVAPC] MAS_SEC_0 = 0x8000000
+INFO:    [DEVAPC]  (INFRA)MAS_DOMAIN_REMAP_0 = 0x88, (INFRA)MAS_DOMAIN_REMAP_1 = 0x0
+INFO:    [DEVAPC]  (MM)MAS_DOMAIN_REMAP_0 = 0x24
+WARNING: region 0:
+WARNING: 	apc:0x168, sa:0x0, ea:0xfff
+WARNING: region 1:
+WARNING: 	apc:0x140, sa:0x1000, ea:0x128f
+WARNING: region 2:
+WARNING: 	apc:0x168, sa:0x1290, ea:0x1fff
+WARNING: region 3:
+WARNING: 	apc:0x168, sa:0x2000, ea:0xbfff
+WARNING: region 4:
+WARNING: 	apc:0x168, sa:0xc000, ea:0x1ffff
+WARNING: region 5:
+WARNING: 	apc:0x0, sa:0x0, ea:0x0
+WARNING: region 6:
+WARNING: 	apc:0x0, sa:0x0, ea:0x0
+WARNING: region 7:
+WARNING: 	apc:0x0, sa:0x0, ea:0x0
+INFO:    GICv3 without legacy support detected. ARM GICv3 driver initialized in EL3
+INFO:    SPM: enable SPMC mode
+NOTICE:  spm_boot_init() start
+NOTICE:  spm_boot_init() end
+INFO:    BL31: Initializing runtime services
+INFO:    BL31: Preparing for EL3 exit to normal world
+INFO:    Entry point address = 0x80000000
+INFO:    SPSR = 0x8
+
+
+Starting depthcharge on Krane...
+vboot_handoff: creating legacy vboot_handoff structure
+vboot_handoff: copying FW preamble
+ec_init(0): CrosEC protocol v3 supported (544, 544)
+Wipe memory regions:
+	[0x00000040000000, 0x00000054600000)
+	[0x00000054660000, 0x00000080000000)
+	[0x000000811809c0, 0x000000ffed9000)
+	[0x00000100000000, 0x00000140000000)
+Initializing XHCI USB controller at 0x11200000.
+Calling VbSelectAndLoadKernel().
+Connected to device vid:did:rid of 1ae0:0028:00
+tpm_get_response: command 0x14e, return code 0x0
+ReadSpaceKernel: TPM: read secdata_kernel: 02 4c 57 52 47 02 00 01 00 00 00 00 33
+RollbackKernelRead: TPM: RollbackKernelRead 0x10002
+tpm_get_response: command 0x14e, return code 0x28b
+RollbackFwmpRead: TPM: no FWMP space
+VbSelectAndLoadKernel: GBB flags are 0x0
+print_hash: RW(active) hash: 85b8cb93b04ed42d395cd019ed72ca37799129fee1c7243e63b5ab67a36b5465
+Trying to locate 'ecrw.hash' in CBFS
+sync_one_ec: devidx=0 select_rw=4
+sync_one_ec: jumping to EC-RW
+EC returned from reboot after 4516us
+CBGFX: cbgfx initialized: screen:width=1920, height=1200, offset=0 canvas:width=1200, height=1200, offset=360
+vboot_init_locale: Supported locales: en, es-419, pt-BR, fr, es, pt-PT, ca, it, de, el, nl, da, nb, sv, fi, et, lv, lt, ru, pl, cs, sk, hu, sl, sr, hr, bg, ro, uk, tr, he, ar, fa, hi, th, ms, vi, id, fil, zh-CN, zh-TW, ko, ja, bn, gu, kn, ml, mr, ta, te, (50 locales)
+load_archive: loading vbgfx.bin
+load_archive: loading font.bin
+vb2_log_menu_change: ================ Developer Warning Menu ================ [ Power Off ]
+vboot_draw_ui: screen=0x20a locale=0, selected_index=3,disabled_idx_mask=0x0
+load_archive: loading locale_en.bin
+vb2_log_menu_change: ================ Developer Warning Menu ================ [ Enable OS Verification ]
+vboot_draw_ui: screen=0x20a locale=0, selected_index=2,disabled_idx_mask=0x0
+vb2_log_menu_change: ================ Developer Warning Menu ================ [ Show Debug Info ]
+vboot_draw_ui: screen=0x20a locale=0, selected_index=1,disabled_idx_mask=0x0
+vb2_log_menu_change: ================ Developer Warning Menu ================ [ Developer Options ]
+vboot_draw_ui: screen=0x20a locale=0, selected_index=0,disabled_idx_mask=0x0
+vb2_handle_menu_input: pressed key 0x5c
+vb2_handle_menu_input: pressed key 0x5c
+vb2_handle_menu_input: pressed key 0x5c
+vb2_log_menu_change: ================ Developer Boot Options Menu ================ [ Boot From Internal Disk ]
+vboot_draw_ui: screen=0x20b locale=0, selected_index=3,disabled_idx_mask=0x1
+boot_disk_action: trying fixed disk
+Man 000015 Snr 1314902098 Product DV6DAB Revision 0.2
+VbTryLoadKernel: trying disk 0
+GptNextKernelEntry: GptNextKernelEntry looking at new prio partition 2
+GptNextKernelEntry: GptNextKernelEntry s1 t0 p1
+GptNextKernelEntry: GptNextKernelEntry looking at new prio partition 4
+GptNextKernelEntry: GptNextKernelEntry s1 t0 p2
+GptNextKernelEntry: GptNextKernelEntry looking at new prio partition 6
+GptNextKernelEntry: GptNextKernelEntry s0 t15 p0
+GptNextKernelEntry: GptNextKernelEntry likes partition 4
+LoadKernel: Found kernel entry at 65605 size 65536
+vb2_verify_keyblock: Checking key block signature...
+vb2_rsa_verify_digest: Digest check failed!
+vb2_verify_keyblock: Invalid key block signature.
+vb2_verify_kernel_vblock: Verifying key block signature failed.
+vb2_verify_keyblock_hash: Checking key block hash...
+vb2_verify_kernel_preamble: Verifying kernel preamble.
+vb2_verify_kernel_vblock: Kernel preamble is good.
+vb2_load_partition: read 10408 KB in 238 ms at 43658 KB/s.
+vb2_load_partition: Partition is good.
+LoadKernel: Key block valid: 0
+LoadKernel: Combined version: 65538
+LoadKernel: In recovery mode or dev-signed kernel
+LoadKernel: Good partition 4
+VbTryLoadKernel: LoadKernel() = 0x0
+vboot_draw_screen: screen=0x0 locale=0
+tpm_get_response: command 0x121, return code 0x0
+RollbackKernelLock: TPM: lock secdata_kernel returned 0x0
+VbSelectAndLoadKernel: Returning 0
+Boot policy: Match for type 0 with cmdline 1
+Modified kernel command line: cros_secure console= loglevel=7 init=/sbin/init cros_secure drm.trace=0x106 root=PARTUUID=06e0a2f9-7ff7-2a45-82e1-d15cad1138a8/PARTNROFF=1 rootwait rw dm_verity.error_behavior=3 dm_verity.max_bios=-1 dm_verity.dev_wait=0 dm="1 vroot none ro 1,0 6144000 verity payload=ROOT_DEV hashtree=HASH_DEV hashstart=6144000 alg=sha256 root_hexdigest=c3b93180258e89e23e6d143cab17cbe34950f97d23d2bd01bb69ed583979403a salt=95adcf9b78aec4c04212393972f9e7928850029cc0ace2c6fe7cb96a77e3a57b" noinitrd vt.global_cursor_default=0 kern_guid=06e0a2f9-7ff7-2a45-82e1-d15cad1138a8 cpuidle.governor=teo  
+Loading FIT.
+Image fdt@36 has 16903 bytes.
+Image fdt@35 has 16904 bytes.
+Image fdt@34 has 16883 bytes.
+Image fdt@33 has 16927 bytes.
+Image fdt@32 has 16923 bytes.
+Image fdt@31 has 16882 bytes.
+Image fdt@30 has 17295 bytes.
+Image fdt@29 has 16989 bytes.
+Image fdt@28 has 17343 bytes.
+Image fdt@27 has 17025 bytes.
+Image fdt@26 has 17354 bytes.
+Image fdt@25 has 17249 bytes.
+Image fdt@24 has 17504 bytes.
+Image fdt@23 has 17461 bytes.
+Image fdt@22 has 17211 bytes.
+Image fdt@21 has 17220 bytes.
+Image fdt@20 has 17162 bytes.
+Image fdt@19 has 17221 bytes.
+Image fdt@18 has 17478 bytes.
+Image fdt@17 has 17472 bytes.
+Image fdt@16 has 17213 bytes.
+Image fdt@15 has 17257 bytes.
+Image fdt@14 has 17089 bytes.
+Image fdt@13 has 17185 bytes.
+Image fdt@12 has 17463 bytes.
+Image fdt@11 has 17205 bytes.
+Image fdt@10 has 17224 bytes.
+Image fdt@9 has 17481 bytes.
+Image fdt@8 has 17541 bytes.
+Image fdt@7 has 17451 bytes.
+Image fdt@6 has 17184 bytes.
+Image fdt@5 has 17410 bytes.
+Image fdt@4 has 17162 bytes.
+Image fdt@3 has 17191 bytes.
+Image fdt@2 has 17134 bytes.
+Image fdt@1 has 17395 bytes.
+Image kernel@1 has 9950032 bytes.
+Compat preference: google,krane-rev6-sku176 google,krane-sku176 google,krane-rev6 google,krane
+Config conf@36, kernel kernel@1, fdt fdt@36, compat google,krane-sku176 (match) google,krane mediatek,mt8183
+Config conf@35, kernel kernel@1, fdt fdt@35, compat google,krane-sku0 google,krane (match) mediatek,mt8183
+Config conf@34, kernel kernel@1, fdt fdt@34, compat google,kodama-sku32 google,kodama mediatek,mt8183
+Config conf@33, kernel kernel@1, fdt fdt@33, compat google,kodama-sku288 google,kodama mediatek,mt8183
+Config conf@32, kernel kernel@1, fdt fdt@32, compat google,kodama-sku272 google,kodama mediatek,mt8183
+Config conf@31, kernel kernel@1, fdt fdt@31, compat google,kodama-sku16 google,kodama mediatek,mt8183
+Config conf@30, kernel kernel@1, fdt fdt@30, compat google,katsu mediatek,mt8183
+Config conf@29, kernel kernel@1, fdt fdt@29, compat google,katsu-sku38 google,katsu mediatek,mt8183
+Config conf@28, kernel kernel@1, fdt fdt@28, compat google,kakadu-rev3 google,kakadu-rev2 google,kakadu mediatek,mt8183
+Config conf@27, kernel kernel@1, fdt fdt@27, compat google,kakadu-rev3-sku22 google,kakadu-rev2-sku22 google,kakadu mediatek,mt8183
+Config conf@26, kernel kernel@1, fdt fdt@26, compat google,kakadu-rev1 google,kakadu-rev0 google,kakadu mediatek,mt8183
+Config conf@25, kernel kernel@1, fdt fdt@25, compat google,willow-sku1 google,willow mediatek,mt8183
+Config conf@24, kernel kernel@1, fdt fdt@24, compat google,willow-sku0 google,willow mediatek,mt8183
+Config conf@23, kernel kernel@1, fdt fdt@23, compat google,cerise-sku1 google,cerise mediatek,mt8183
+Config conf@22, kernel kernel@1, fdt fdt@22, compat google,cerise-rev3-sku1 google,cerise mediatek,mt8183
+Config conf@21, kernel kernel@1, fdt fdt@21, compat google,pico-sku2 google,pico mediatek,mt8183
+Config conf@20, kernel kernel@1, fdt fdt@20, compat google,pico-sku1 google,pico mediatek,mt8183
+Config conf@19, kernel kernel@1, fdt fdt@19, compat google,makomo-rev4-sku1 google,makomo-rev5-sku1 google,makomo mediatek,mt8183
+Config conf@18, kernel kernel@1, fdt fdt@18, compat google,makomo-rev4-sku0 google,makomo-rev5-sku0 google,makomo mediatek,mt8183
+Config conf@17, kernel kernel@1, fdt fdt@17, compat google,makomo-rev3-sku0 google,makomo mediatek,mt8183
+Config conf@16, kernel kernel@1, fdt fdt@16, compat google,makomo-rev0-sku0 google,makomo mediatek,mt8183
+Config conf@15, kernel kernel@1, fdt fdt@15, compat google,juniper-sku17 google,juniper mediatek,mt8183
+Config conf@14, kernel kernel@1, fdt fdt@14, compat google,kappa mediatek,mt8183
+Config conf@13, kernel kernel@1, fdt fdt@13, compat google,juniper-sku16 google,juniper mediatek,mt8183
+Config conf@12, kernel kernel@1, fdt fdt@12, compat google,fennel-sku0 google,fennel mediatek,mt8183
+Config conf@11, kernel kernel@1, fdt fdt@11, compat google,fennel-sku2 google,fennel mediatek,mt8183
+Config conf@10, kernel kernel@1, fdt fdt@10, compat google,fennel-sku7 google,fennel mediatek,mt8183
+Config conf@9, kernel kernel@1, fdt fdt@9, compat google,fennel-sku6 google,fennel mediatek,mt8183
+Config conf@8, kernel kernel@1, fdt fdt@8, compat google,fennel-sku1 google,fennel mediatek,mt8183
+Config conf@7, kernel kernel@1, fdt fdt@7, compat google,damu mediatek,mt8183
+Config conf@6, kernel kernel@1, fdt fdt@6, compat google,cozmo mediatek,mt8183
+Config conf@5, kernel kernel@1, fdt fdt@5, compat google,cerise-sku0 google,cerise mediatek,mt8183
+Config conf@4, kernel kernel@1, fdt fdt@4, compat google,cerise-rev3-sku0 google,cerise mediatek,mt8183
+Config conf@3, kernel kernel@1, fdt fdt@3, compat google,burnet mediatek,mt8183
+Config conf@2, kernel kernel@1, fdt fdt@2, compat google,bellis-rev0-sku1 google,bellis mediatek,mt8183
+Config conf@1, kernel kernel@1, fdt fdt@1, compat google,bellis-rev0-sku0 google,bellis mediatek,mt8183
+Choosing best match conf@36 for compat google,krane-sku176.
+LZ4 decompressing fdt@36 to 0x5f800000
+tpm_get_response: command 0x17b, return code 0x0
+tpm_cleanup: add release locality here.
+Shutting down all USB controllers.
+Exiting depthcharge with code 4 at timestamp: 7634284
+LZ4 decompressing kernel@1 to 0x8017b418
+LZ4 decompressing kernel@1 to 0x40000000
+jumping to kernel
+INFO:    cpu0: "DYNAMIC_SPM_FW_VERSION", wakesrc = 0xe87dde7, pcm_con1 = 0x5849
+INFO:    settle = 99, sec = 131041, sw_flag = 0x8809a 0x40, src_req = 0x0
+INFO:    suspend: wake up by R12_EINT_EVENT_B, timer_out = 0
+INFO:    r15 = 0xb79, r13 = 0x86040000, debug_flag = 0x1910ff 0x0
+INFO:    sw_flag = 0x8809a 0x40, r12 = 0x40, r12_ext = 0x0
+INFO:    idle_sta = 0x1ff, req_sta =  0x100000, event_reg = 0x90100000
+INFO:    isr = 0x10, raw_sta = 0x40, raw_ext_sta = 0x400290aa
+INFO:    wake_misc = 0x0

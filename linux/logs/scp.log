@@ -1,0 +1,11 @@
+[   93.539458] mtk-scp 10500000.scp: assigned reserved memory node scp_mem_region
+[   93.541492] remoteproc remoteproc0: scp is available
+[   93.547628] remoteproc remoteproc0: powering up scp
+[   93.547656] remoteproc remoteproc0: Booting fw image mediatek/mt8183/scp.img, size 1032064
+[   93.547685] mtk-scp 10500000.scp: IPI buf addr 0x0007bdb0
+[   93.720723] mtk-scp 10500000.scp: SCP is ready. FW version kukui_scp_v2.0.2771-7a68c38973
+[   93.720731] mtk-scp 10500000.scp: creating channel cros-ec-rpmsg addr 0xd
+[   93.720747] remoteproc remoteproc0: remote processor scp is now up
+[   94.022772] mtk-fd-4.0 1502b000.fd: scp addr:0x0000000050c00000 va:ffffffc014c00000
+[   94.022804] mtk-fd-4.0 1502b000.fd: scp iova addr:0x00000000ffb00000
+[   94.666623] cros-ec-rpmsg 10500000.scp.cros-ec-rpmsg.13.-1: Chrome EC device registered

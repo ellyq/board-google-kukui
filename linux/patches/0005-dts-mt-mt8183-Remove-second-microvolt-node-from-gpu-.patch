@@ -1,0 +1,132 @@
+From 0818186336d5565da851a6a05a1aaf5e06c045b2 Mon Sep 17 00:00:00 2001
+From: WeirdTreeThing <bradyn127@protonmail.com>
+Date: Sun, 22 Oct 2023 19:56:23 -0400
+Subject: [PATCH 05/11] dts/mt/mt8183: Remove second microvolt node from gpu
+ opp tables
+
+Signed-off-by: WeirdTreeThing <bradyn127@protonmail.com>
+---
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi | 32 ++++++++++++------------
+ 1 file changed, 16 insertions(+), 16 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+index d024d1788329..aba83bf5385a 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+@@ -661,97 +661,97 @@ opp-800000000 {
+ 		};
+ 			opp-300000000 {
+ 				opp-hz = /bits/ 64 <300000000>;
+-				opp-microvolt = <625000>, <850000>;
++				opp-microvolt = <625000>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-320000000 {
+ 				opp-hz = /bits/ 64 <320000000>;
+-				opp-microvolt = <631250>, <850000>;
++				opp-microvolt = <631250>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-340000000 {
+ 				opp-hz = /bits/ 64 <340000000>;
+-				opp-microvolt = <637500>, <850000>;
++				opp-microvolt = <637500>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-360000000 {
+ 				opp-hz = /bits/ 64 <360000000>;
+-				opp-microvolt = <643750>, <850000>;
++				opp-microvolt = <643750>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-380000000 {
+ 				opp-hz = /bits/ 64 <380000000>;
+-				opp-microvolt = <650000>, <850000>;
++				opp-microvolt = <650000>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-400000000 {
+ 				opp-hz = /bits/ 64 <400000000>;
+-				opp-microvolt = <656250>, <850000>;
++				opp-microvolt = <656250>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-420000000 {
+ 				opp-hz = /bits/ 64 <420000000>;
+-				opp-microvolt = <662500>, <850000>;
++				opp-microvolt = <662500>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-460000000 {
+ 				opp-hz = /bits/ 64 <460000000>;
+-				opp-microvolt = <675000>, <850000>;
++				opp-microvolt = <675000>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-500000000 {
+ 				opp-hz = /bits/ 64 <500000000>;
+-				opp-microvolt = <687500>, <850000>;
++				opp-microvolt = <687500>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-540000000 {
+ 				opp-hz = /bits/ 64 <540000000>;
+-				opp-microvolt = <700000>, <850000>;
++				opp-microvolt = <700000>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-580000000 {
+ 				opp-hz = /bits/ 64 <580000000>;
+-				opp-microvolt = <712500>, <850000>;
++				opp-microvolt = <712500>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-620000000 {
+ 				opp-hz = /bits/ 64 <620000000>;
+-				opp-microvolt = <725000>, <850000>;
++				opp-microvolt = <725000>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-653000000 {
+ 				opp-hz = /bits/ 64 <653000000>;
+-				opp-microvolt = <743750>, <850000>;
++				opp-microvolt = <743750>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-698000000 {
+ 				opp-hz = /bits/ 64 <698000000>;
+-				opp-microvolt = <768750>, <868750>;
++				opp-microvolt = <768750>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-743000000 {
+ 				opp-hz = /bits/ 64 <743000000>;
+-				opp-microvolt = <793750>, <893750>;
++				opp-microvolt = <793750>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 
+ 			opp-800000000 {
+ 				opp-hz = /bits/ 64 <800000000>;
+-				opp-microvolt = <825000>, <925000>;
++				opp-microvolt = <825000>;
+ 				opp-core-mask = /bits/ 64 <0xf>;
+ 			};
+ 		};
+-- 
+2.41.0
+

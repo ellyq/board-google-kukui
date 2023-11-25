@@ -1,0 +1,70 @@
+From 40616b9ee1e7641311e636a187fcdd5509662fa8 Mon Sep 17 00:00:00 2001
+From: Alicja Michalska <ahplka19@gmail.com>
+Date: Sat, 28 Oct 2023 22:51:25 +0200
+Subject: [PATCH 09/11] arm64: dts: mtk: mt8183: Fix MDP3 node references
+
+---
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi | 12 ++++++------
+ 1 file changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+index d5819ef4191e..5a35f08ed4a3 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+@@ -1907,7 +1907,7 @@ mmsys: syscon@14000000 {
+ 			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0 0x1000>;
+ 		};
+ 
+-		mdp3-rdma0@14001000 {
++		mdp3_rdma0: mdp3-rdma0@14001000 {
+ 			compatible = "mediatek,mt8183-mdp3",
+ 				     "mediatek,mt8183-mdp3-rdma";
+ 			mediatek,scp = <&scp>;
+@@ -1955,7 +1955,7 @@ mdp3-rdma0@14001000 {
+ 				     <&gce 0x15020000 SUBSYS_1502XXXX>;
+ 		};
+ 
+-		mdp3-rsz0@14003000 {
++		mdp3_rsz0: mdp3-rsz0@14003000 {
+ 			compatible = "mediatek,mt8183-mdp3-rsz";
+ 			mediatek,mdp3-id = <0>;
+ 			reg = <0 0x14003000 0 0x1000>;
+@@ -1965,7 +1965,7 @@ mdp3-rsz0@14003000 {
+ 			clocks = <&mmsys CLK_MM_MDP_RSZ0>;
+ 		};
+ 
+-		mdp3-rsz1@14004000 {
++		mdp3_rsz1: mdp3-rsz1@14004000 {
+ 			compatible = "mediatek,mt8183-mdp3-rsz";
+ 			mediatek,mdp3-id = <1>;
+ 			reg = <0 0x14004000 0 0x1000>;
+@@ -1975,7 +1975,7 @@ mdp3-rsz1@14004000 {
+ 			clocks = <&mmsys CLK_MM_MDP_RSZ1>;
+ 		};
+ 
+-		mdp3-wrot0@14005000 {
++		mdp3_wrot0: mdp3-wrot0@14005000 {
+ 			compatible = "mediatek,mt8183-mdp3-wrot";
+ 			mediatek,mdp3-id = <0>;
+ 			reg = <0 0x14005000 0 0x1000>;
+@@ -1987,7 +1987,7 @@ mdp3-wrot0@14005000 {
+ 			iommus = <&iommu M4U_PORT_MDP_WROT0>;
+ 		};
+ 
+-		mdp3-wdma@14006000 {
++		mdp3_wdma: mdp3-wdma@14006000 {
+ 			compatible = "mediatek,mt8183-mdp3-wdma";
+ 			mediatek,mdp3-id = <0>;
+ 			reg = <0 0x14006000 0 0x1000>;
+@@ -2188,7 +2188,7 @@ smi_common: smi@14019000 {
+ 			power-domains = <&spm MT8183_POWER_DOMAIN_DISP>;
+ 		};
+ 
+-		mdp3-ccorr@1401c000 {
++		mdp3_ccorr: mdp3-ccorr@1401c000 {
+ 			compatible = "mediatek,mt8183-mdp3-ccorr";
+ 			mediatek,mdp3-id = <0>;
+ 			reg = <0 0x1401c000 0 0x1000>;
+-- 
+2.41.0
+

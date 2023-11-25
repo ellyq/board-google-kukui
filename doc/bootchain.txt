@@ -1,0 +1,5 @@
+1. BootROM (SoC)
+2. Coreboot (SPI)
+3. Trusted Firmware-A
+4. Payload
+5. Kernel (eMMC)

@@ -1,0 +1,65 @@
+Driver Info:
+	Driver name      : mtk-mdp3
+	Card type        : MediaTek MDP3
+	Bus info         : platform:14001000.mdp3-rdma0
+	Driver version   : 6.7.0
+	Capabilities     : 0x84204000
+		Video Memory-to-Memory Multiplanar
+		Streaming
+		Extended Pix Format
+		Device Capabilities
+	Device Caps      : 0x04204000
+		Video Memory-to-Memory Multiplanar
+		Streaming
+		Extended Pix Format
+Priority: 2
+Format Video Capture Multiplanar:
+	Width/Height      : 16/16
+	Pixel Format      : 'YM12' (Planar YUV 4:2:0 (N-C))
+	Field             : None
+	Number of planes  : 3
+	Flags             : 
+	Colorspace        : Default
+	Transfer Function : Default
+	YCbCr/HSV Encoding: Default
+	Quantization      : Default
+	Plane 0           :
+	   Bytes per Line : 16
+	   Size Image     : 256
+	Plane 1           :
+	   Bytes per Line : 8
+	   Size Image     : 64
+	Plane 2           :
+	   Bytes per Line : 8
+	   Size Image     : 64
+Format Video Output Multiplanar:
+	Width/Height      : 16/16
+	Pixel Format      : 'YM12' (Planar YUV 4:2:0 (N-C))
+	Field             : None
+	Number of planes  : 3
+	Flags             : 
+	Colorspace        : Default
+	Transfer Function : Default
+	YCbCr/HSV Encoding: Default
+	Quantization      : Default
+	Plane 0           :
+	   Bytes per Line : 16
+	   Size Image     : 256
+	Plane 1           :
+	   Bytes per Line : 8
+	   Size Image     : 64
+	Plane 2           :
+	   Bytes per Line : 8
+	   Size Image     : 64
+Selection Video Capture: compose, Left 0, Top 0, Width 16, Height 16, Flags: 
+Selection Video Capture: compose_default, Left 0, Top 0, Width 16, Height 16, Flags: 
+Selection Video Capture: compose_bounds, Left 0, Top 0, Width 16, Height 16, Flags: 
+Selection Video Output: crop, Left 0, Top 0, Width 16, Height 16, Flags: 
+Selection Video Output: crop_default, Left 0, Top 0, Width 16, Height 16, Flags: 
+Selection Video Output: crop_bounds, Left 0, Top 0, Width 16, Height 16, Flags: 
+
+User Controls
+
+                horizontal_flip 0x00980914 (bool)   : default=0 value=0
+                  vertical_flip 0x00980915 (bool)   : default=0 value=0
+                         rotate 0x00980922 (int)    : min=0 max=270 step=90 default=0 value=0 flags=modify-layout

@@ -1,0 +1,125 @@
+Driver Info:
+	Driver name      : mtk-vcodec-dec
+	Card type        : MT8183 video decoder
+	Bus info         : platform:16020000.vcodec
+	Driver version   : 6.7.0
+	Capabilities     : 0x84204000
+		Video Memory-to-Memory Multiplanar
+		Streaming
+		Extended Pix Format
+		Device Capabilities
+	Device Caps      : 0x04204000
+		Video Memory-to-Memory Multiplanar
+		Streaming
+		Extended Pix Format
+Media Driver Info:
+	Driver name      : mtk-vcodec-dec
+	Model            : mtk-vcodec-dec
+	Serial           : 
+	Bus info         : platform:16020000.vcodec
+	Media version    : 6.7.0
+	Hardware revision: 0x00000000 (0)
+	Driver version   : 6.7.0
+Interface Info:
+	ID               : 0x0300000c
+	Type             : V4L Video
+Entity Info:
+	ID               : 0x00000001 (1)
+	Name             : mtk-vcodec-dec-source
+	Function         : V4L2 I/O
+	Pad 0x01000002   : 0: Source
+	  Link 0x02000008: to remote pad 0x1000004 of entity 'mtk-vcodec-dec-proc' (Video Decoder): Data, Enabled, Immutable
+Priority: 2
+Format Video Capture Multiplanar:
+	Width/Height      : 64/64
+	Pixel Format      : 'MM21' (Mediatek 8-bit Block Format)
+	Field             : None
+	Number of planes  : 2
+	Flags             : 
+	Colorspace        : Rec. 709
+	Transfer Function : Default
+	YCbCr/HSV Encoding: Default
+	Quantization      : Default
+	Plane 0           :
+	   Bytes per Line : 64
+	   Size Image     : 4096
+	Plane 1           :
+	   Bytes per Line : 64
+	   Size Image     : 2048
+Format Video Output Multiplanar:
+	Width/Height      : 64/64
+	Pixel Format      : 'S264' (H.264 Parsed Slice Data)
+	Field             : None
+	Number of planes  : 1
+	Flags             : 
+	Colorspace        : Rec. 709
+	Transfer Function : Default
+	YCbCr/HSV Encoding: Default
+	Quantization      : Default
+	Plane 0           :
+	   Bytes per Line : 0
+	   Size Image     : 4096
+Selection Video Capture: compose, Left 0, Top 0, Width 64, Height 64, Flags: 
+Selection Video Capture: compose_default, Left 0, Top 0, Width 64, Height 64, Flags: 
+Selection Video Capture: compose_bounds, Left 0, Top 0, Width 64, Height 64, Flags: 
+
+Codec Controls
+
+                   h264_profile 0x00990a6b (menu)   : min=0 max=4 default=2 value=2 (Main)
+				1: Constrained Baseline
+				2: Main
+				4: High
+                    vp8_profile 0x00990aff (menu)   : min=0 max=3 default=0 value=0 (0)
+				0: 0
+				1: 1
+				2: 2
+				3: 3
+                    vp9_profile 0x00990b00 (menu)   : min=0 max=3 default=0 value=0 (0)
+				0: 0
+				1: 1
+				2: 2
+				3: 3
+                   hevc_profile 0x00990b67 (menu)   : min=0 max=2 default=0 value=0 (Main)
+				0: Main
+				2: Main 10
+                    av1_profile 0x00990b8f (menu)   : min=0 max=0 default=0 value=0 (Main)
+				0: Main
+                      av1_level 0x00990b90 (menu)   : min=0 max=13 default=8 value=8 (4.0)
+				0: 2.0
+				1: 2.1
+				2: 2.2
+				3: 2.3
+				4: 3.0
+				5: 3.1
+				6: 3.2
+				7: 3.3
+				8: 4.0
+				9: 4.1
+				10: 4.2
+				11: 4.3
+				12: 5.0
+				13: 5.1
+
+Stateless Codec Controls
+
+               h264_decode_mode 0x00a40900 (menu)   : min=1 max=1 default=1 value=1 (Frame-Based)
+				1: Frame-Based
+                h264_start_code 0x00a40901 (menu)   : min=1 max=1 default=1 value=1 (Annex B Start Code)
+				1: Annex B Start Code
+    h264_sequence_parameter_set 0x00a40902 (h264-sps): value=unsupported payload type flags=has-payload
+     h264_picture_parameter_set 0x00a40903 (h264-pps): value=unsupported payload type flags=has-payload
+            h264_scaling_matrix 0x00a40904 (h264-scaling-matrix): value=unsupported payload type flags=has-payload
+         h264_decode_parameters 0x00a40907 (h264-decode-params): value=unsupported payload type flags=has-payload
+           vp8_frame_parameters 0x00a409c8 (vp8-frame): value=unsupported payload type flags=has-payload
+    vp9_frame_decode_parameters 0x00a40a2c (vp9-frame): value=unsupported payload type flags=has-payload
+    hevc_sequence_parameter_set 0x00a40a90 (hevc-sps): value=unsupported payload type flags=has-payload
+     hevc_picture_parameter_set 0x00a40a91 (hevc-sps): value=unsupported payload type flags=has-payload
+            hevc_scaling_matrix 0x00a40a93 (hevc-scaling-matrix): value=unsupported payload type flags=has-payload
+         hevc_decode_parameters 0x00a40a94 (hevc-decode-params): value=unsupported payload type flags=has-payload
+               hevc_decode_mode 0x00a40a95 (menu)   : min=1 max=1 default=1 value=1 (Frame-Based)
+				1: Frame-Based
+                hevc_start_code 0x00a40a96 (menu)   : min=1 max=1 default=1 value=1 (Annex B Start Code)
+				1: Annex B Start Code
+        av1_sequence_parameters 0x00a40af4 (unknown): type=280 value=unsupported payload type flags=has-payload
+           av1_tile_group_entry 0x00a40af5 (unknown): type=281 elems=1 dims=[512] flags=has-payload, dynamic-array
+           av1_frame_parameters 0x00a40af6 (unknown): type=282 value=unsupported payload type flags=has-payload

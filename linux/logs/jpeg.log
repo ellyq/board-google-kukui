@@ -1,0 +1,50 @@
+Driver Info:
+	Driver name      : mtk-jpeg-enc
+	Card type        : mtk-jpeg-enc
+	Bus info         : platform:17030000.venc_jpg
+	Driver version   : 6.7.0
+	Capabilities     : 0x84204000
+		Video Memory-to-Memory Multiplanar
+		Streaming
+		Extended Pix Format
+		Device Capabilities
+	Device Caps      : 0x04204000
+		Video Memory-to-Memory Multiplanar
+		Streaming
+		Extended Pix Format
+Priority: 2
+Format Video Capture Multiplanar:
+	Width/Height      : 32/32
+	Pixel Format      : 'JPEG' (JFIF JPEG)
+	Field             : None
+	Number of planes  : 1
+	Flags             : 
+	Colorspace        : sRGB
+	Transfer Function : sRGB
+	YCbCr/HSV Encoding: ITU-R 601
+	Quantization      : Full Range
+	Plane 0           :
+	   Bytes per Line : 0
+	   Size Image     : 1048576
+Format Video Output Multiplanar:
+	Width/Height      : 32/32
+	Pixel Format      : 'YUYV' (YUYV 4:2:2)
+	Field             : None
+	Number of planes  : 1
+	Flags             : 
+	Colorspace        : sRGB
+	Transfer Function : sRGB
+	YCbCr/HSV Encoding: ITU-R 601
+	Quantization      : Full Range
+	Plane 0           :
+	   Bytes per Line : 64
+	   Size Image     : 2048
+Selection Video Output: crop, Left 0, Top 0, Width 0, Height 0, Flags: 
+Selection Video Output: crop_default, Left 0, Top 0, Width 32, Height 32, Flags: 
+Selection Video Output: crop_bounds, Left 0, Top 0, Width 32, Height 32, Flags: 
+
+JPEG Compression Controls
+
+               restart_interval 0x009d0902 (int)    : min=0 max=100 step=1 default=0 value=0
+            compression_quality 0x009d0903 (int)    : min=48 max=100 step=1 default=90 value=90
+                 active_markers 0x009d0904 (bitmask): max=0x00000002 default=0x00000000 value=0

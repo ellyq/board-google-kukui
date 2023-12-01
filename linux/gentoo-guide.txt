@@ -1,0 +1,96 @@
+1. Partition eMMC using cfdisk.
+label: gpt
+label-id: A318AA78-0EB7-2F42-B739-C299A0AB6F69
+device: /dev/mmcblk0
+unit: sectors
+first-lba: 34
+last-lba: 244277214
+sector-size: 512
+
+/dev/mmcblk0p1 : start=        2048, size=      524288, type=FE3A2A5D-4F32-41A7-B725-ACCC3285A309, uuid=1C801F43-03DF-4815-A227-839D55DAF2F9
+/dev/mmcblk0p2 : start=      526336, size=      524288, type=FE3A2A5D-4F32-41A7-B725-ACCC3285A309, uuid=1B881854-6F2C-4F11-993C-EDEBFC697FAF
+/dev/mmcblk0p3 : start=     1050624, size=     2097152, type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, uuid=61C59195-487B-49B4-8283-B608F96094C7
+/dev/mmcblk0p4 : start=     3147776, size=   134217728, type=0FC63DAF-8483-4772-8E79-3D69D8477DE4, uuid=832B03EA-3540-47C6-9445-454EAB38261B
+
+2. Create filesystems.
+mkfs.ext4 /dev/mmcblk0p3
+mkfs.ext4 /dev/mmcblk0p4
+
+3. Create mountpoints and mount the partitions.
+mkdir -p /mnt/gentoo/boot
+mount /dev/mmcblk0p4 /mnt/gentoo
+mount /dev/mmcblk0p3 /mnt/gentoo/boot
+cd /mnt/gentoo
+
+4. Get stage3 and extract it.
+# I don't care about security for development system that will most likely get corrupted while working on the kernel.
+# Install `tar` if you're bootstraping from Alpine/postmarketOS.
+wget https://distfiles.gentoo.org/releases/arm64/autobuilds/20231126T234701Z/stage3-arm64-systemd-mergedusr-20231126T234701Z.tar.xz
+tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
+rm stage3*.tar.xz
+
+5. Configure portage.
+### /mnt/gentoo/etc/portage/make.conf
+# Compiler flags. MT8183 uses Cortex A53/A72 combo. Two jobs because we only have 4GB of RAM.
+COMMON_FLAGS="-march=armv8-a+crc+crypto -mtune=cortex-a72.cortex-a53 -mfix-cortex-a53-835769 -mfix-cortex-a53-843419 -O2 -pipe"
+CFLAGS="${COMMON_FLAGS}"
+CXXFLAGS="${COMMON_FLAGS}"
+FCFLAGS="${COMMON_FLAGS}"
+FFLAGS="${COMMON_FLAGS}"
+
+CHOST="aarch64-unknown-linux-gnu"
+
+MAKEOPTS="-j2 -l2"
+
+# I don't care about licences. Be gay, do crimes.
+ACCEPT_LICENSE="*"
+
+# NOTE: This stage was built with the bindist Use flag enabled
+PORTDIR="/var/db/repos/gentoo"
+DISTDIR="/var/cache/distfiles"
+PKGDIR="/var/cache/binpkgs"
+
+# Set the system's language.
+LC_MESSAGES=C.utf8
+L10N="en-GB.UTF-8"
+
+# Pick mirrors.
+GENTOO_MIRRORS="https://ftp.belnet.be/pub/rsync.gentoo.org/gentoo/ rsync://ftp.belnet.be/gentoo/gentoo/ https://mirror.dkm.cz/gentoo/ rsync://mirror.dkm.cz/gentoo/ https://mirror.netcologne.de/gentoo/ rsync://mirror.netcologne.de/gentoo/ https://mirror.leaseweb.com/gentoo/ rsync://mirror.leaseweb.com/gentoo/"
+
+# Set QEMU targets, in case we want to emulate other platforms.
+QEMU_USER_TARGETS="arm aarch64 ppc ppc64 ppc64le i386 x86_64"
+QEMU_SOFTMMU_TARGETS="arm aarch64 i386 x86_64 ppc ppc64 ppcemb"
+QEMU_FLAGS="spice usb usbredir qxl static"
+
+# Global USE flags.
+USE="fbcon v4l vulkan wifi bluetooth ipv6 usb lm-sensors debug posix crypt truetype fontconfig bash-completion zsh-completion gui xcb wayland qt6 kde plasma sound alsa aac mp3 flac opus encode lame ffmpeg mplayer mpeg x264 mp4 imagemagick avif heif jpeg gif"
+
+6. Setup DNS.
+echo "nameserver 1.1.1.1" > /mnt/gentoo/etc/resolv.conf
+
+7. Bind shm nodes to chroot. You may want to create a shell script for convenience.
+#!/usr/bin/env bash
+mount --types proc /proc /mnt/gentoo/proc
+mount --rbind /sys /mnt/gentoo/sys
+mount --make-rslave /mnt/gentoo/sys
+mount --rbind /dev /mnt/gentoo/dev
+mount --make-rslave /mnt/gentoo/dev
+mount --bind /run /mnt/gentoo/run
+mount --make-slave /mnt/gentoo/run
+
+8. Enter chroot.
+chroot /mnt/gentoo /bin/bash
+source /etc/profile
+export PS1="(gentoo) ${PS1}"
+
+9. Sync emerge.
+emerge-webrsync
+
+10. Select system profile. I'm choosing "[11] default/linux/arm64/17.0/desktop/systemd (stable)". Blasphemy, I know.
+eselect profile list
+eselect profile set 11
+
+11. Update @world.
+emerge --ask --verbose --update --deep --newuse @world
+
+[To be continued... time to sleep :)]

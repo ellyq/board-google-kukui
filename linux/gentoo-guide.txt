@@ -40,6 +40,7 @@ FFLAGS="${COMMON_FLAGS}"
 
 CHOST="aarch64-unknown-linux-gnu"
 
+EMERGE_DEFAULT_OPTS="--jobs 2"
 MAKEOPTS="-j2 -l2"
 
 # I don't care about licences. Be gay, do crimes.

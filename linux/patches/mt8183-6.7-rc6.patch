@@ -1,0 +1,1619 @@
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-burnet.dts b/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-burnet.dts
+index 19c1e2bee494..20b71f2e7159 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-burnet.dts
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-burnet.dts
+@@ -30,3 +30,6 @@ touchscreen@2c {
+ 	};
+ };
+ 
++&i2c2 {
++	i2c-scl-internal-delay-ns = <4100>;
++};
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-cozmo.dts b/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-cozmo.dts
+index 072133fb0f01..47905f84bc16 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-cozmo.dts
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-cozmo.dts
+@@ -17,6 +17,8 @@ &i2c_tunnel {
+ };
+ 
+ &i2c2 {
++	i2c-scl-internal-delay-ns = <25000>;
++
+ 	trackpad@2c {
+ 		compatible = "hid-over-i2c";
+ 		reg = <0x2c>;
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-damu.dts b/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-damu.dts
+index 552bfc726999..8f95b7270c3f 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-damu.dts
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-damu.dts
+@@ -27,7 +27,14 @@ &touchscreen {
+ 	hid-descr-addr = <0x0001>;
+ };
+ 
++&mt6358codec {
++	mediatek,dmic-mode = <1>; /* one-wire */
++};
++
+ &qca_wifi {
+ 	qcom,ath10k-calibration-variant = "GO_DAMU";
+ };
+ 
++&i2c2 {
++	i2c-scl-internal-delay-ns = <20000>;
++};
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel.dtsi b/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel.dtsi
+index bbe6c338f465..f317d85325fa 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-fennel.dtsi
+@@ -6,6 +6,10 @@
+ /dts-v1/;
+ #include "mt8183-kukui-jacuzzi.dtsi"
+ 
++&cpu_thermal {
++        sustainable-power = <4500>; /* milliwatts */
++};
++
+ &mt6358codec {
+ 	mediatek,dmic-mode = <1>; /* one-wire */
+ };
+@@ -25,3 +29,6 @@ trackpad@2c {
+ 	};
+ };
+ 
++&i2c2 {
++	i2c-scl-internal-delay-ns = <21500>;
++};
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kenzo.dts b/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kenzo.dts
+index 8fa89db03e63..230fce289838 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kenzo.dts
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-kenzo.dts
+@@ -11,3 +11,23 @@ / {
+ 	model = "Google kenzo sku17 board";
+ 	compatible = "google,juniper-sku17", "google,juniper", "mediatek,mt8183";
+ };
++
++&i2c0 {
++	touchscreen@40 {
++		compatible = "hid-over-i2c";
++		reg = <0x40>;
++
++		pinctrl-names = "default";
++		pinctrl-0 = <&touchscreen_pins>;
++
++		interrupt-parent = <&pio>;
++		interrupts-extended = <&pio 155 IRQ_TYPE_LEVEL_LOW>;
++
++		post-power-on-delay-ms = <70>;
++		hid-descr-addr = <0x0001>;
++	};
++};
++
++&i2c2 {
++	mediatek,default-timing-adjust;
++};
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow.dtsi b/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow.dtsi
+index 76d33540166f..a10c59759491 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-jacuzzi-willow.dtsi
+@@ -6,7 +6,25 @@
+ /dts-v1/;
+ #include "mt8183-kukui-jacuzzi.dtsi"
+ 
++&i2c0 {
++	touchscreen@40 {
++		compatible = "hid-over-i2c";
++		reg = <0x40>;
++
++		pinctrl-names = "default";
++		pinctrl-0 = <&touchscreen_pins>;
++
++		interrupt-parent = <&pio>;
++		interrupts-extended = <&pio 155 IRQ_TYPE_LEVEL_LOW>;
++
++		post-power-on-delay-ms = <70>;
++		hid-descr-addr = <0x0001>;
++	};
++};
++
+ &i2c2 {
++	mediatek,default-timing-adjust;
++
+ 	trackpad@2c {
+ 		compatible = "hid-over-i2c";
+ 		reg = <0x2c>;
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtsi b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtsi
+index a11adeb29b1f..9e94de8ffc86 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kakadu.dtsi
+@@ -95,6 +95,51 @@ eeprom@58 {
+ 		reg = <0x58>;
+ 		pagesize = <32>;
+ 		vcc-supply = <&mt6358_vcama2_reg>;
++		device-id = <0>;
++	};
++
++	sensor_main: sensor_main@10 {
++		status = "okay";
++		compatible = "ovti,ov8856";
++		reg = <0x10>;
++
++		clocks = <&topckgen CLK_TOP_MUX_CAMTG>,
++			 <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		clock-names = "xvclk", "freq_mux";
++		clock-frequency = <19200000>;
++
++		assigned-clocks = <&topckgen CLK_TOP_MUX_CAMTG>,
++				  <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		assigned-clock-parents = <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		assigned-clock-rates = <0>, <24000000>;
++
++		reset-gpios = <&pio 111 GPIO_ACTIVE_LOW>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&camera_pins_cam0>;
++
++		avdd-supply = <&mt6358_vcama2_reg>;
++		dvdd-supply = <&mt6358_vcamd_reg>;
++		dovdd-supply = <&mt6358_vcamio_reg>;
++
++		lens-focus = <&camera_main_af>;
++
++		port {
++			ov8856_endpoint: endpoint {
++				clock-lanes = <0>;
++				clock-noncontinuous;
++				data-lanes = <1 2 3 4>;
++				link-frequencies = /bits/ 64 <360000000 180000000>;
++				remote-endpoint = <&seninf_port0_endpoint>;
++			};
++		};
++	};
++
++	camera_main_af: camera_main_af@c {
++		compatible = "dongwoon,dw9768";
++		reg = <0x0c>;
++
++		vin-supply = <&mt6358_vcamio_reg>;
++		vdd-supply = <&mt6358_vcama2_reg>;
+ 	};
+ };
+ 
+@@ -110,6 +155,42 @@ eeprom@54 {
+ 		reg = <0x54>;
+ 		pagesize = <32>;
+ 		vcc-supply = <&mt6358_vcn18_reg>;
++		device-id = <0>;
++	};
++
++	sensor_sub: sensor_sub@3d {
++		status = "okay";
++		compatible = "ovti,ov02a10";
++		reg = <0x3d>;
++
++		clocks = <&topckgen CLK_TOP_MUX_CAMTG2>,
++			 <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		clock-names = "eclk", "freq_mux";
++		clock-frequency = <24000000>;
++		rotation = <180>;
++
++		assigned-clocks = <&topckgen CLK_TOP_MUX_CAMTG2>,
++				  <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		assigned-clock-parents = <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		assigned-clock-rates = <0>, <24000000>;
++
++		powerdown-gpios = <&pio 107 GPIO_ACTIVE_HIGH>;
++		reset-gpios = <&pio 109 GPIO_ACTIVE_LOW>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&camera_pins_cam1>;
++
++		avdd-supply = <&mt6358_vcama1_reg>;
++		dvdd-supply = <&mt6358_vcn18_reg>;
++		dovdd-supply = <&mt6358_vcamio_reg>;
++
++		port {
++			ov02a10_endpoint: endpoint {
++				data-lanes = <1>;
++				ovti,mipi-clock-voltage = <3>;
++				link-frequencies = /bits/ 64 <390000000>;
++				remote-endpoint = <&seninf_port1_endpoint>;
++			};
++		};
+ 	};
+ };
+ 
+@@ -382,6 +463,52 @@ &qca_wifi {
+ 	qcom,ath10k-calibration-variant = "GO_KAKADU";
+ };
+ 
++&seninf {
++	status = "okay";
++
++	ports {
++		port@0 {
++			reg = <0>;
++
++			seninf_port0_endpoint: endpoint {
++				clock-lanes = <2>;
++				clock-noncontinuous;
++				data-lanes = <0 1 3 4>;
++				link-frequencies = /bits/ 64 <360000000 180000000>;
++				remote-endpoint = <&ov8856_endpoint>;
++			};
++		};
++
++		port@1 {
++			reg = <1>;
++
++			seninf_port1_endpoint: endpoint {
++				data-lanes = <1>;
++				remote-endpoint = <&ov02a10_endpoint>;
++			};
++		};
++	};
++};
++
++&camera_pins_cam0 {
++	pins_reset {
++		pinmux = <PINMUX_GPIO111__FUNC_GPIO111>;
++		output-low;
++	};
++};
++
++&camera_pins_cam1 {
++	pins_powerdown {
++		pinmux = <PINMUX_GPIO107__FUNC_GPIO107>;
++		output-high;
++	};
++
++	pins_reset {
++		pinmux = <PINMUX_GPIO109__FUNC_GPIO109>;
++		output-low;
++	};
++};
++
+ &panel {
+ 	status = "okay";
+ 	compatible = "boe,tv105wum-nw0";
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku16.dts b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku16.dts
+index 7213cdcca612..6e5f677241a5 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku16.dts
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku16.dts
+@@ -16,6 +16,54 @@ / {
+ 	compatible = "google,kodama-sku16", "google,kodama", "mediatek,mt8183";
+ };
+ 
++&i2c2 {
++	sensor_main: sensor_main@36 {
++		compatible = "ovti,ov5695";
++		reg = <0x36>;
++
++		clocks = <&topckgen CLK_TOP_MUX_CAMTG>,
++			 <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		clock-names = "xvclk", "freq_mux";
++
++		assigned-clocks = <&topckgen CLK_TOP_MUX_CAMTG>,
++				  <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		assigned-clock-parents = <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		assigned-clock-rates = <0>, <24000000>;
++
++		reset-gpios = <&pio 111 1>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&camera_pins_cam0>;
++
++		avdd-supply = <&mt6358_vcama2_reg>;
++		dvdd-supply = <&mt6358_vcamd_reg>;
++		dovdd-supply = <&mt6358_vcamio_reg>;
++
++		lens-focus = <&camera_main_af>;
++
++		port {
++			ov5695_endpoint: endpoint {
++				data-lanes = <1 3>;
++				remote-endpoint = <&seninf_port0_endpoint>;
++			};
++		};
++	};
++};
++
++&seninf {
++	status = "okay";
++
++	ports {
++		port@0 {
++			reg = <0>;
++
++			seninf_port0_endpoint: endpoint {
++				data-lanes = <1 3>;
++				remote-endpoint = <&ov5695_endpoint>;
++			};
++		};
++	};
++};
++
+ &panel {
+ 	status = "okay";
+ 	compatible = "auo,b101uan08.3";
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku272.dts b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku272.dts
+index bbf0cd1aa66d..fe3115bb08fa 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku272.dts
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku272.dts
+@@ -16,6 +16,53 @@ / {
+ 	compatible = "google,kodama-sku272", "google,kodama", "mediatek,mt8183";
+ };
+ 
++&i2c2 {
++	sensor_main: sensor_main@37 {
++		compatible = "galaxycore,gc5035";
++		reg = <0x37>;
++
++		clocks = <&topckgen CLK_TOP_MUX_CAMTG>;
++		clock-names = "mclk";
++		clock-frequency = <24000000>;
++
++		assigned-clocks = <&topckgen CLK_TOP_MUX_CAMTG>;
++		assigned-clock-parents = <&topckgen CLK_TOP_UNIVP_192M_D8>;
++
++		resetb-gpios = <&pio 111 GPIO_ACTIVE_LOW>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&camera_pins_cam0>;
++
++		avdd28-supply = <&mt6358_vcama2_reg>;
++		dvdd12-supply = <&mt6358_vcamd_reg>;
++		iovdd-supply = <&mt6358_vcamio_reg>;
++
++		lens-focus = <&camera_main_af>;
++
++		port {
++			gc5035_endpoint: endpoint {
++				data-lanes = <1 3>;
++				remote-endpoint = <&seninf_port0_endpoint>;
++				link-frequencies = /bits/ 64 <438000000>;
++			};
++		};
++	};
++};
++
++&seninf {
++	status = "okay";
++
++	ports {
++		port@0 {
++			reg = <0>;
++
++			seninf_port0_endpoint: endpoint {
++				data-lanes = <1 3>;
++				remote-endpoint = <&gc5035_endpoint>;
++			};
++		};
++	};
++};
++
+ &panel {
+ 	status = "okay";
+ 	compatible = "auo,b101uan08.3";
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku288.dts b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku288.dts
+index a429ffeac3bd..7ea1fb81b84b 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku288.dts
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku288.dts
+@@ -16,6 +16,53 @@ / {
+ 	compatible = "google,kodama-sku288", "google,kodama", "mediatek,mt8183";
+ };
+ 
++&i2c2 {
++	sensor_main: sensor_main@37 {
++		compatible = "galaxycore,gc5035";
++		reg = <0x37>;
++
++		clocks = <&topckgen CLK_TOP_MUX_CAMTG>;
++		clock-names = "mclk";
++		clock-frequency = <24000000>;
++
++		assigned-clocks = <&topckgen CLK_TOP_MUX_CAMTG>;
++		assigned-clock-parents = <&topckgen CLK_TOP_UNIVP_192M_D8>;
++
++		resetb-gpios = <&pio 111 GPIO_ACTIVE_LOW>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&camera_pins_cam0>;
++
++		avdd28-supply = <&mt6358_vcama2_reg>;
++		dvdd12-supply = <&mt6358_vcamd_reg>;
++		iovdd-supply = <&mt6358_vcamio_reg>;
++
++		lens-focus = <&camera_main_af>;
++
++		port {
++			gc5035_endpoint: endpoint {
++				data-lanes = <1 3>;
++				remote-endpoint = <&seninf_port0_endpoint>;
++				link-frequencies = /bits/ 64 <438000000>;
++			};
++		};
++	};
++};
++
++&seninf {
++	status = "okay";
++
++	ports {
++		port@0 {
++			reg = <0>;
++
++			seninf_port0_endpoint: endpoint {
++				data-lanes = <1 3>;
++				remote-endpoint = <&gc5035_endpoint>;
++			};
++		};
++	};
++};
++
+ &panel {
+ 	status = "okay";
+ 	compatible = "boe,tv101wum-n53";
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku32.dts b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku32.dts
+index 7739358008ee..c24d4cf4c060 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku32.dts
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama-sku32.dts
+@@ -15,6 +15,53 @@ / {
+ 	compatible = "google,kodama-sku32", "google,kodama", "mediatek,mt8183";
+ };
+ 
++&i2c2 {
++	sensor_main: sensor_main@36 {
++		compatible = "ovti,ov5695";
++		reg = <0x36>;
++
++		clocks = <&topckgen CLK_TOP_MUX_CAMTG>,
++			 <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		clock-names = "xvclk", "freq_mux";
++
++		assigned-clocks = <&topckgen CLK_TOP_MUX_CAMTG>,
++				  <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		assigned-clock-parents = <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		assigned-clock-rates = <0>, <24000000>;
++
++		reset-gpios = <&pio 111 1>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&camera_pins_cam0>;
++
++		avdd-supply = <&mt6358_vcama2_reg>;
++		dvdd-supply = <&mt6358_vcamd_reg>;
++		dovdd-supply = <&mt6358_vcamio_reg>;
++
++		lens-focus = <&camera_main_af>;
++
++		port {
++			ov5695_endpoint: endpoint {
++				data-lanes = <1 3>;
++				remote-endpoint = <&seninf_port0_endpoint>;
++			};
++		};
++	};
++};
++
++&seninf {
++	status = "okay";
++	ports {
++		port@0 {
++			reg = <0>;
++
++			seninf_port0_endpoint: endpoint {
++				data-lanes = <1 3>;
++				remote-endpoint = <&ov5695_endpoint>;
++			};
++		};
++	};
++};
++
+ &panel {
+ 	status = "okay";
+ 	compatible = "boe,tv101wum-n53";
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama.dtsi b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama.dtsi
+index 4864c39e53a4..494c13bd5887 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-kodama.dtsi
+@@ -70,6 +70,15 @@ eeprom@58 {
+ 		reg = <0x58>;
+ 		pagesize = <32>;
+ 		vcc-supply = <&mt6358_vcamio_reg>;
++		device-id = <0>;
++	};
++
++	camera_main_af: camera_main_af@c {
++		compatible = "dongwoon,dw9768";
++		reg = <0x0c>;
++
++		vin-supply = <&mt6358_vcamio_reg>;
++		vdd-supply = <&mt6358_vcama2_reg>;
+ 	};
+ };
+ 
+@@ -85,6 +94,42 @@ eeprom@54 {
+ 		reg = <0x54>;
+ 		pagesize = <32>;
+ 		vcc-supply = <&mt6358_vcn18_reg>;
++		device-id = <0>;
++	};
++
++	sensor_sub: sensor_sub@3d {
++		status = "okay";
++		compatible = "ovti,ov02a10";
++		reg = <0x3d>;
++
++		clocks = <&topckgen CLK_TOP_MUX_CAMTG2>,
++			 <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		clock-names = "eclk", "freq_mux";
++		clock-frequency = <24000000>;
++		rotation = <180>;
++
++		assigned-clocks = <&topckgen CLK_TOP_MUX_CAMTG2>,
++				  <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		assigned-clock-parents = <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		assigned-clock-rates = <0>, <24000000>;
++
++		powerdown-gpios = <&pio 107 GPIO_ACTIVE_HIGH>;
++		reset-gpios = <&pio 109 GPIO_ACTIVE_LOW>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&camera_pins_cam1>;
++
++		avdd-supply = <&mt6358_vcama1_reg>;
++		dvdd-supply = <&mt6358_vcn18_reg>;
++		dovdd-supply = <&mt6358_vcamio_reg>;
++
++		port {
++			ov02a10_endpoint: endpoint {
++				data-lanes = <1>;
++				ovti,mipi-clock-voltage = <4>;
++				link-frequencies = /bits/ 64 <390000000>;
++				remote-endpoint = <&seninf_port1_endpoint>;
++			};
++		};
+ 	};
+ };
+ 
+@@ -349,6 +394,39 @@ &qca_wifi {
+ 	qcom,ath10k-calibration-variant = "GO_KODAMA";
+ };
+ 
++&seninf {
++	ports {
++		port@1 {
++			reg = <1>;
++
++			seninf_port1_endpoint: endpoint {
++				data-lanes = <1>;
++				link-frequencies = /bits/ 64 <390000000>;
++				remote-endpoint = <&ov02a10_endpoint>;
++			};
++		};
++	};
++};
++
++&camera_pins_cam0 {
++	pins_reset {
++		pinmux = <PINMUX_GPIO111__FUNC_GPIO111>;
++		output-low;
++	};
++};
++
++&camera_pins_cam1 {
++	pins_powerdown {
++		pinmux = <PINMUX_GPIO107__FUNC_GPIO107>;
++		output-high;
++	};
++
++	pins_reset {
++		pinmux = <PINMUX_GPIO109__FUNC_GPIO109>;
++		output-low;
++	};
++};
++
+ &i2c_tunnel {
+         google,remote-bus = <2>;
+ };
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku0.dts b/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku0.dts
+index 4ac75806fa94..e1130cb252a5 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku0.dts
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku0.dts
+@@ -13,7 +13,7 @@
+ #include "mt8183-kukui-krane.dtsi"
+ 
+ / {
+-	model = "MediaTek krane sku0 board";
++	model = "Lenovo Chromebook Duet (AUO)";
+ 	chassis-type = "tablet";
+ 	compatible = "google,krane-sku0", "google,krane", "mediatek,mt8183";
+ };
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku176.dts b/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku176.dts
+index 095279e55d50..35a0ad99f3ac 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku176.dts
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane-sku176.dts
+@@ -13,7 +13,7 @@
+ #include "mt8183-kukui-krane.dtsi"
+ 
+ / {
+-	model = "MediaTek krane sku176 board";
++	model = "Lenovo Chromebook Duet (BOE)";
+ 	chassis-type = "tablet";
+ 	compatible = "google,krane-sku176", "google,krane", "mediatek,mt8183";
+ };
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane.dtsi b/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane.dtsi
+index d5f41c6c9881..45770e2c6826 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui-krane.dtsi
+@@ -79,6 +79,51 @@ eeprom@58 {
+ 		reg = <0x58>;
+ 		pagesize = <32>;
+ 		vcc-supply = <&mt6358_vcama2_reg>;
++		device-id = <0>;
++	};
++
++	sensor_main: sensor_main@10 {
++		status = "okay";
++		compatible = "ovti,ov8856";
++		reg = <0x10>;
++
++		clocks = <&topckgen CLK_TOP_MUX_CAMTG>,
++			 <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		clock-names = "xvclk", "freq_mux";
++		clock-frequency = <19200000>;
++
++		assigned-clocks = <&topckgen CLK_TOP_MUX_CAMTG>,
++				  <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		assigned-clock-parents = <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		assigned-clock-rates = <0>, <24000000>;
++
++		reset-gpios = <&pio 111 GPIO_ACTIVE_LOW>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&camera_pins_cam0>;
++
++		avdd-supply = <&mt6358_vcama2_reg>;
++		dvdd-supply = <&mt6358_vcamd_reg>;
++		dovdd-supply = <&mt6358_vcamio_reg>;
++
++		lens-focus = <&camera_main_af>;
++
++		port {
++			ov8856_endpoint: endpoint {
++				clock-lanes = <0>;
++				clock-noncontinuous;
++				data-lanes = <1 2 3 4>;
++				link-frequencies = /bits/ 64 <360000000 180000000>;
++				remote-endpoint = <&seninf_port0_endpoint>;
++			};
++		};
++	};
++
++	camera_main_af: camera_main_af@c {
++		compatible = "dongwoon,dw9768";
++		reg = <0x0c>;
++
++		vin-supply = <&mt6358_vcamio_reg>;
++		vdd-supply = <&mt6358_vcama2_reg>;
+ 	};
+ };
+ 
+@@ -89,11 +134,47 @@ &i2c4 {
+ 	clock-frequency = <400000>;
+ 	vbus-supply = <&mt6358_vcn18_reg>;
+ 
+-	eeprom@54 {
++	eeprom@50 {
+ 		compatible = "atmel,24c32";
+-		reg = <0x54>;
++		reg = <0x50>;
+ 		pagesize = <32>;
+ 		vcc-supply = <&mt6358_vcn18_reg>;
++		device-id = <0>;
++	};
++
++	sensor_sub: sensor_sub@3d {
++		status = "okay";
++		compatible = "ovti,ov02a10";
++		reg = <0x3d>;
++
++		clocks = <&topckgen CLK_TOP_MUX_CAMTG2>,
++			 <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		clock-names = "eclk", "freq_mux";
++		clock-frequency = <24000000>;
++		rotation = <180>;
++
++		assigned-clocks = <&topckgen CLK_TOP_MUX_CAMTG2>,
++				  <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		assigned-clock-parents = <&topckgen CLK_TOP_UNIVP_192M_D8>;
++		assigned-clock-rates = <0>, <24000000>;
++
++		powerdown-gpios = <&pio 107 GPIO_ACTIVE_HIGH>;
++		reset-gpios = <&pio 109 GPIO_ACTIVE_LOW>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&camera_pins_cam1>;
++
++		avdd-supply = <&mt6358_vcama1_reg>;
++		dvdd-supply = <&mt6358_vcn18_reg>;
++		dovdd-supply = <&mt6358_vcamio_reg>;
++
++		port {
++			ov02a10_endpoint: endpoint {
++				data-lanes = <1>;
++				ovti,mipi-clock-voltage = <3>;
++				link-frequencies = /bits/ 64 <390000000>;
++				remote-endpoint = <&seninf_port1_endpoint>;
++			};
++		};
+ 	};
+ };
+ 
+@@ -356,3 +437,49 @@ &qca_wifi {
+ &sound {
+ 	compatible = "mediatek,mt8183_mt6358_ts3a227_max98357";
+ };
++
++&seninf {
++	status = "okay";
++
++	ports {
++		port@0 {
++			reg = <0>;
++
++			seninf_port0_endpoint: endpoint {
++				clock-lanes = <2>;
++				clock-noncontinuous;
++				data-lanes = <0 1 3 4>;
++				link-frequencies = /bits/ 64 <360000000 180000000>;
++				remote-endpoint = <&ov8856_endpoint>;
++			};
++		};
++
++		port@1 {
++			reg = <1>;
++
++			seninf_port1_endpoint: endpoint {
++				data-lanes = <1>;
++				remote-endpoint = <&ov02a10_endpoint>;
++			};
++		};
++	};
++};
++
++&camera_pins_cam0 {
++	pins_reset {
++		pinmux = <PINMUX_GPIO111__FUNC_GPIO111>;
++		output-low;
++	};
++};
++
++&camera_pins_cam1 {
++	pins_powerdown {
++		pinmux = <PINMUX_GPIO107__FUNC_GPIO107>;
++		output-high;
++	};
++
++	pins_reset {
++		pinmux = <PINMUX_GPIO109__FUNC_GPIO109>;
++		output-low;
++	};
++};
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183-kukui.dtsi b/arch/arm64/boot/dts/mediatek/mt8183-kukui.dtsi
+index 7881a27be029..ee4db545ea5b 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183-kukui.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183-kukui.dtsi
+@@ -125,6 +125,7 @@ scp_mem_reserved: memory@50000000 {
+ 
+ 	sound: mt8183-sound {
+ 		mediatek,platform = <&afe>;
++		mediatek,hdmi-codec = <&it6505dptx>;
+ 		pinctrl-names = "default",
+ 				"aud_tdm_out_on",
+ 				"aud_tdm_out_off";
+@@ -229,6 +230,11 @@ tboard_thermistor2: thermal-sensor2 {
+ 	};
+ };
+ 
++&afe {
++	i2s3-share = "I2S2";
++	i2s0-share = "I2S5";
++};
++
+ &auxadc {
+ 	status = "okay";
+ };
+@@ -269,6 +275,18 @@ &cpu7 {
+ 	proc-supply = <&mt6358_vproc11_reg>;
+ };
+ 
++&dpi0 {
++	pinctrl-names = "sleep", "default";
++	pinctrl-0 = <&dpi_pin_default>;
++	pinctrl-1 = <&dpi_pin_func>;
++	status = "okay";
++	port {
++		dpi_out: endpoint {
++			remote-endpoint = <&it6505_in>;
++		};
++	};
++};
++
+ &dsi0 {
+ 	status = "okay";
+ 	#address-cells = <1>;
+@@ -331,6 +349,27 @@ &i2c3 {
+ 	clock-frequency = <100000>;
+ 	#address-cells = <1>;
+ 	#size-cells = <0>;
++
++	it6505dptx: it6505dptx@5c {
++		compatible = "ite,it6505";
++		status = "okay";
++		interrupt-parent = <&pio>;
++		interrupts = <152 IRQ_TYPE_LEVEL_LOW 152 0>;
++		reg = <0x5c>;
++		pinctrl-names = "default";
++		pinctrl-0 = <&it6505_pins>;
++		ovdd-supply = <&mt6358_vsim2_reg>;
++		pwr18-supply = <&it6505_pp18_reg>;
++		reset-gpios = <&pio 179 1>;
++		hpd-gpios = <&pio 9 0>;
++		extcon = <&usbc_extcon>;
++		no-laneswap;
++		port {
++			it6505_in: endpoint {
++				remote-endpoint = <&dpi_out>;
++			};
++		};
++	};
+ };
+ 
+ &i2c5 {
+@@ -384,6 +423,7 @@ &mmc1 {
+ 	mmc-pwrseq = <&wifi_pwrseq>;
+ 	bus-width = <4>;
+ 	max-frequency = <200000000>;
++	drv-type = <2>;
+ 	cap-sd-highspeed;
+ 	sd-uhs-sdr50;
+ 	sd-uhs-sdr104;
+@@ -514,7 +554,64 @@ pins-bt-en {
+ 		};
+ 	};
+ 
+-	ec_ap_int_odl: ec-ap-int-odl {
++	camera_pins_cam0: cam0@2 {
++		pins_cmd_dat {
++			pinmux = <PINMUX_GPIO99__FUNC_CMMCLK0>;
++		};
++	};
++
++	camera_pins_cam1: cam1@2 {
++		pins_cmd_dat {
++			pinmux = <PINMUX_GPIO100__FUNC_CMMCLK1>;
++		};
++	};
++
++	dpi_pin_default: dpi_pin_default {
++		pins_cmd_dat {
++			pinmux = <PINMUX_GPIO13__FUNC_GPIO13>,
++				<PINMUX_GPIO14__FUNC_GPIO14>,
++				<PINMUX_GPIO15__FUNC_GPIO15>,
++				<PINMUX_GPIO16__FUNC_GPIO16>,
++				<PINMUX_GPIO17__FUNC_GPIO17>,
++				<PINMUX_GPIO18__FUNC_GPIO18>,
++				<PINMUX_GPIO19__FUNC_GPIO19>,
++				<PINMUX_GPIO20__FUNC_GPIO20>,
++				<PINMUX_GPIO21__FUNC_GPIO21>,
++				<PINMUX_GPIO22__FUNC_GPIO22>,
++				<PINMUX_GPIO23__FUNC_GPIO23>,
++				<PINMUX_GPIO24__FUNC_GPIO24>,
++				<PINMUX_GPIO25__FUNC_GPIO25>,
++				<PINMUX_GPIO26__FUNC_GPIO26>,
++				<PINMUX_GPIO27__FUNC_GPIO27>,
++				<PINMUX_GPIO28__FUNC_GPIO28>;
++				drive-strength = <MTK_DRIVE_6mA>;
++				output-low;
++		};
++	};
++
++	dpi_pin_func: dpi_pin_func {
++		pins_cmd_dat {
++			pinmux = <PINMUX_GPIO13__FUNC_DBPI_D0>,
++				<PINMUX_GPIO14__FUNC_DBPI_D1>,
++				<PINMUX_GPIO15__FUNC_DBPI_D2>,
++				<PINMUX_GPIO16__FUNC_DBPI_D3>,
++				<PINMUX_GPIO17__FUNC_DBPI_D4>,
++				<PINMUX_GPIO18__FUNC_DBPI_D5>,
++				<PINMUX_GPIO19__FUNC_DBPI_D6>,
++				<PINMUX_GPIO20__FUNC_DBPI_D7>,
++				<PINMUX_GPIO21__FUNC_DBPI_D8>,
++				<PINMUX_GPIO22__FUNC_DBPI_D9>,
++				<PINMUX_GPIO23__FUNC_DBPI_D10>,
++				<PINMUX_GPIO24__FUNC_DBPI_D11>,
++				<PINMUX_GPIO25__FUNC_DBPI_HSYNC>,
++				<PINMUX_GPIO26__FUNC_DBPI_VSYNC>,
++				<PINMUX_GPIO27__FUNC_DBPI_DE>,
++				<PINMUX_GPIO28__FUNC_DBPI_CK>;
++				drive-strength = <MTK_DRIVE_6mA>;
++		};
++	};
++
++	ec_ap_int_odl: ec_ap_int_odl {
+ 		pins1 {
+ 			pinmux = <PINMUX_GPIO151__FUNC_GPIO151>;
+ 			input-enable;
+@@ -591,6 +688,32 @@ pins-bus {
+ 		};
+ 	};
+ 
++	it6505_pins: it6505_pins {
++		pins_hpd {
++			pinmux = <PINMUX_GPIO9__FUNC_GPIO9>;
++			input-enable;
++			bias-pull-up;
++		};
++
++		pins_int {
++			pinmux = <PINMUX_GPIO152__FUNC_GPIO152>;
++			input-enable;
++			bias-pull-up;
++		};
++
++		pins_power_enable {
++			pinmux = <PINMUX_GPIO178__FUNC_GPIO178>;
++			output-low;
++			bias-pull-up;
++		};
++
++		pins_reset {
++			pinmux = <PINMUX_GPIO179__FUNC_GPIO179>;
++			output-low;
++			bias-pull-up;
++		};
++	};
++
+ 	mmc0_pins_default: mmc0-pins-default {
+ 		pins-cmd-dat {
+ 			pinmux = <PINMUX_GPIO123__FUNC_MSDC0_DAT0>,
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+index 976dc968b3ca..d64c109af49b 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+@@ -1572,6 +1572,7 @@ mipi_tx0: dsi-phy@11e50000 {
+ 			compatible = "mediatek,mt8183-mipi-tx";
+ 			reg = <0 0x11e50000 0 0x1000>;
+ 			clocks = <&apmixedsys CLK_APMIXED_MIPID0_26M>;
++			clock-names = "ref_clk";
+ 			#clock-cells = <0>;
+ 			#phy-cells = <0>;
+ 			clock-output-names = "mipi_tx0_pll";
+@@ -1602,6 +1603,7 @@ u3phy: t-phy@11f40000 {
+ 			compatible = "mediatek,mt8183-tphy",
+ 				     "mediatek,generic-tphy-v2";
+ 			#address-cells = <1>;
++			#phy-cells = <1>;
+ 			#size-cells = <1>;
+ 			ranges = <0 0 0x11f40000 0x1000>;
+ 			status = "okay";
+@@ -1628,6 +1630,7 @@ mfgcfg: syscon@13000000 {
+ 			compatible = "mediatek,mt8183-mfgcfg", "syscon";
+ 			reg = <0 0x13000000 0 0x1000>;
+ 			#clock-cells = <1>;
++			power-domains = <&spm MT8183_POWER_DOMAIN_MFG_ASYNC>;
+ 		};
+ 
+ 		gpu: gpu@13040000 {
+@@ -1639,7 +1642,20 @@ gpu: gpu@13040000 {
+ 				<GIC_SPI 278 IRQ_TYPE_LEVEL_LOW>;
+ 			interrupt-names = "job", "mmu", "gpu";
+ 
+-			clocks = <&mfgcfg CLK_MFG_BG3D>;
++			clocks =
++				<&topckgen CLK_TOP_MFGPLL_CK>,
++				<&topckgen CLK_TOP_MUX_MFG>,
++				<&clk26m>,
++				<&mfgcfg CLK_MFG_BG3D>;
++			clock-names =
++				"clk_main_parent",
++				"clk_mux",
++				"clk_sub_parent",
++				"subsys_mfg_cg";
++
++			#cooling-cells = <2>;
++			cooling-min-level = <0>;
++			cooling-max-level = <15>;
+ 
+ 			power-domains =
+ 				<&spm MT8183_POWER_DOMAIN_MFG_CORE0>,
+@@ -1660,22 +1676,59 @@ mmsys: syscon@14000000 {
+ 			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0 0x1000>;
+ 		};
+ 
+-		mdp3-rdma0@14001000 {
+-			compatible = "mediatek,mt8183-mdp3-rdma";
+-			reg = <0 0x14001000 0 0x1000>;
+-			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x1000 0x1000>;
++		mdp3_rdma0: mdp3-rdma0@14001000 {
++			compatible = "mediatek,mt8183-mdp3",
++				     "mediatek,mt8183-mdp3-rdma";
++			mediatek,scp = <&scp>;
++			mediatek,mdp3-id = <0>;
++			mediatek,mdp3-comps = "mediatek,mt8183-mdp3-dl1",
++					      "mediatek,mt8183-mdp3-dl2",
++					      "mediatek,mt8183-mdp3-path1",
++					      "mediatek,mt8183-mdp3-path2",
++					      "mediatek,mt8183-mdp3-imgi",
++					      "mediatek,mt8183-mdp3-exto";
++			mediatek,mdp3-comp-ids = <0 1 0 1 0 1>;
++			reg = <0 0x14001000 0 0x1000>,
++			      <0 0x14000000 0 0x1000>,
++			      <0 0x14005000 0 0x1000>,
++			      <0 0x14006000 0 0x1000>,
++			      <0 0x15020000 0 0x1000>;
++			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x1000 0x1000>,
++						  <&gce SUBSYS_1400XXXX 0 0x1000>,
++						  <&gce SUBSYS_1400XXXX 0x5000 0x1000>,
++						  <&gce SUBSYS_1400XXXX 0x6000 0x1000>,
++						  <&gce SUBSYS_1502XXXX 0 0x1000>;
+ 			mediatek,gce-events = <CMDQ_EVENT_MDP_RDMA0_SOF>,
+ 					      <CMDQ_EVENT_MDP_RDMA0_EOF>;
+ 			power-domains = <&spm MT8183_POWER_DOMAIN_DISP>;
+ 			clocks = <&mmsys CLK_MM_MDP_RDMA0>,
+-				 <&mmsys CLK_MM_MDP_RSZ1>;
++				 <&mmsys CLK_MM_MDP_RSZ1>,
++				 <&mmsys CLK_MM_MDP_DL_TXCK>,
++				 <&mmsys CLK_MM_MDP_DL_RX>,
++				 <&mmsys CLK_MM_IPU_DL_TXCK>,
++				 <&mmsys CLK_MM_IPU_DL_RX>;
+ 			iommus = <&iommu M4U_PORT_MDP_RDMA0>;
++			mediatek,mmsys = <&mmsys>;
++			mediatek,mm-mutex = <&mutex>;
++			mediatek,mailbox-gce = <&gce>;
+ 			mboxes = <&gce 20 CMDQ_THR_PRIO_LOWEST 0>,
+-				 <&gce 21 CMDQ_THR_PRIO_LOWEST 0>;
+-		};
+-
+-		mdp3-rsz0@14003000 {
++				 <&gce 21 CMDQ_THR_PRIO_LOWEST 0>,
++				 <&gce 22 CMDQ_THR_PRIO_LOWEST 0>,
++				 <&gce 23 CMDQ_THR_PRIO_LOWEST 0>;
++			mdp3-rsz0 = <&mdp3_rsz0>; /* debug only */
++			mdp3-rsz1 = <&mdp3_rsz1>; /* debug only */
++			mdp3-wrot0 = <&mdp3_wrot0>; /* debug only */
++			mdp3-wdma0 = <&mdp3_wdma>; /* debug only */
++			mdp3-ccorr0 = <&mdp3_ccorr>; /* debug only */
++			gce-subsys = <&gce 0x14000000 SUBSYS_1400XXXX>,
++				     <&gce 0x14010000 SUBSYS_1401XXXX>,
++				     <&gce 0x14020000 SUBSYS_1402XXXX>,
++				     <&gce 0x15020000 SUBSYS_1502XXXX>;
++		};
++
++		mdp3_rsz0: mdp3-rsz0@14003000 {
+ 			compatible = "mediatek,mt8183-mdp3-rsz";
++			mediatek,mdp3-id = <0>;
+ 			reg = <0 0x14003000 0 0x1000>;
+ 			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x3000 0x1000>;
+ 			mediatek,gce-events = <CMDQ_EVENT_MDP_RSZ0_SOF>,
+@@ -1683,8 +1736,9 @@ mdp3-rsz0@14003000 {
+ 			clocks = <&mmsys CLK_MM_MDP_RSZ0>;
+ 		};
+ 
+-		mdp3-rsz1@14004000 {
++		mdp3_rsz1: mdp3-rsz1@14004000 {
+ 			compatible = "mediatek,mt8183-mdp3-rsz";
++			mediatek,mdp3-id = <1>;
+ 			reg = <0 0x14004000 0 0x1000>;
+ 			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x4000 0x1000>;
+ 			mediatek,gce-events = <CMDQ_EVENT_MDP_RSZ1_SOF>,
+@@ -1692,8 +1746,9 @@ mdp3-rsz1@14004000 {
+ 			clocks = <&mmsys CLK_MM_MDP_RSZ1>;
+ 		};
+ 
+-		mdp3-wrot0@14005000 {
++		mdp3_wrot0: mdp3-wrot0@14005000 {
+ 			compatible = "mediatek,mt8183-mdp3-wrot";
++			mediatek,mdp3-id = <0>;
+ 			reg = <0 0x14005000 0 0x1000>;
+ 			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x5000 0x1000>;
+ 			mediatek,gce-events = <CMDQ_EVENT_MDP_WROT0_SOF>,
+@@ -1703,8 +1758,9 @@ mdp3-wrot0@14005000 {
+ 			iommus = <&iommu M4U_PORT_MDP_WROT0>;
+ 		};
+ 
+-		mdp3-wdma@14006000 {
++		mdp3_wdma: mdp3-wdma@14006000 {
+ 			compatible = "mediatek,mt8183-mdp3-wdma";
++			mediatek,mdp3-id = <0>;
+ 			reg = <0 0x14006000 0 0x1000>;
+ 			mediatek,gce-client-reg = <&gce SUBSYS_1400XXXX 0x6000 0x1000>;
+ 			mediatek,gce-events = <CMDQ_EVENT_MDP_WDMA0_SOF>,
+@@ -1826,14 +1882,60 @@ dsi0: dsi@14014000 {
+ 			phy-names = "dphy";
+ 		};
+ 
++		dpi0: dpi@14015000 {
++			compatible = "mediatek,mt8183-dpi";
++			reg = <0 0x14015000 0 0x1000>;
++			interrupts = <GIC_SPI 237 IRQ_TYPE_LEVEL_LOW>;
++			power-domains = <&spm MT8183_POWER_DOMAIN_DISP>;
++			clocks = <&topckgen CLK_TOP_MUX_DPI0>,
++				 <&mmsys CLK_MM_DPI_MM>,
++				 <&mmsys CLK_MM_DPI_IF>,
++				 <&apmixedsys CLK_APMIXED_TVDPLL>,
++				 <&topckgen CLK_TOP_TVDPLL_D2>,
++				 <&topckgen CLK_TOP_TVDPLL_D4>,
++				 <&topckgen CLK_TOP_TVDPLL_D8>,
++				 <&topckgen CLK_TOP_TVDPLL_D16>;
++			clock-names = "pixel", "engine", "ck_cg", "pll",
++				      "TVDPLL_D2",
++				      "TVDPLL_D4",
++				      "TVDPLL_D8",
++				      "TVDPLL_D16";
++		};
++
+ 		mutex: mutex@14016000 {
+ 			compatible = "mediatek,mt8183-disp-mutex";
+ 			reg = <0 0x14016000 0 0x1000>;
++			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x6000 0x1000>;
+ 			interrupts = <GIC_SPI 217 IRQ_TYPE_LEVEL_LOW>;
+ 			power-domains = <&spm MT8183_POWER_DOMAIN_DISP>;
+ 			mediatek,gce-events = <CMDQ_EVENT_MUTEX_STREAM_DONE0>,
+-					      <CMDQ_EVENT_MUTEX_STREAM_DONE1>;
+-			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0x6000 0x1000>;
++					      <CMDQ_EVENT_MUTEX_STREAM_DONE1>,
++					      <CMDQ_EVENT_MDP_RDMA0_SOF>,
++					      <CMDQ_EVENT_MDP_RDMA0_EOF>,
++					      <CMDQ_EVENT_MDP_RSZ0_SOF>,
++					      <CMDQ_EVENT_MDP_RSZ1_SOF>,
++					      <CMDQ_EVENT_MDP_TDSHP_SOF>,
++					      <CMDQ_EVENT_MDP_WROT0_SOF>,
++					      <CMDQ_EVENT_MDP_WROT0_EOF>,
++					      <CMDQ_EVENT_MDP_WDMA0_SOF>,
++					      <CMDQ_EVENT_MDP_WDMA0_EOF>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_0>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_1>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_2>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_3>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_4>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_5>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_6>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_7>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_8>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_9>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_10>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_11>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_12>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_13>,
++					      <CMDQ_EVENT_ISP_FRAME_DONE_P2_14>,
++					      <CMDQ_EVENT_WPE_A_DONE>,
++					      <CMDQ_EVENT_SPE_B_DONE>;
+ 		};
+ 
+ 		larb0: larb@14017000 {
+@@ -1857,8 +1959,9 @@ smi_common: smi@14019000 {
+ 			power-domains = <&spm MT8183_POWER_DOMAIN_DISP>;
+ 		};
+ 
+-		mdp3-ccorr@1401c000 {
++		mdp3_ccorr: mdp3-ccorr@1401c000 {
+ 			compatible = "mediatek,mt8183-mdp3-ccorr";
++			mediatek,mdp3-id = <0>;
+ 			reg = <0 0x1401c000 0 0x1000>;
+ 			mediatek,gce-client-reg = <&gce SUBSYS_1401XXXX 0xc000 0x1000>;
+ 			mediatek,gce-events = <CMDQ_EVENT_MDP_CCORR_SOF>,
+@@ -1872,6 +1975,21 @@ imgsys: syscon@15020000 {
+ 			#clock-cells = <1>;
+ 		};
+ 
++		dip: dip@15022000 {
++			compatible = "mediatek,mt8183-dip";
++			mediatek,larb = <&larb5>;
++			mediatek,mdp3 = <&mdp3_rdma0>;
++			mediatek,scp = <&scp>;
++			iommus = <&iommu M4U_PORT_CAM_IMGI>;
++			reg = <0 0x15022000 0 0x6000>;
++			interrupts = <GIC_SPI 268 IRQ_TYPE_LEVEL_LOW>;
++			clocks = <&imgsys CLK_IMG_LARB5>,
++				 <&imgsys CLK_IMG_DIP>;
++			clock-names = "larb5",
++				      "dip";
++			power-domains = <&spm MT8183_POWER_DOMAIN_ISP>;
++		};
++
+ 		larb5: larb@15021000 {
+ 			compatible = "mediatek,mt8183-smi-larb";
+ 			reg = <0 0x15021000 0 0x1000>;
+@@ -1892,12 +2010,57 @@ larb2: larb@1502f000 {
+ 			power-domains = <&spm MT8183_POWER_DOMAIN_ISP>;
+ 		};
+ 
++		fd: fd@1502b000 {
++			compatible = "mediatek,mt8183-fd";
++			mediatek,scp = <&scp>;
++			iommus = <&iommu M4U_PORT_CAM_FDVT_RP>,
++				 <&iommu M4U_PORT_CAM_FDVT_WR>,
++				 <&iommu M4U_PORT_CAM_FDVT_RB>;
++			reg = <0 0x1502b000 0 0x1000>;
++			interrupts = <GIC_SPI 269 IRQ_TYPE_LEVEL_LOW>;
++			clocks = <&imgsys CLK_IMG_FDVT>;
++			clock-names = "fd";
++			power-domains = <&spm MT8183_POWER_DOMAIN_ISP>;
++		};
++
+ 		vdecsys: syscon@16000000 {
+ 			compatible = "mediatek,mt8183-vdecsys", "syscon";
+ 			reg = <0 0x16000000 0 0x1000>;
+ 			#clock-cells = <1>;
+ 		};
+ 
++		vcodec_dec: vcodec@16000000 {
++			compatible = "mediatek,mt8183-vcodec-dec";
++			reg = /* <0 0x16000000 0 0x1000>,	VDEC_SYS - deprecated? */
++				 <0 0x16020000 0 0x1000>,		/* VDEC_MISC */
++				 <0 0x16021000 0 0x800>,		/* VDEC_VLD */
++				 <0 0x16021800 0 0x800>,		/* VDEC_TOP */
++				 <0 0x16022000 0 0x1000>,		/* VDEC_MC */
++				 <0 0x16023000 0 0x1000>,		/* VDEC_AVCVLD */
++				 <0 0x16024000 0 0x1000>,		/* VDEC_AVCMV */
++				 <0 0x16025000 0 0x1000>,		/* VDEC_PP */
++				 <0 0x16026800 0 0x800>,		/* VP8_VD */
++				 <0 0x16027000 0 0x800>,		/* VP6_VD */
++				 <0 0x16027800 0 0x800>,		/* VP8_VL */
++				 <0 0x16028400 0 0x400>;		/* VP9_VD */
++			reg-names = "misc", "ld", "top", "cm", "ad", "av", "pp",
++				"hwd", "hwq", "hwb", "hwg";
++			interrupts = <GIC_SPI 250 IRQ_TYPE_LEVEL_LOW>;
++			mediatek,larb = <&larb1>;
++			iommus = <&iommu M4U_PORT_HW_VDEC_MC_EXT>,
++				 <&iommu M4U_PORT_HW_VDEC_PP_EXT>,
++				 <&iommu M4U_PORT_HW_VDEC_VLD_EXT>,
++				 <&iommu M4U_PORT_HW_VDEC_AVC_MV_EXT>,
++				 <&iommu M4U_PORT_HW_VDEC_PRED_RD_EXT>,
++				 <&iommu M4U_PORT_HW_VDEC_PRED_WR_EXT>,
++				 <&iommu M4U_PORT_HW_VDEC_PPWRAP_EXT>;
++			mediatek,scp = <&scp>;
++			mediatek,vdecsys = <&vdecsys>;
++			power-domains = <&spm MT8183_POWER_DOMAIN_VDEC>;
++			clocks = <&vdecsys CLK_VDEC_VDEC>;
++			clock-names = "vdec";
++		};
++
+ 		larb1: larb@16010000 {
+ 			compatible = "mediatek,mt8183-smi-larb";
+ 			reg = <0 0x16010000 0 0x1000>;
+@@ -1934,6 +2097,26 @@ venc_jpg: venc_jpg@17030000 {
+ 			clock-names = "jpgenc";
+ 		};
+ 
++		vcodec_enc: vcodec@17020000 {
++			compatible = "mediatek,mt8183-vcodec-enc";
++			reg = <0 0x17020000 0 0x1000>,
++				 <0 0x17000000 0 0x1000>; /* Dummy?! */
++			interrupts = <GIC_SPI 247 IRQ_TYPE_LEVEL_LOW>;
++			mediatek,larb = <&larb4>;
++			iommus = <&iommu M4U_PORT_VENC_REC>,
++				 <&iommu M4U_PORT_VENC_BSDMA>,
++				 <&iommu M4U_PORT_VENC_RD_COMV>,
++				 <&iommu M4U_PORT_VENC_CUR_LUMA>,
++				 <&iommu M4U_PORT_VENC_CUR_CHROMA>,
++				 <&iommu M4U_PORT_VENC_REF_LUMA>,
++				 <&iommu M4U_PORT_VENC_REF_CHROMA>;
++			mediatek,scp = <&scp>;
++			mediatek,vencsys = <&vencsys>;
++			power-domains = <&spm MT8183_POWER_DOMAIN_VENC>;
++			clocks = <&vencsys CLK_VENC_VENC>;
++			clock-names = "venc";
++		};
++
+ 		ipu_conn: syscon@19000000 {
+ 			compatible = "mediatek,mt8183-ipu_conn", "syscon";
+ 			reg = <0 0x19000000 0 0x1000>;
+@@ -1964,6 +2147,70 @@ camsys: syscon@1a000000 {
+ 			#clock-cells = <1>;
+ 		};
+ 
++		camisp: camisp@1a000000 {
++			compatible = "mediatek,mt8183-camisp";
++			reg = <0 0x1a000000 0 0x1000>,
++					<0 0x1a003000 0 0x1000>,
++					<0 0x1a004000 0 0x2000>,
++					<0 0x1a006000 0 0x2000>,
++					<0 0x1a008000 0 0x2000>;
++			reg-names = "cam_sys",
++					"cam_uni",
++					"cam_a",
++					"cam_b",
++					"cam_c";
++			interrupts = <GIC_SPI 253 IRQ_TYPE_LEVEL_LOW>,
++					<GIC_SPI 254 IRQ_TYPE_LEVEL_LOW>,
++					<GIC_SPI 255 IRQ_TYPE_LEVEL_LOW>,
++					<GIC_SPI 256 IRQ_TYPE_LEVEL_LOW>;
++			interrupt-names = "cam_uni",
++					"cam_a",
++					"cam_b",
++					"cam_c";
++			iommus = <&iommu M4U_PORT_CAM_IMGO>;
++			clocks = <&camsys CLK_CAM_CAM>,
++					<&camsys CLK_CAM_CAMTG>;
++			clock-names = "camsys_cam_cgpdn",
++					"camsys_camtg_cgpdn";
++			mediatek,larb = <&larb3>,
++					<&larb6>;
++			power-domains = <&spm MT8183_POWER_DOMAIN_CAM>;
++			mediatek,scp = <&scp>;
++
++			port {
++				camisp_endpoint: endpoint {
++					remote-endpoint = <&seninf_camisp_endpoint>;
++				};
++			};
++		};
++
++		seninf: seninf@1a040000 {
++			compatible = "mediatek,mt8183-seninf";
++			reg = <0 0x1a040000 0 0x8000>,
++			      <0 0x11C80000 0 0x6000>;
++			reg-names = "base_reg", "rx_reg";
++			interrupts = <GIC_SPI 251 IRQ_TYPE_LEVEL_LOW>;
++			power-domains = <&spm MT8183_POWER_DOMAIN_CAM>;
++			clocks = <&camsys CLK_CAM_SENINF>,
++				 <&topckgen CLK_TOP_MUX_SENINF>;
++			clock-names = "CLK_CAM_SENINF", "CLK_TOP_MUX_SENINF";
++			status = "disabled";
++
++			ports {
++				#address-cells = <1>;
++				#size-cells = <0>;
++
++				port@4 {
++					reg = <4>;
++
++					seninf_camisp_endpoint: endpoint {
++						remote-endpoint = <&camisp_endpoint>;
++					};
++				};
++			};
++
++		};
++
+ 		larb6: larb@1a001000 {
+ 			compatible = "mediatek,mt8183-smi-larb";
+ 			reg = <0 0x1a001000 0 0x1000>;
+diff --git a/drivers/gpu/drm/bridge/ite-it6505.c b/drivers/gpu/drm/bridge/ite-it6505.c
+index 2f300f5ca051..ee222818c625 100644
+--- a/drivers/gpu/drm/bridge/ite-it6505.c
++++ b/drivers/gpu/drm/bridge/ite-it6505.c
+@@ -1283,6 +1283,7 @@ static void it6505_init(struct it6505 *it6505)
+ 	it6505_write(it6505, REG_TIME_STMP_CTRL,
+ 		     EN_SSC_GAT | EN_ENHANCE_VID_STMP | EN_ENHANCE_AUD_STMP);
+ 	it6505_write(it6505, REG_INFOFRAME_CTRL, 0x00);
++	it6505_write(it6505, REG_BANK_SEL, 0x01);
+ 	it6505_write(it6505, REG_DRV_0_DB_800_MV,
+ 		     afe_setting_table[it6505->afe_setting][0]);
+ 	it6505_write(it6505, REG_PRE_0_DB_800_MV,
+@@ -1292,6 +1293,7 @@ static void it6505_init(struct it6505 *it6505)
+ 	it6505_write(it6505, REG_SSC_CTRL0, 0x9E);
+ 	it6505_write(it6505, REG_SSC_CTRL1, 0x1C);
+ 	it6505_write(it6505, REG_SSC_CTRL2, 0x42);
++	it6505_write(it6505, REG_BANK_SEL, 0x00);
+ }
+ 
+ static void it6505_video_disable(struct it6505 *it6505)
+@@ -1520,9 +1522,11 @@ static void it6505_setup_ssc(struct it6505 *it6505)
+ 	it6505_set_bits(it6505, REG_TRAIN_CTRL0, SPREAD_AMP_5,
+ 			it6505->enable_ssc ? SPREAD_AMP_5 : 0x00);
+ 	if (it6505->enable_ssc) {
++		it6505_write(it6505, REG_BANK_SEL, 0x01);
+ 		it6505_write(it6505, REG_SSC_CTRL0, 0x9E);
+ 		it6505_write(it6505, REG_SSC_CTRL1, 0x1C);
+ 		it6505_write(it6505, REG_SSC_CTRL2, 0x42);
++		it6505_write(it6505, REG_BANK_SEL, 0x00);
+ 		it6505_write(it6505, REG_SP_CTRL0, 0x07);
+ 		it6505_write(it6505, REG_IP_CTRL1, 0x29);
+ 		it6505_write(it6505, REG_IP_CTRL2, 0x03);
+@@ -2165,7 +2169,7 @@ static void it6505_link_train_ok(struct it6505 *it6505)
+ 	struct device *dev = it6505->dev;
+ 
+ 	it6505->link_state = LINK_OK;
+-	/* disalbe mute enable avi info frame */
++	/* disable mute enable avi info frame */
+ 	it6505_set_bits(it6505, REG_DATA_MUTE_CTRL, EN_VID_MUTE, 0x00);
+ 	it6505_set_bits(it6505, REG_INFOFRAME_CTRL,
+ 			EN_VID_CTRL_PKT, EN_VID_CTRL_PKT);
+@@ -2840,6 +2844,45 @@ static int __maybe_unused it6505_audio_setup_hw_params(struct it6505 *it6505,
+ 	return 0;
+ }
+ 
++static int it6505_audio_hw_params(struct device *dev, void *data,
++				  struct hdmi_codec_daifmt *daifmt,
++				  struct hdmi_codec_params *params)
++{
++	struct it6505 *it6505 = dev_get_drvdata(dev);
++
++	return it6505_audio_setup_hw_params(it6505, params);
++}
++
++static int it6505_audio_setup_trigger(struct it6505 *it6505, int cmd)
++{
++	struct device *dev = it6505->dev;
++	DRM_DEV_DEBUG_DRIVER(dev, "event: %d", cmd);
++
++	switch (cmd) {
++	case SNDRV_PCM_TRIGGER_START:
++	case SNDRV_PCM_TRIGGER_RESUME:
++		queue_delayed_work(system_wq, &it6505->delayed_audio,
++				   msecs_to_jiffies(180));
++		break;
++	case SNDRV_PCM_TRIGGER_STOP:
++	case SNDRV_PCM_TRIGGER_SUSPEND:
++		cancel_delayed_work(&it6505->delayed_audio);
++		break;
++	default:
++		return -EINVAL;
++	}
++
++	return 0;
++}
++
++
++static int it6505_audio_trigger(struct device *dev, int cmd)
++{
++	struct it6505 *it6505 = dev_get_drvdata(dev);
++
++	return it6505_audio_setup_trigger(it6505, cmd);
++}
++
+ static void __maybe_unused it6505_audio_shutdown(struct device *dev, void *data)
+ {
+ 	struct it6505 *it6505 = dev_get_drvdata(dev);
+@@ -2862,11 +2905,58 @@ static int __maybe_unused it6505_audio_hook_plugged_cb(struct device *dev,
+ 	return 0;
+ }
+ 
++static const struct hdmi_codec_ops it6505_audio_codec_ops = {
++	.hw_params = it6505_audio_hw_params,
++	.trigger = it6505_audio_trigger,
++	.audio_shutdown = it6505_audio_shutdown,
++	.hook_plugged_cb = it6505_audio_hook_plugged_cb,
++};
++
++static int it6505_register_audio_driver(struct device *dev)
++{
++	struct it6505 *it6505 = dev_get_drvdata(dev);
++	struct hdmi_codec_pdata codec_data = {
++		.ops = &it6505_audio_codec_ops,
++		.max_i2s_channels = 8,
++		.i2s = 1,
++		.data = it6505,
++	};
++	struct platform_device *pdev;
++
++	pdev = platform_device_register_data(dev, HDMI_CODEC_DRV_NAME,
++					     PLATFORM_DEVID_AUTO, &codec_data,
++					     sizeof(codec_data));
++	if (IS_ERR(pdev))
++		return PTR_ERR(pdev);
++
++	INIT_DELAYED_WORK(&it6505->delayed_audio, it6505_delayed_audio);
++	DRM_DEV_DEBUG_DRIVER(dev, "bound to %s", HDMI_CODEC_DRV_NAME);
++
++	return 0;
++}
++
+ static inline struct it6505 *bridge_to_it6505(struct drm_bridge *bridge)
+ {
+ 	return container_of(bridge, struct it6505, bridge);
+ }
+ 
++static void it6505_bridge_mode_set(struct drm_bridge *bridge,
++				   const struct drm_display_mode *mode,
++				   const struct drm_display_mode *adjusted_mode)
++{
++	struct it6505 *it6505 = bridge_to_it6505(bridge);
++
++	if (WARN_ON(!it6505->powered))
++		return;
++
++	mutex_lock(&it6505->mode_lock);
++
++	memcpy(&it6505->source_output_mode, adjusted_mode,
++	       sizeof(it6505->source_output_mode));
++
++	mutex_unlock(&it6505->mode_lock);
++}
++
+ static int it6505_bridge_attach(struct drm_bridge *bridge,
+ 				enum drm_bridge_attach_flags flags)
+ {
+@@ -3058,6 +3148,7 @@ static const struct drm_bridge_funcs it6505_bridge_funcs = {
+ 	.attach = it6505_bridge_attach,
+ 	.detach = it6505_bridge_detach,
+ 	.mode_valid = it6505_bridge_mode_valid,
++	.mode_set = it6505_bridge_mode_set,
+ 	.atomic_enable = it6505_bridge_atomic_enable,
+ 	.atomic_disable = it6505_bridge_atomic_disable,
+ 	.atomic_pre_enable = it6505_bridge_atomic_pre_enable,
+@@ -3423,6 +3514,12 @@ static int it6505_i2c_probe(struct i2c_client *client)
+ 		return err;
+ 	}
+ 
++	err = it6505_register_audio_driver(dev);
++	if (err < 0) {
++		dev_err(dev, "Failed to register audio driver: %d", err);
++		return err;
++	}
++
+ 	INIT_WORK(&it6505->link_works, it6505_link_training_work);
+ 	INIT_WORK(&it6505->hdcp_wait_ksv_list, it6505_hdcp_wait_ksv_list);
+ 	INIT_DELAYED_WORK(&it6505->hdcp_work, it6505_hdcp_work);
+diff --git a/include/sound/hdmi-codec.h b/include/sound/hdmi-codec.h
+index 9b162ac1e08e..ea834a838754 100644
+--- a/include/sound/hdmi-codec.h
++++ b/include/sound/hdmi-codec.h
+@@ -81,6 +81,12 @@ struct hdmi_codec_ops {
+ 		       struct hdmi_codec_daifmt *fmt,
+ 		       struct hdmi_codec_params *hparms);
+ 
++	/*
++	 * PCM trigger callback.
++	 * Optional
++	 */
++	int (*trigger)(struct device *dev, int cmd);
++
+ 	/*
+ 	 * Shuts down the audio stream.
+ 	 * Mandatory
+diff --git a/sound/soc/codecs/hdmi-codec.c b/sound/soc/codecs/hdmi-codec.c
+index 20da1eaa4f1c..ca74e811bc47 100644
+--- a/sound/soc/codecs/hdmi-codec.c
++++ b/sound/soc/codecs/hdmi-codec.c
+@@ -276,7 +276,31 @@ struct hdmi_codec_priv {
+ 	u8 iec_status[AES_IEC958_STATUS_SIZE];
+ };
+ 
++static int hdmi_tx_event(struct snd_soc_dapm_widget *w,
++		struct snd_kcontrol *kcontrol, int event)
++{
++	struct snd_soc_component *component = snd_soc_dapm_to_component(w->dapm);
++	struct hdmi_codec_priv *hcp = snd_soc_component_get_drvdata(component);
++
++	switch (event) {
++	case SND_SOC_DAPM_PRE_PMU:
++		if (hcp->hcd.ops->trigger)
++			hcp->hcd.ops->trigger(component->dev->parent, SNDRV_PCM_TRIGGER_START);
++		break;
++	case SND_SOC_DAPM_POST_PMD:
++		if (hcp->hcd.ops->trigger)
++			hcp->hcd.ops->trigger(component->dev->parent, SNDRV_PCM_TRIGGER_STOP);
++		break;
++	default:
++		break;
++	}
++
++	return 0;
++}
++
+ static const struct snd_soc_dapm_widget hdmi_widgets[] = {
++	SND_SOC_DAPM_OUT_DRV_E("SDB", SND_SOC_NOPM, 0, 0, NULL, 0, hdmi_tx_event,
++			       SND_SOC_DAPM_POST_PMD | SND_SOC_DAPM_PRE_PMU),
+ 	SND_SOC_DAPM_OUTPUT("TX"),
+ 	SND_SOC_DAPM_OUTPUT("RX"),
+ };
+@@ -816,9 +840,13 @@ static int hdmi_dai_probe(struct snd_soc_dai *dai)
+ 	struct hdmi_codec_daifmt *daifmt;
+ 	struct snd_soc_dapm_route route[] = {
+ 		{
+-			.sink = "TX",
++			.sink = "SDB",
+ 			.source = dai->driver->playback.stream_name,
+ 		},
++		{
++			.sink = "TX",
++			.source = "SDB",
++		},
+ 		{
+ 			.sink = dai->driver->capture.stream_name,
+ 			.source = "RX",
+@@ -833,7 +861,7 @@ static int hdmi_dai_probe(struct snd_soc_dai *dai)
+ 		if (!route[i].source || !route[i].sink)
+ 			continue;
+ 
+-		ret = snd_soc_dapm_add_routes(dapm, &route[i], 1);
++		ret = snd_soc_dapm_add_routes(dapm, route, ARRAY_SIZE(route));
+ 		if (ret)
+ 			return ret;
+ 	}

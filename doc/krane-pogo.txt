@@ -1,0 +1,6 @@
+Starting from left:
+Pin 1: 105k Ohm, most likely GPIO
+Pin 2: 15k Ohm, USB data
+Pin 3: GND
+Pin 4: 15k Ohm, USB data
+Pin 5: VCC 3.3V
